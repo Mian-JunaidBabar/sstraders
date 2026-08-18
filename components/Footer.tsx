@@ -79,6 +79,9 @@ export default function Footer() {
               <Link href="/metals" className="hover:text-black">
                 Metals
               </Link>
+              <Link href="/fluxes" className="hover:text-black">
+                Fluxes
+              </Link>
               <Link href="/graphite-crucibles" className="hover:text-black">
                 Graphite Crucibles
               </Link>
@@ -200,6 +203,7 @@ export default function Footer() {
                 <Link href="/non-ferro-alloys">Non-Ferro</Link>
                 <Link href="/master-alloys">Master Alloys</Link>
                 <Link href="/metals">Metals</Link>
+                <Link href="/fluxes">Fluxes</Link>
                 <Link href="/graphite-crucibles">Crucibles</Link>
               </div>
             </div>

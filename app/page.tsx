@@ -8,6 +8,7 @@ import {
   nonferro,
   masterAlloys,
   metals,
+  fluxes,
 } from "@/data/products";
 import { getBreadcrumbSchema } from "@/lib/schema";
 
@@ -453,13 +454,7 @@ export default function HomePage() {
         >
           Our ranges
         </h2>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-            gap: "24px",
-          }}
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {ranges.map((r, i) => {
             const rangeHref =
               r.title === "Ferro Alloys"
@@ -470,7 +465,9 @@ export default function HomePage() {
                     ? "/master-alloys"
                     : r.title === "Metals"
                       ? "/metals"
-                      : "/graphite-crucibles";
+                      : r.title === "Fluxes"
+                        ? "/fluxes"
+                        : "/graphite-crucibles";
 
             return (
               <div
@@ -664,6 +661,7 @@ export default function HomePage() {
             const foundNonFerro = nonferro.find((p) => p.name === b.name);
             const foundMaster = masterAlloys.find((p) => p.name === b.name);
             const foundMetal = metals.find((p) => p.name === b.name);
+            const foundFlux = fluxes.find((p) => p.name === b.name);
             const productUrl = foundFerro
               ? `/ferro-alloys/${foundFerro.slug}`
               : foundNonFerro
@@ -672,9 +670,11 @@ export default function HomePage() {
                   ? `/master-alloys/${foundMaster.slug}`
                   : foundMetal
                     ? `/metals/${foundMetal.slug}`
-                    : b.name.includes("Crucible")
-                      ? "/graphite-crucibles"
-                      : "#";
+                    : foundFlux
+                      ? `/fluxes/${foundFlux.slug}`
+                      : b.name.includes("Crucible")
+                        ? "/graphite-crucibles"
+                        : "#";
 
             return (
               <div

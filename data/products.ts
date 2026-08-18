@@ -28,7 +28,7 @@ export interface UseCase {
 export interface Product {
   name: string;
   slug: string;
-  category: "ferro" | "non-ferro" | "master-alloys" | "metals";
+  category: "ferro" | "non-ferro" | "master-alloys" | "metals" | "fluxes";
   use: string;
   status: string;
   photo: string;
@@ -68,9 +68,9 @@ export interface Pillar {
 export const siteInfo = {
   name: "SS Traders",
   legalName: "SS Traders Pakistan",
-  tagline: "High-Grade Ferro Alloys, Non-Ferro Alloys, Master Alloys, Pure Metals & Crucibles",
+  tagline: "High-Grade Ferro Alloys, Non-Ferro Alloys, Master Alloys, Pure Metals, Fluxes & Crucibles",
   description:
-    "A Lahore-based trading company specialised in high-grade ferro alloys, non-ferro alloys, master alloys, pure metals and crucibles for iron, steel, aluminium and copper foundries across Pakistan.",
+    "A Lahore-based trading company specialised in high-grade ferro alloys, non-ferro alloys, master alloys, pure metals, foundry fluxes and crucibles for iron, steel, aluminium and copper foundries across Pakistan.",
   url: "https://sstraders.pk",
   phone: "+92 300 9405230",
   phoneRaw: "+923009405230",
@@ -1212,6 +1212,199 @@ export const metals: Product[] = [
   },
 ];
 
+const rawFluxes = [
+  {
+    name: "Covering Flux",
+    use: "Melt surface protection, reduces oxidation loss",
+    status: "[confirm availability]",
+    photo: P + "copper-phosphorus-webp.webp",
+    note: "Forms a protective barrier on molten metal to reduce oxidation losses during melting and holding. [confirm exact composition/dosage with supplier]",
+    origin: "[confirm origin]",
+    specs: [
+      { k: "Form", v: "[confirm — powder/granular]" },
+      { k: "Dosage", v: "[confirm per supplier spec]" },
+      { k: "Application", v: "Melting & holding stage" },
+    ],
+    chem: [
+      { k: "Base composition", v: "[confirm exact blend with supplier]" },
+      { k: "Melting point", v: "[confirm thermal range]" },
+      { k: "Moisture max", v: "[confirm max %]" },
+    ],
+    supply: [
+      { k: "Form", v: "Powder / Granular [confirm]" },
+      { k: "Packing", v: "25 kg moisture-proof bag [confirm]" },
+      { k: "Origin", v: "[confirm origin]" },
+      { k: "Minimum order", v: "[confirm min order]" },
+      { k: "Delivery", v: "Ex-Lahore, 24 – 72 hrs" },
+    ],
+    uses: [
+      {
+        n: "01",
+        t: "Melt surface barrier",
+        b: "Forms a continuous liquid flux cover over molten metal bath, preventing direct air contact.",
+      },
+      {
+        n: "02",
+        t: "Oxidation loss reduction",
+        b: "Minimizes metal burning and oxidation losses during extended high-temperature holding periods.",
+      },
+      {
+        n: "03",
+        t: "Hydrogen pickup prevention",
+        b: "Acts as a physical shield against atmospheric humidity absorption in aluminium holding pots.",
+      },
+      {
+        n: "04",
+        t: "Clean crucible walls",
+        b: "Prevents dross crusting and ring formation along the upper interior walls of crucible furnaces.",
+      },
+    ],
+  },
+  {
+    name: "Drossing Flux",
+    use: "Separates metal from oxide dross",
+    status: "[confirm availability]",
+    photo: P + "copper-phosphorus-webp.webp",
+    note: "Promotes separation of usable metal from the oxide dross layer, reducing metal loss during skimming. [confirm exact composition/dosage with supplier]",
+    origin: "[confirm origin]",
+    specs: [
+      { k: "Form", v: "[confirm]" },
+      { k: "Dosage", v: "[confirm per supplier spec]" },
+      { k: "Application", v: "Pre-skimming" },
+    ],
+    chem: [
+      { k: "Active salts", v: "[confirm chemical formulation]" },
+      { k: "Reaction temperature", v: "[confirm operational window]" },
+    ],
+    supply: [
+      { k: "Form", v: "Powder / Granular [confirm]" },
+      { k: "Packing", v: "25 kg bag [confirm]" },
+      { k: "Origin", v: "[confirm origin]" },
+      { k: "Minimum order", v: "[confirm min order]" },
+      { k: "Delivery", v: "Ex-Lahore, 24 – 72 hrs" },
+    ],
+    uses: [
+      {
+        n: "01",
+        t: "Metal-dross separation",
+        b: "Alters surface tension to release entrapped metallic droplets back into the liquid pool.",
+      },
+      {
+        n: "02",
+        t: "Dry dross formation",
+        b: "Converts wet metallic dross into a dry, powdery oxide crust that skims easily.",
+      },
+      {
+        n: "03",
+        t: "Yield optimization",
+        b: "Saves up to 70% of usable metal that would otherwise be discarded with heavy dross skim.",
+      },
+      {
+        n: "04",
+        t: "Cleaner ladle pouring",
+        b: "Ensures dross-free metal transfer from holding pots into casting ladles and moulds.",
+      },
+    ],
+  },
+  {
+    name: "Exothermic Flux",
+    use: "Recovers metal trapped in dross",
+    status: "[confirm availability]",
+    photo: P + "copper-phosphorus-webp.webp",
+    note: "Self-heating reaction recovers metal entrapped in dross that has already formed, reducing melting losses. [confirm exact composition/dosage with supplier]",
+    origin: "[confirm origin]",
+    specs: [
+      { k: "Form", v: "Powder, typically" },
+      { k: "Dosage", v: "[confirm — industry typical is ~0.1–0.5% by melt mass]" },
+      { k: "Application", v: "Applied to dross" },
+    ],
+    chem: [
+      { k: "Exothermic agents", v: "[confirm self-heating blend]" },
+      { k: "Ignition temp", v: "[confirm reaction trigger temp]" },
+    ],
+    supply: [
+      { k: "Form", v: "Powder, typically" },
+      { k: "Packing", v: "25 kg bag [confirm]" },
+      { k: "Origin", v: "[confirm origin]" },
+      { k: "Minimum order", v: "[confirm min order]" },
+      { k: "Delivery", v: "Ex-Lahore, 24 – 72 hrs" },
+    ],
+    uses: [
+      {
+        n: "01",
+        t: "Exothermic heat generation",
+        b: "Generates localized heat upon contact with hot dross to melt entrapped solid metal particles.",
+      },
+      {
+        n: "02",
+        t: "Maximum metal recovery",
+        b: "Extracts high-purity metal from heavy dross layers prior to final disposal.",
+      },
+      {
+        n: "03",
+        t: "Dross temperature boost",
+        b: "Prevents chilling of the dross layer during manual skimming operations.",
+      },
+      {
+        n: "04",
+        t: "Smelting efficiency",
+        b: "Substantially lowers overall melt loss percentage per ton of liquid metal cast.",
+      },
+    ],
+  },
+  {
+    name: "Furnace Cleaning Flux",
+    use: "Softens refractory/wall oxide buildup",
+    status: "[confirm availability]",
+    photo: P + "copper-phosphorus-webp.webp",
+    note: "Softens oxide buildup on furnace walls and refractory lining, protecting furnace life and melting efficiency. [confirm exact composition/dosage with supplier]",
+    origin: "[confirm origin]",
+    specs: [
+      { k: "Form", v: "[confirm]" },
+      { k: "Application", v: "Furnace wall/lining, not the melt itself" },
+    ],
+    chem: [
+      { k: "Cleaning compounds", v: "[confirm fluxing agents]" },
+      { k: "Refractory compatibility", v: "[confirm brick & castable types]" },
+    ],
+    supply: [
+      { k: "Form", v: "Granular / Powder [confirm]" },
+      { k: "Packing", v: "25 kg bag [confirm]" },
+      { k: "Origin", v: "[confirm origin]" },
+      { k: "Minimum order", v: "[confirm min order]" },
+      { k: "Delivery", v: "Ex-Lahore, 24 – 72 hrs" },
+    ],
+    uses: [
+      {
+        n: "01",
+        t: "Refractory corundum removal",
+        b: "Dissolves and loosens stubborn hard corundum oxide buildup adhering to furnace walls.",
+      },
+      {
+        n: "02",
+        t: "Furnace capacity restoration",
+        b: "Restores full bath volume and melt capacity in holding pots and reverb furnaces.",
+      },
+      {
+        n: "03",
+        t: "Thermal efficiency protection",
+        b: "Removes insulating oxide layers from walls, lowering energy consumption per heat.",
+      },
+      {
+        n: "04",
+        t: "Extended lining life",
+        b: "Prevents mechanical refractory damage caused by chiseling or scraping hardened slag.",
+      },
+    ],
+  },
+];
+
+export const fluxes: Product[] = rawFluxes.map((f) => ({
+  ...f,
+  category: "fluxes",
+  slug: slugify(f.name),
+}));
+
 export const ranges: Range[] = [
   {
     kicker: "9 grades in stock",
@@ -1240,6 +1433,13 @@ export const ranges: Range[] = [
     body: "Pure elemental ingots and lumps for foundry alloying and electroplating. Silicon Metal 441, Nickel, Tin, Zinc, Magnesium, Cadmium.",
     photo: P + "silicon-metal-webp-768x768.webp",
     chips: ["Si 441", "Nickel", "Tin", "Zinc", "Magnesium"],
+  },
+  {
+    kicker: "4 formulations",
+    title: "Fluxes",
+    body: "Melt surface protection, dross separation, exothermic metal recovery, and furnace wall cleaning fluxes.",
+    photo: P + "copper-phosphorus-webp.webp",
+    chips: ["Covering Flux", "Drossing Flux", "Exothermic", "Furnace Cleaning"],
   },
   {
     kicker: "All sizes",
@@ -1441,7 +1641,13 @@ export function getRelatedProducts(product: Product): {
   photo: string;
   href: string;
 }[] {
-  const allProducts = [...ferro, ...nonferro, ...masterAlloys, ...metals];
+  const allProducts = [
+    ...ferro,
+    ...nonferro,
+    ...masterAlloys,
+    ...metals,
+    ...fluxes,
+  ];
   // Filter out current product
   const candidates = allProducts.filter((p) => p.slug !== product.slug);
 
@@ -1459,6 +1665,8 @@ export function getRelatedProducts(product: Product): {
         return "master-alloys";
       case "metals":
         return "metals";
+      case "fluxes":
+        return "fluxes";
       default:
         return "ferro-alloys";
     }

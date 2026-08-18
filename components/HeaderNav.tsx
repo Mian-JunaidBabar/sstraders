@@ -77,6 +77,9 @@ export default function HeaderNav() {
             <Link href="/metals" className="hover:text-black">
               Metals
             </Link>
+            <Link href="/fluxes" className="hover:text-black">
+              Fluxes
+            </Link>
             <Link href="/graphite-crucibles" className="hover:text-black">
               Crucibles
             </Link>
@@ -231,6 +234,13 @@ export default function HeaderNav() {
               style={{ color: "var(--color-accent)" }}
             >
               Metals
+            </Link>
+            <Link
+              href="/fluxes"
+              onClick={closeMenu}
+              style={{ color: "var(--color-accent)" }}
+            >
+              Fluxes
             </Link>
             <Link
               href="/graphite-crucibles"

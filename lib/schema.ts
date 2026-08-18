@@ -58,7 +58,9 @@ export function getProductSchema(product: Product, categorySlug: string) {
         ? "Non-Ferro Alloys"
         : product.category === "master-alloys"
         ? "Master Alloys"
-        : "Metals",
+        : product.category === "metals"
+        ? "Metals"
+        : "Fluxes",
     brand: {
       "@type": "Brand",
       name: siteInfo.name,
