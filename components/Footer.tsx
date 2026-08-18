@@ -23,7 +23,7 @@ export default function Footer() {
         >
           <div>
             <img
-              src="/assets/ss-traders-logo.png"
+              src="/logo.webp"
               alt={siteInfo.name}
               style={{
                 height: "30px",
@@ -145,7 +145,7 @@ export default function Footer() {
         >
           <div>
             <img
-              src="/assets/ss-traders-logo.png"
+              src="/logo.webp"
               alt={siteInfo.name}
               style={{
                 height: "26px",

@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "SS Traders — High-Grade Ferro Alloys, Non-Ferro Alloys & Crucibles",
   description:
     "Direct importers of high-grade ferro alloys, non-ferro alloys and premium crucibles in Lahore, Pakistan. Ready stock in warehouse.",
+  appleWebApp: {
+    title: "SSTraders",
+  },
 };
 
 export default function RootLayout({
@@ -20,6 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased">
       <head>
+        <meta name="apple-mobile-web-app-title" content="SSTraders" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}

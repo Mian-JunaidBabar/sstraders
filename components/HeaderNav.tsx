@@ -46,7 +46,7 @@ export default function HeaderNav() {
         >
           <Link href="/">
             <img
-              src="/assets/ss-traders-logo.png"
+              src="/logo.webp"
               alt={`${siteInfo.name} — Metal Industry Suppliers`}
               style={{ height: "34px", width: "auto", display: "block" }}
             />
@@ -122,7 +122,7 @@ export default function HeaderNav() {
         >
           <Link href="/" onClick={closeMenu}>
             <img
-              src="/assets/ss-traders-logo.png"
+              src="/logo.webp"
               alt={siteInfo.name}
               style={{ height: "26px", width: "auto", display: "block" }}
             />
