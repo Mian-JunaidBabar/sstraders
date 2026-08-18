@@ -69,10 +69,16 @@ export default function HeaderNav() {
               Ferro Alloys
             </Link>
             <Link href="/non-ferro-alloys" className="hover:text-black">
-              Non-Ferro Alloys
+              Non-Ferro
+            </Link>
+            <Link href="/master-alloys" className="hover:text-black">
+              Master Alloys
+            </Link>
+            <Link href="/metals" className="hover:text-black">
+              Metals
             </Link>
             <Link href="/graphite-crucibles" className="hover:text-black">
-              Graphite Crucibles
+              Crucibles
             </Link>
             <Link href="/about" className="hover:text-black">
               About
@@ -211,6 +217,20 @@ export default function HeaderNav() {
               style={{ color: "var(--color-accent)" }}
             >
               Non-Ferro Alloys
+            </Link>
+            <Link
+              href="/master-alloys"
+              onClick={closeMenu}
+              style={{ color: "var(--color-accent)" }}
+            >
+              Master Alloys
+            </Link>
+            <Link
+              href="/metals"
+              onClick={closeMenu}
+              style={{ color: "var(--color-accent)" }}
+            >
+              Metals
             </Link>
             <Link
               href="/graphite-crucibles"

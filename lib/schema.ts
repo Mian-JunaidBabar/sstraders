@@ -51,7 +51,14 @@ export function getProductSchema(product: Product, categorySlug: string) {
     name: product.name,
     description: `${product.note} ${product.use}. Supplied by ${siteInfo.name} in ${siteInfo.address.city}, Pakistan.`,
     image: product.photo,
-    category: product.category === "ferro" ? "Ferro Alloys" : "Non-Ferro Alloys",
+    category:
+      product.category === "ferro"
+        ? "Ferro Alloys"
+        : product.category === "non-ferro"
+        ? "Non-Ferro Alloys"
+        : product.category === "master-alloys"
+        ? "Master Alloys"
+        : "Metals",
     brand: {
       "@type": "Brand",
       name: siteInfo.name,

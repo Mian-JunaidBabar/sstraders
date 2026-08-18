@@ -6,6 +6,8 @@ import {
   promises,
   ferro,
   nonferro,
+  masterAlloys,
+  metals,
 } from "@/data/products";
 import { getBreadcrumbSchema } from "@/lib/schema";
 
@@ -464,7 +466,11 @@ export default function HomePage() {
                 ? "/ferro-alloys"
                 : r.title === "Non-Ferro Alloys"
                   ? "/non-ferro-alloys"
-                  : "/graphite-crucibles";
+                  : r.title === "Master Alloys"
+                    ? "/master-alloys"
+                    : r.title === "Metals"
+                      ? "/metals"
+                      : "/graphite-crucibles";
 
             return (
               <div
@@ -656,13 +662,19 @@ export default function HomePage() {
           {board.map((b, i) => {
             const foundFerro = ferro.find((p) => p.name === b.name);
             const foundNonFerro = nonferro.find((p) => p.name === b.name);
+            const foundMaster = masterAlloys.find((p) => p.name === b.name);
+            const foundMetal = metals.find((p) => p.name === b.name);
             const productUrl = foundFerro
               ? `/ferro-alloys/${foundFerro.slug}`
               : foundNonFerro
                 ? `/non-ferro-alloys/${foundNonFerro.slug}`
-                : b.name.includes("Crucible")
-                  ? "/graphite-crucibles"
-                  : "#";
+                : foundMaster
+                  ? `/master-alloys/${foundMaster.slug}`
+                  : foundMetal
+                    ? `/metals/${foundMetal.slug}`
+                    : b.name.includes("Crucible")
+                      ? "/graphite-crucibles"
+                      : "#";
 
             return (
               <div

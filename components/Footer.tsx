@@ -73,6 +73,12 @@ export default function Footer() {
               <Link href="/non-ferro-alloys" className="hover:text-black">
                 Non-Ferro Alloys
               </Link>
+              <Link href="/master-alloys" className="hover:text-black">
+                Master Alloys
+              </Link>
+              <Link href="/metals" className="hover:text-black">
+                Metals
+              </Link>
               <Link href="/graphite-crucibles" className="hover:text-black">
                 Graphite Crucibles
               </Link>
@@ -192,6 +198,8 @@ export default function Footer() {
               >
                 <Link href="/ferro-alloys">Ferro Alloys</Link>
                 <Link href="/non-ferro-alloys">Non-Ferro</Link>
+                <Link href="/master-alloys">Master Alloys</Link>
+                <Link href="/metals">Metals</Link>
                 <Link href="/graphite-crucibles">Crucibles</Link>
               </div>
             </div>

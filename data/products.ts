@@ -28,7 +28,7 @@ export interface UseCase {
 export interface Product {
   name: string;
   slug: string;
-  category: "ferro" | "non-ferro";
+  category: "ferro" | "non-ferro" | "master-alloys" | "metals";
   use: string;
   status: string;
   photo: string;
@@ -68,9 +68,9 @@ export interface Pillar {
 export const siteInfo = {
   name: "SS Traders",
   legalName: "SS Traders Pakistan",
-  tagline: "High-Grade Ferro Alloys, Non-Ferro Alloys & Crucibles",
+  tagline: "High-Grade Ferro Alloys, Non-Ferro Alloys, Master Alloys, Pure Metals & Crucibles",
   description:
-    "A Lahore-based trading company specialised in high-grade ferro alloys, non-ferro alloys and crucibles for iron, steel, aluminium and copper foundries across Pakistan.",
+    "A Lahore-based trading company specialised in high-grade ferro alloys, non-ferro alloys, master alloys, pure metals and crucibles for iron, steel, aluminium and copper foundries across Pakistan.",
   url: "https://sstraders.pk",
   phone: "+92 300 9405230",
   phoneRaw: "+923009405230",
@@ -589,214 +589,6 @@ export const ferro: Product[] = [
 
 export const nonferro: Product[] = [
   {
-    name: "Silicon Metal 441",
-    slug: "silicon-metal-441",
-    category: "non-ferro",
-    use: "Si addition, aluminium",
-    status: "Ready stock",
-    photo: P + "silicon-metal-webp-768x768.webp",
-    note: "High-purity silicon metal. Stock available in warehouse for immediate delivery.",
-    origin: "China",
-    specs: [
-      { k: "Si min", v: "99.0%" },
-      { k: "Fe / Al / Ca max", v: "0.4% / 0.4% / 0.1%" },
-      { k: "Size", v: "10 – 100 mm lump" },
-      { k: "Packing", v: "1 MT jumbo bag" },
-    ],
-    chem: [
-      { k: "Silicon (Si) min", v: "99.0%" },
-      { k: "Iron (Fe) max", v: "0.4%" },
-      { k: "Aluminium (Al) max", v: "0.4%" },
-      { k: "Calcium (Ca) max", v: "0.1%" },
-    ],
-    supply: [
-      { k: "Grade", v: "Si Metal 441" },
-      { k: "Lump size", v: "10 – 100 mm" },
-      { k: "Packing", v: "1 MT jumbo bag" },
-      { k: "Origin", v: "China" },
-      { k: "Minimum order", v: "1 MT" },
-      { k: "Delivery", v: "Ex-Lahore, 24 – 72 hrs" },
-    ],
-    uses: [
-      {
-        n: "01",
-        t: "Aluminium alloy casting",
-        b: "Primary alloying element for casting aluminium engine blocks, pistons, and wheels.",
-      },
-      {
-        n: "02",
-        t: "Fluidity enhancement",
-        b: "Improves molten aluminium fluidity and reduces thermal contraction during mould cooling.",
-      },
-      {
-        n: "03",
-        t: "Chemical industry raw material",
-        b: "High purity suitable for silicone synthesis and chemical reagent formulations.",
-      },
-      {
-        n: "04",
-        t: "Secondary aluminium smelting",
-        b: "Essential for adjusting silicon ratio in recycled scrap aluminium ingot production.",
-      },
-    ],
-  },
-  {
-    name: "Aluminium Silicon 50/50",
-    slug: "aluminium-silicon-50-50",
-    category: "non-ferro",
-    use: "Master alloy",
-    status: "A+ grade",
-    photo: P + "master-alloy-AlNI-8020-webp.webp",
-    note: "A+ grade aluminium silicon master alloy. Guaranteed purity with ready stock and fast delivery.",
-    origin: "China",
-    specs: [
-      { k: "Si", v: "48 – 52%" },
-      { k: "Al", v: "Balance" },
-      { k: "Fe max", v: "0.5%" },
-      { k: "Form", v: "Waffle ingot, ~5 kg" },
-    ],
-    chem: [
-      { k: "Silicon (Si)", v: "48 – 52%" },
-      { k: "Aluminium (Al)", v: "Balance" },
-      { k: "Iron (Fe) max", v: "0.5%" },
-      { k: "Manganese (Mn) max", v: "0.2%" },
-    ],
-    supply: [
-      { k: "Grade", v: "AlSi 50/50" },
-      { k: "Form", v: "Waffle ingot, ~5 kg" },
-      { k: "Packing", v: "1 MT pallet / bundle" },
-      { k: "Origin", v: "China" },
-      { k: "Minimum order", v: "500 kg" },
-      { k: "Delivery", v: "Ex-Lahore, 24 – 72 hrs" },
-    ],
-    uses: [
-      {
-        n: "01",
-        t: "Low-temperature Si addition",
-        b: "Dissolves rapidly at lower melt temperatures compared to pure silicon metal lumps.",
-      },
-      {
-        n: "02",
-        t: "Hypereutectic alloy prep",
-        b: "Used for precise silicon adjustment in high-silicon automotive casting alloys.",
-      },
-      {
-        n: "03",
-        t: "Uniform distribution",
-        b: "Pre-alloyed matrix prevents silicon segregation and ensures homogenous melt chemistry.",
-      },
-      {
-        n: "04",
-        t: "Reduced furnace dross",
-        b: "Fast melting minimizes oxidation losses and reduces dross formation in the pot.",
-      },
-    ],
-  },
-  {
-    name: "Aluminium Copper 40/60",
-    slug: "aluminium-copper-40-60",
-    category: "non-ferro",
-    use: "Master alloy",
-    status: "Ready stock",
-    photo: P + "copper-phosphorus-webp.webp",
-    note: "Premium 40/60 grade copper alloy. Direct import with wholesale rates and ready stock.",
-    origin: "China",
-    specs: [
-      { k: "Cu", v: "38 – 42%" },
-      { k: "Al", v: "Balance" },
-      { k: "Fe max", v: "0.4%" },
-      { k: "Form", v: "Waffle ingot, ~5 kg" },
-    ],
-    chem: [
-      { k: "Copper (Cu)", v: "38 – 42%" },
-      { k: "Aluminium (Al)", v: "Balance" },
-      { k: "Iron (Fe) max", v: "0.4%" },
-      { k: "Silicon (Si) max", v: "0.2%" },
-    ],
-    supply: [
-      { k: "Grade", v: "AlCu 40/60" },
-      { k: "Form", v: "Waffle ingot, ~5 kg" },
-      { k: "Packing", v: "1 MT pallet" },
-      { k: "Origin", v: "China" },
-      { k: "Minimum order", v: "250 kg" },
-      { k: "Delivery", v: "Ex-Lahore, 24 – 72 hrs" },
-    ],
-    uses: [
-      {
-        n: "01",
-        t: "Copper alloying",
-        b: "Efficiently introduces copper into 2000 and 3000 series aerospace and structural alloys.",
-      },
-      {
-        n: "02",
-        t: "Hardness & Strength",
-        b: "Increases room-temperature and high-temperature mechanical strength of aluminium castings.",
-      },
-      {
-        n: "03",
-        t: "Machinability booster",
-        b: "Enhances chip breaking and surface finish quality during CNC machining of cast parts.",
-      },
-      {
-        n: "04",
-        t: "Controlled solubility",
-        b: "Prevents high melting point copper sinking to the bottom of the melting furnace.",
-      },
-    ],
-  },
-  {
-    name: "Aluminium Nickel 80/20",
-    slug: "aluminium-nickel-80-20",
-    category: "non-ferro",
-    use: "Master alloy",
-    status: "Fresh arrival",
-    photo: P + "master-alloy-AlNI-8020-webp.webp",
-    note: "High-quality 80/20 aluminium nickel alloy. Fresh arrival, 100% pure, stock ready in warehouse.",
-    origin: "China",
-    specs: [
-      { k: "Ni", v: "18 – 22%" },
-      { k: "Al", v: "Balance" },
-      { k: "Fe max", v: "0.4%" },
-      { k: "Form", v: "Waffle ingot, ~5 kg" },
-    ],
-    chem: [
-      { k: "Nickel (Ni)", v: "18 – 22%" },
-      { k: "Aluminium (Al)", v: "Balance" },
-      { k: "Iron (Fe) max", v: "0.4%" },
-      { k: "Silicon (Si) max", v: "0.2%" },
-    ],
-    supply: [
-      { k: "Grade", v: "AlNi 80/20" },
-      { k: "Form", v: "Waffle ingot, ~5 kg" },
-      { k: "Packing", v: "1 MT pallet" },
-      { k: "Origin", v: "China" },
-      { k: "Minimum order", v: "250 kg" },
-      { k: "Delivery", v: "Ex-Lahore, 24 – 72 hrs" },
-    ],
-    uses: [
-      {
-        n: "01",
-        t: "High-temperature pistons",
-        b: "Essential additive for heavy-duty diesel engine pistons requiring high heat resistance.",
-      },
-      {
-        n: "02",
-        t: "Thermal expansion control",
-        b: "Lowers thermal expansion coefficient in automotive engine components subjected to thermal cycles.",
-      },
-      {
-        n: "03",
-        t: "Wear-resistant alloys",
-        b: "Forms nickel aluminide intermetallic phases that significantly reduce friction and wear.",
-      },
-      {
-        n: "04",
-        t: "Homogeneous dissolution",
-        b: "Bypasses the high 1455°C melting point of pure nickel metal in aluminium holding pots.",
-      },
-    ],
-  },
-  {
     name: "Manganese Metal Ingot",
     slug: "manganese-metal-ingot",
     category: "non-ferro",
@@ -902,6 +694,524 @@ export const nonferro: Product[] = [
   },
 ];
 
+export const masterAlloys: Product[] = [
+  {
+    name: "Aluminium Silicon 50/50",
+    slug: "aluminium-silicon-50-50",
+    category: "master-alloys",
+    use: "Master alloy",
+    status: "A+ grade",
+    photo: P + "master-alloy-AlNI-8020-webp.webp",
+    note: "A+ grade aluminium silicon master alloy. Guaranteed purity with ready stock and fast delivery.",
+    origin: "China",
+    specs: [
+      { k: "Si", v: "48 – 52%" },
+      { k: "Al", v: "Balance" },
+      { k: "Fe max", v: "0.5%" },
+      { k: "Form", v: "Waffle ingot, ~5 kg" },
+    ],
+    chem: [
+      { k: "Silicon (Si)", v: "48 – 52%" },
+      { k: "Aluminium (Al)", v: "Balance" },
+      { k: "Iron (Fe) max", v: "0.5%" },
+      { k: "Manganese (Mn) max", v: "0.2%" },
+    ],
+    supply: [
+      { k: "Grade", v: "AlSi 50/50" },
+      { k: "Form", v: "Waffle ingot, ~5 kg" },
+      { k: "Packing", v: "1 MT pallet / bundle" },
+      { k: "Origin", v: "China" },
+      { k: "Minimum order", v: "500 kg" },
+      { k: "Delivery", v: "Ex-Lahore, 24 – 72 hrs" },
+    ],
+    uses: [
+      {
+        n: "01",
+        t: "Low-temperature Si addition",
+        b: "Dissolves rapidly at lower melt temperatures compared to pure silicon metal lumps.",
+      },
+      {
+        n: "02",
+        t: "Hypereutectic alloy prep",
+        b: "Used for precise silicon adjustment in high-silicon automotive casting alloys.",
+      },
+      {
+        n: "03",
+        t: "Uniform distribution",
+        b: "Pre-alloyed matrix prevents silicon segregation and ensures homogenous melt chemistry.",
+      },
+      {
+        n: "04",
+        t: "Reduced furnace dross",
+        b: "Fast melting minimizes oxidation losses and reduces dross formation in the pot.",
+      },
+    ],
+  },
+  {
+    name: "Aluminium Copper 40/60",
+    slug: "aluminium-copper-40-60",
+    category: "master-alloys",
+    use: "Master alloy",
+    status: "Ready stock",
+    photo: P + "copper-phosphorus-webp.webp",
+    note: "Premium 40/60 grade copper alloy. Direct import with wholesale rates and ready stock.",
+    origin: "China",
+    specs: [
+      { k: "Cu", v: "38 – 42%" },
+      { k: "Al", v: "Balance" },
+      { k: "Fe max", v: "0.4%" },
+      { k: "Form", v: "Waffle ingot, ~5 kg" },
+    ],
+    chem: [
+      { k: "Copper (Cu)", v: "38 – 42%" },
+      { k: "Aluminium (Al)", v: "Balance" },
+      { k: "Iron (Fe) max", v: "0.4%" },
+      { k: "Silicon (Si) max", v: "0.2%" },
+    ],
+    supply: [
+      { k: "Grade", v: "AlCu 40/60" },
+      { k: "Form", v: "Waffle ingot, ~5 kg" },
+      { k: "Packing", v: "1 MT pallet" },
+      { k: "Origin", v: "China" },
+      { k: "Minimum order", v: "250 kg" },
+      { k: "Delivery", v: "Ex-Lahore, 24 – 72 hrs" },
+    ],
+    uses: [
+      {
+        n: "01",
+        t: "Copper alloying",
+        b: "Efficiently introduces copper into 2000 and 3000 series aerospace and structural alloys.",
+      },
+      {
+        n: "02",
+        t: "Hardness & Strength",
+        b: "Increases room-temperature and high-temperature mechanical strength of aluminium castings.",
+      },
+      {
+        n: "03",
+        t: "Machinability booster",
+        b: "Enhances chip breaking and surface finish quality during CNC machining of cast parts.",
+      },
+      {
+        n: "04",
+        t: "Controlled solubility",
+        b: "Prevents high melting point copper sinking to the bottom of the melting furnace.",
+      },
+    ],
+  },
+  {
+    name: "Aluminium Nickel 80/20",
+    slug: "aluminium-nickel-80-20",
+    category: "master-alloys",
+    use: "Master alloy",
+    status: "Fresh arrival",
+    photo: P + "master-alloy-AlNI-8020-webp.webp",
+    note: "High-quality 80/20 aluminium nickel alloy. Fresh arrival, 100% pure, stock ready in warehouse.",
+    origin: "China",
+    specs: [
+      { k: "Ni", v: "18 – 22%" },
+      { k: "Al", v: "Balance" },
+      { k: "Fe max", v: "0.4%" },
+      { k: "Form", v: "Waffle ingot, ~5 kg" },
+    ],
+    chem: [
+      { k: "Nickel (Ni)", v: "18 – 22%" },
+      { k: "Aluminium (Al)", v: "Balance" },
+      { k: "Iron (Fe) max", v: "0.4%" },
+      { k: "Silicon (Si) max", v: "0.2%" },
+    ],
+    supply: [
+      { k: "Grade", v: "AlNi 80/20" },
+      { k: "Form", v: "Waffle ingot, ~5 kg" },
+      { k: "Packing", v: "1 MT pallet" },
+      { k: "Origin", v: "China" },
+      { k: "Minimum order", v: "250 kg" },
+      { k: "Delivery", v: "Ex-Lahore, 24 – 72 hrs" },
+    ],
+    uses: [
+      {
+        n: "01",
+        t: "High-temperature pistons",
+        b: "Essential additive for heavy-duty diesel engine pistons requiring high heat resistance.",
+      },
+      {
+        n: "02",
+        t: "Thermal expansion control",
+        b: "Lowers thermal expansion coefficient in automotive engine components subjected to thermal cycles.",
+      },
+      {
+        n: "03",
+        t: "Wear-resistant alloys",
+        b: "Forms nickel aluminide intermetallic phases that significantly reduce friction and wear.",
+      },
+      {
+        n: "04",
+        t: "Homogeneous dissolution",
+        b: "Bypasses the high 1455°C melting point of pure nickel metal in aluminium holding pots.",
+      },
+    ],
+  },
+  {
+    name: "ADC12",
+    slug: "adc12",
+    category: "master-alloys",
+    use: "Die casting, automotive parts",
+    status: "[confirm availability]",
+    photo: P + "master-alloy-AlNI-8020-webp.webp",
+    note: "JIS H5302 standard aluminium die-casting alloy, equivalent to ASTM A383 / EN AC-AlSi12Cu2. Used for gearbox housings and thin-wall automotive castings.",
+    origin: "[confirm origin]",
+    specs: [
+      { k: "Si", v: "9.6 – 12.0%" },
+      { k: "Cu", v: "1.5 – 3.5%" },
+      { k: "Sn max", v: "0.3%" },
+      { k: "Fe / Mn / Zn / Ni max", v: "[confirm exact JIS limits]" },
+      { k: "Al", v: "Balance" },
+    ],
+    chem: [
+      { k: "Silicon (Si)", v: "9.6 – 12.0%" },
+      { k: "Copper (Cu)", v: "1.5 – 3.5%" },
+      { k: "Tin (Sn) max", v: "0.3%" },
+      { k: "Fe / Mn / Zn / Ni max", v: "[confirm exact JIS limits]" },
+      { k: "Aluminium (Al)", v: "Balance" },
+    ],
+    supply: [
+      { k: "Grade", v: "ADC12 (JIS H5302)" },
+      { k: "Form", v: "Ingot, ~6–8 kg" },
+      { k: "Packing", v: "1 MT bundle / pallet" },
+      { k: "Origin", v: "[confirm origin]" },
+      { k: "Minimum order", v: "[confirm min order]" },
+      { k: "Delivery", v: "Ex-Lahore, 24 – 72 hrs" },
+    ],
+    uses: [
+      {
+        n: "01",
+        t: "Automotive die casting",
+        b: "Standard alloy for engine blocks, crankcases, transmission covers, and oil pans.",
+      },
+      {
+        n: "02",
+        t: "Thin-wall castings",
+        b: "High silicon content yields exceptional castability and mould cavity filling for intricate shapes.",
+      },
+      {
+        n: "03",
+        t: "Dimensional stability",
+        b: "Low shrinkage rates during cooling preserve tight machining tolerances in die-cast components.",
+      },
+      {
+        n: "04",
+        t: "Machinability & Strength",
+        b: "Copper addition balances tensile strength and good chip-breaking capability during CNC milling.",
+      },
+    ],
+  },
+];
+
+export const metals: Product[] = [
+  {
+    name: "Silicon Metal 441",
+    slug: "silicon-metal-441",
+    category: "metals",
+    use: "Si addition, aluminium",
+    status: "Ready stock",
+    photo: P + "silicon-metal-webp-768x768.webp",
+    note: "High-purity silicon metal. Stock available in warehouse for immediate delivery.",
+    origin: "China",
+    specs: [
+      { k: "Si min", v: "99.0%" },
+      { k: "Fe / Al / Ca max", v: "0.4% / 0.4% / 0.1%" },
+      { k: "Size", v: "10 – 100 mm lump" },
+      { k: "Packing", v: "1 MT jumbo bag" },
+    ],
+    chem: [
+      { k: "Silicon (Si) min", v: "99.0%" },
+      { k: "Iron (Fe) max", v: "0.4%" },
+      { k: "Aluminium (Al) max", v: "0.4%" },
+      { k: "Calcium (Ca) max", v: "0.1%" },
+    ],
+    supply: [
+      { k: "Grade", v: "Si Metal 441" },
+      { k: "Lump size", v: "10 – 100 mm" },
+      { k: "Packing", v: "1 MT jumbo bag" },
+      { k: "Origin", v: "China" },
+      { k: "Minimum order", v: "1 MT" },
+      { k: "Delivery", v: "Ex-Lahore, 24 – 72 hrs" },
+    ],
+    uses: [
+      {
+        n: "01",
+        t: "Aluminium alloy casting",
+        b: "Primary alloying element for casting aluminium engine blocks, pistons, and wheels.",
+      },
+      {
+        n: "02",
+        t: "Fluidity enhancement",
+        b: "Improves molten aluminium fluidity and reduces thermal contraction during mould cooling.",
+      },
+      {
+        n: "03",
+        t: "Chemical industry raw material",
+        b: "High purity suitable for silicone synthesis and chemical reagent formulations.",
+      },
+      {
+        n: "04",
+        t: "Secondary aluminium smelting",
+        b: "Essential for adjusting silicon ratio in recycled scrap aluminium ingot production.",
+      },
+    ],
+  },
+  {
+    name: "Nickel Ingot",
+    slug: "nickel-ingot",
+    category: "metals",
+    use: "Alloying, plating feedstock",
+    status: "[confirm availability]",
+    photo: P + "master-alloy-AlNI-8020-webp.webp",
+    note: "[confirm grade/purity with supplier]",
+    origin: "[confirm origin]",
+    specs: [
+      { k: "Ni min", v: "99.8% [confirm]" },
+      { k: "Form", v: "Ingot / cathode" },
+    ],
+    chem: [
+      { k: "Nickel (Ni) min", v: "99.8% [confirm]" },
+      { k: "Cobalt (Co) max", v: "[confirm limit]" },
+      { k: "Carbon (C) max", v: "[confirm limit]" },
+      { k: "Sulphur (S) max", v: "[confirm limit]" },
+    ],
+    supply: [
+      { k: "Grade", v: "Pure Nickel (99.8% [confirm])" },
+      { k: "Form", v: "Ingot / Cathode cut" },
+      { k: "Packing", v: "Pallet / Drum [confirm]" },
+      { k: "Origin", v: "[confirm origin]" },
+      { k: "Minimum order", v: "[confirm min order]" },
+      { k: "Delivery", v: "Ex-Lahore, 24 – 72 hrs" },
+    ],
+    uses: [
+      {
+        n: "01",
+        t: "Specialty steel alloying",
+        b: "Adds toughness, impact strength, and corrosion resistance to high-strength alloy steels.",
+      },
+      {
+        n: "02",
+        t: "Electroplating feedstock",
+        b: "High-purity soluble anode feedstock for electroplating and surface finishing processes.",
+      },
+      {
+        n: "03",
+        t: "Superalloy production",
+        b: "Vital element for heat-resistant nickel-base superalloys used in high-temperature applications.",
+      },
+      {
+        n: "04",
+        t: "Non-ferrous foundry additions",
+        b: "Used for precise nickel alloying in cupronickel and nickel-bronze casting melts.",
+      },
+    ],
+  },
+  {
+    name: "Tin Ingot",
+    slug: "tin-ingot",
+    category: "metals",
+    use: "Solder, bronze, coatings",
+    status: "[confirm availability]",
+    photo: P + "copper-phosphorus-webp.webp",
+    note: "[confirm grade/purity with supplier]",
+    origin: "[confirm origin]",
+    specs: [
+      { k: "Sn min", v: "99.85% [confirm]" },
+      { k: "Form", v: "Ingot" },
+    ],
+    chem: [
+      { k: "Tin (Sn) min", v: "99.85% [confirm]" },
+      { k: "Lead (Pb) max", v: "[confirm limit]" },
+      { k: "Copper (Cu) max", v: "[confirm limit]" },
+      { k: "Bismuth (Bi) max", v: "[confirm limit]" },
+    ],
+    supply: [
+      { k: "Grade", v: "Pure Tin Ingot (99.85% [confirm])" },
+      { k: "Form", v: "Ingot (~25 kg [confirm])" },
+      { k: "Packing", v: "Steel strapped pallet" },
+      { k: "Origin", v: "[confirm origin]" },
+      { k: "Minimum order", v: "[confirm min order]" },
+      { k: "Delivery", v: "Ex-Lahore, 24 – 72 hrs" },
+    ],
+    uses: [
+      {
+        n: "01",
+        t: "Bronze alloy production",
+        b: "Primary constituent mixed with copper to manufacture phosphor bronze and gunmetal castings.",
+      },
+      {
+        n: "02",
+        t: "Babbitt & bearing metals",
+        b: "Key soft-matrix element for white-metal anti-friction sleeve bearings.",
+      },
+      {
+        n: "03",
+        t: "Soldering & tinning",
+        b: "Pure tin feedstock for electronic solders, hot-dip tinning, and protective wire coatings.",
+      },
+      {
+        n: "04",
+        t: "Low melting point alloys",
+        b: "Essential for formulating fusible safety plug alloys and precision casting compounds.",
+      },
+    ],
+  },
+  {
+    name: "Zinc Ingot",
+    slug: "zinc-ingot",
+    category: "metals",
+    use: "Galvanising, die casting alloys",
+    status: "[confirm availability]",
+    photo: P + "ferro-magnese.webp",
+    note: "[confirm grade/purity with supplier]",
+    origin: "[confirm origin]",
+    specs: [
+      { k: "Zn min", v: "99.95% SHG [confirm]" },
+      { k: "Form", v: "Ingot" },
+    ],
+    chem: [
+      { k: "Zinc (Zn) min", v: "99.95% SHG [confirm]" },
+      { k: "Lead (Pb) max", v: "0.005% [confirm]" },
+      { k: "Iron (Fe) max", v: "0.005% [confirm]" },
+      { k: "Cadmium (Cd) max", v: "0.003% [confirm]" },
+    ],
+    supply: [
+      { k: "Grade", v: "Special High Grade (SHG) 99.95%" },
+      { k: "Form", v: "Ingot (~25 kg)" },
+      { k: "Packing", v: "1 MT pallet" },
+      { k: "Origin", v: "[confirm origin]" },
+      { k: "Minimum order", v: "[confirm min order]" },
+      { k: "Delivery", v: "Ex-Lahore, 24 – 72 hrs" },
+    ],
+    uses: [
+      {
+        n: "01",
+        t: "Hot-dip galvanising",
+        b: "Protective zinc coating bath material for structural steel, pipes, and wire products.",
+      },
+      {
+        n: "02",
+        t: "Brass manufacturing",
+        b: "Primary zinc component alloyed with copper for casting valve bodies and brass fittings.",
+      },
+      {
+        n: "03",
+        t: "Zamak die casting alloys",
+        b: "Purity feedstock for preparing Zamak 3 and Zamak 5 precision die casting alloys.",
+      },
+      {
+        n: "04",
+        t: "Sacrificial anodes",
+        b: "Used for marine cathode protection anodes to safeguard ship hulls and steel structures.",
+      },
+    ],
+  },
+  {
+    name: "Magnesium Ingot",
+    slug: "magnesium-ingot",
+    category: "metals",
+    use: "Alloying, nodularising base",
+    status: "[confirm availability]",
+    photo: P + "silicon-metal-webp-768x768.webp",
+    note: "[confirm grade/purity with supplier]",
+    origin: "[confirm origin]",
+    specs: [
+      { k: "Mg min", v: "99.8% [confirm]" },
+      { k: "Form", v: "Ingot" },
+    ],
+    chem: [
+      { k: "Magnesium (Mg) min", v: "99.8% [confirm]" },
+      { k: "Silicon (Si) max", v: "0.05% [confirm]" },
+      { k: "Iron (Fe) max", v: "0.04% [confirm]" },
+      { k: "Aluminium (Al) max", v: "0.02% [confirm]" },
+    ],
+    supply: [
+      { k: "Grade", v: "Pure Magnesium Ingot 99.8%" },
+      { k: "Form", v: "Ingot (~7.5 kg)" },
+      { k: "Packing", v: "1 MT wooden pallet" },
+      { k: "Origin", v: "[confirm origin]" },
+      { k: "Minimum order", v: "[confirm min order]" },
+      { k: "Delivery", v: "Ex-Lahore, 24 – 72 hrs" },
+    ],
+    uses: [
+      {
+        n: "01",
+        t: "Aluminium alloy hardening",
+        b: "Primary magnesium source for 5000 and 6000 series high-strength aluminium alloys.",
+      },
+      {
+        n: "02",
+        t: "Ductile iron desulphurization",
+        b: "Direct addition reagent for deep hot-metal desulphurization in iron foundries.",
+      },
+      {
+        n: "03",
+        t: "Titanium reduction",
+        b: "Key reducing agent in the Kroll process for extracting metallic titanium sponge.",
+      },
+      {
+        n: "04",
+        t: "Lightweight die castings",
+        b: "Ultralight metal feedstock for casting chainsaw bodies and power tool housings.",
+      },
+    ],
+  },
+  {
+    name: "Cadmium",
+    slug: "cadmium",
+    category: "metals",
+    use: "Plating, specialty alloys",
+    status: "[confirm — regulated material]",
+    photo: P + "copper-phosphorus-webp.webp",
+    note: "Toxic, regulated metal. Confirm import licensing and storage compliance before listing publicly.",
+    origin: "[confirm origin]",
+    specs: [
+      { k: "Cd min", v: "99.95% [confirm]" },
+      { k: "Form", v: "Ingot / stick" },
+    ],
+    chem: [
+      { k: "Cadmium (Cd) min", v: "99.95% [confirm]" },
+      { k: "Lead (Pb) max", v: "0.02% [confirm]" },
+      { k: "Zinc (Zn) max", v: "0.01% [confirm]" },
+      { k: "Iron (Fe) max", v: "0.005% [confirm]" },
+    ],
+    supply: [
+      { k: "Grade", v: "High Purity Cadmium 99.95%" },
+      { k: "Form", v: "Ingot / Stick" },
+      { k: "Packing", v: "Special sealed drum [confirm]" },
+      { k: "Origin", v: "[confirm origin]" },
+      { k: "Minimum order", v: "[confirm min order]" },
+      { k: "Delivery", v: "Ex-Lahore, 24 – 72 hrs (Licence required)" },
+    ],
+    uses: [
+      {
+        n: "01",
+        t: "Corrosion protective plating",
+        b: "Provides exceptional corrosion protection on aerospace fasteners and military hardware.",
+      },
+      {
+        n: "02",
+        t: "Low-temperature solders",
+        b: "Forms ultra-low melting point eutectic alloys for thermal fuses and safety links.",
+      },
+      {
+        n: "03",
+        t: "Ni-Cd battery manufacture",
+        b: "Raw material cathode element for heavy-duty industrial rechargeable nickel-cadmium cells.",
+      },
+      {
+        n: "04",
+        t: "Specialty bearing alloys",
+        b: "Improves fatigue resistance in high-load copper-lead-cadmium engine bearings.",
+      },
+    ],
+  },
+];
+
 export const ranges: Range[] = [
   {
     kicker: "9 grades in stock",
@@ -911,11 +1221,25 @@ export const ranges: Range[] = [
     chips: ["FeSi 75%", "FeMn 75%", "FeCr 60%", "Nodulariser"],
   },
   {
-    kicker: "6 grades in stock",
+    kicker: "Stock in warehouse",
     title: "Non-Ferro Alloys",
-    body: "Master alloys and ingots for alloy wheels, car pistons and aluminium engine parts. Silicon metal, AlSi, AlCu, AlNi.",
+    body: "Non-ferrous foundry additives including Manganese metal ingots and Copper Phosphorus deoxidisers.",
+    photo: P + "copper-phosphorus-webp.webp",
+    chips: ["Mn Ingot 99.7%", "CuP 14%", "Ready stock"],
+  },
+  {
+    kicker: "4 grades available",
+    title: "Master Alloys",
+    body: "Master alloys and ingots for alloy wheels, car pistons and aluminium engine parts. AlSi 50/50, AlCu 40/60, AlNi 80/20, ADC12.",
     photo: P + "master-alloy-AlNI-8020-webp.webp",
-    chips: ["Si 441", "AlSi 50/50", "AlCu 40/60", "CuP 14%"],
+    chips: ["AlSi 50/50", "AlCu 40/60", "AlNi 80/20", "ADC12"],
+  },
+  {
+    kicker: "6 pure elements",
+    title: "Metals",
+    body: "Pure elemental ingots and lumps for foundry alloying and electroplating. Silicon Metal 441, Nickel, Tin, Zinc, Magnesium, Cadmium.",
+    photo: P + "silicon-metal-webp-768x768.webp",
+    chips: ["Si 441", "Nickel", "Tin", "Zinc", "Magnesium"],
   },
   {
     kicker: "All sizes",
@@ -1117,13 +1441,28 @@ export function getRelatedProducts(product: Product): {
   photo: string;
   href: string;
 }[] {
-  const allProducts = [...ferro, ...nonferro];
+  const allProducts = [...ferro, ...nonferro, ...masterAlloys, ...metals];
   // Filter out current product
   const candidates = allProducts.filter((p) => p.slug !== product.slug);
 
-  // Pick items from same category first, then cross category / crucibles
+  // Pick items from same category first, then cross category
   const sameCat = candidates.filter((p) => p.category === product.category);
   const diffCat = candidates.filter((p) => p.category !== product.category);
+
+  const getCategoryPath = (cat: string) => {
+    switch (cat) {
+      case "ferro":
+        return "ferro-alloys";
+      case "non-ferro":
+        return "non-ferro-alloys";
+      case "master-alloys":
+        return "master-alloys";
+      case "metals":
+        return "metals";
+      default:
+        return "ferro-alloys";
+    }
+  };
 
   const selected: { name: string; grade: string; photo: string; href: string }[] =
     [];
@@ -1135,7 +1474,7 @@ export function getRelatedProducts(product: Product): {
         ? `${sameCat[0].specs[0].k} ${sameCat[0].specs[0].v}`
         : sameCat[0].use,
       photo: sameCat[0].photo,
-      href: `/${sameCat[0].category === "ferro" ? "ferro-alloys" : "non-ferro-alloys"}/${sameCat[0].slug}`,
+      href: `/${getCategoryPath(sameCat[0].category)}/${sameCat[0].slug}`,
     });
   }
 
@@ -1146,7 +1485,7 @@ export function getRelatedProducts(product: Product): {
         ? `${sameCat[1].specs[0].k} ${sameCat[1].specs[0].v}`
         : sameCat[1].use,
       photo: sameCat[1].photo,
-      href: `/${sameCat[1].category === "ferro" ? "ferro-alloys" : "non-ferro-alloys"}/${sameCat[1].slug}`,
+      href: `/${getCategoryPath(sameCat[1].category)}/${sameCat[1].slug}`,
     });
   }
 
@@ -1157,7 +1496,7 @@ export function getRelatedProducts(product: Product): {
         ? `${diffCat[0].specs[0].k} ${diffCat[0].specs[0].v}`
         : diffCat[0].use,
       photo: diffCat[0].photo,
-      href: `/${diffCat[0].category === "ferro" ? "ferro-alloys" : "non-ferro-alloys"}/${diffCat[0].slug}`,
+      href: `/${getCategoryPath(diffCat[0].category)}/${diffCat[0].slug}`,
     });
   }
 
