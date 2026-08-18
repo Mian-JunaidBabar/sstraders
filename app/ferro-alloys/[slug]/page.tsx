@@ -1,12 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import {
-  ferro,
-  fesiChem,
-  fesiSupply,
-  fesiUses,
-  related,
-} from "@/data/products";
+import { ferro, getRelatedProducts, siteInfo } from "@/data/products";
+import { getProductSchema, getBreadcrumbSchema } from "@/lib/schema";
 
 export function generateStaticParams() {
   return ferro.map((p) => ({
@@ -26,8 +21,25 @@ export default async function FerroProductPage({
     notFound();
   }
 
+  const related = getRelatedProducts(product);
+  const productSchema = getProductSchema(product, "ferro-alloys");
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Ferro Alloys", url: "/ferro-alloys" },
+    { name: product.name, url: `/ferro-alloys/${product.slug}` },
+  ]);
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
       {/* DESKTOP VIEW */}
       <div className="hidden md:block">
         <div
@@ -38,9 +50,30 @@ export default async function FerroProductPage({
             letterSpacing: ".08em",
             textTransform: "uppercase",
             color: "var(--color-neutral-600)",
+            display: "flex",
+            gap: "8px",
           }}
         >
-          Home / Ferro Alloys /{" "}
+          <Link
+            href="/"
+            style={{
+              color: "var(--color-neutral-600)",
+              textDecoration: "none",
+            }}
+          >
+            Home
+          </Link>
+          <span>/</span>
+          <Link
+            href="/ferro-alloys"
+            style={{
+              color: "var(--color-neutral-600)",
+              textDecoration: "none",
+            }}
+          >
+            Ferro Alloys
+          </Link>
+          <span>/</span>
           <span style={{ color: "var(--color-accent)" }}>{product.name}</span>
         </div>
         <div
@@ -68,26 +101,11 @@ export default async function FerroProductPage({
               <i className="corner tr"></i>
               <i className="corner bl"></i>
               <i className="corner br"></i>
-              <div
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  minHeight: "78px",
-                  background:
-                    "repeating-linear-gradient(45deg, #e4e4e5 0 8px, #eeeeef 8px 16px)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  textAlign: "center",
-                  padding: "10px",
-                  font: "600 9px/1.35 'Barlow',sans-serif",
-                  letterSpacing: ".12em",
-                  textTransform: "uppercase",
-                  color: "var(--color-neutral-500)",
-                }}
-              >
-                {product.name}
-              </div>
+              <img
+                src={product.photo}
+                alt={product.name}
+                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              />
             </div>
             <div
               style={{
@@ -105,26 +123,11 @@ export default async function FerroProductPage({
                   background: "var(--color-surface)",
                 }}
               >
-                <div
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    minHeight: "78px",
-                    background:
-                      "repeating-linear-gradient(45deg, #e4e4e5 0 8px, #eeeeef 8px 16px)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    textAlign: "center",
-                    padding: "10px",
-                    font: "600 9px/1.35 'Barlow',sans-serif",
-                    letterSpacing: ".12em",
-                    textTransform: "uppercase",
-                    color: "var(--color-neutral-500)",
-                  }}
-                >
-                  Product photo
-                </div>
+                <img
+                  src={product.photo}
+                  alt={product.name}
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                />
               </div>
               <div
                 style={{
@@ -185,6 +188,7 @@ export default async function FerroProductPage({
               </div>
             </div>
           </div>
+
           <div>
             <div style={{ display: "flex", gap: "8px", marginBottom: "16px" }}>
               <span
@@ -197,7 +201,7 @@ export default async function FerroProductPage({
                   padding: "7px 9px",
                 }}
               >
-                Ready stock
+                {product.status}
               </span>
               <span
                 style={{
@@ -244,8 +248,7 @@ export default async function FerroProductPage({
                 marginBottom: "20px",
               }}
             >
-              {product.name.replace("Ferro ", "Fe")} · {product.use} · Origin:
-              China
+              {product.use} · Origin: {product.origin || "Imported"}
             </div>
             <p
               style={{
@@ -257,6 +260,8 @@ export default async function FerroProductPage({
             >
               {product.note}
             </p>
+
+            {/* CHEMICAL ANALYSIS TABLE */}
             <div
               className="blueprint"
               style={{
@@ -288,7 +293,7 @@ export default async function FerroProductPage({
                 </span>
               </div>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
-                {fesiChem.map((s, i) => (
+                {product.chem.map((s, i) => (
                   <div
                     key={i}
                     style={{
@@ -320,6 +325,8 @@ export default async function FerroProductPage({
                 ))}
               </div>
             </div>
+
+            {/* SUPPLY TABLE */}
             <div
               className="blueprint"
               style={{
@@ -346,7 +353,7 @@ export default async function FerroProductPage({
                 Supply &amp; packing
               </div>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
-                {fesiSupply.map((s, i) => (
+                {product.supply.map((s, i) => (
                   <div
                     key={i}
                     style={{
@@ -379,9 +386,10 @@ export default async function FerroProductPage({
                 ))}
               </div>
             </div>
+
             <div style={{ display: "flex", gap: "10px", marginBottom: "12px" }}>
               <a
-                href={`https://wa.me/923009405230?text=Salam.%20${product.name}%20ka%20rate%20chahiye.`}
+                href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam.%20${product.name}%20ka%20rate%20chahiye.`}
                 style={{
                   flex: 1,
                   background: "var(--color-accent)",
@@ -398,22 +406,10 @@ export default async function FerroProductPage({
                   textDecoration: "none",
                 }}
               >
-                <svg
-                  width="17"
-                  height="17"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#fff"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
-                </svg>
-                Order {product.name.replace("Ferro ", "Fe")} on WhatsApp
+                Order {product.name} on WhatsApp
               </a>
               <a
-                href="tel:+923009405230"
+                href={`tel:${siteInfo.phoneRaw}`}
                 style={{
                   flex: "none",
                   border: "1px solid var(--color-accent)",
@@ -442,6 +438,8 @@ export default async function FerroProductPage({
             </p>
           </div>
         </div>
+
+        {/* BOTTOM USES & RELATED PRODUCTS */}
         <div
           style={{
             background: "var(--color-accent)",
@@ -477,7 +475,7 @@ export default async function FerroProductPage({
                   border: "1px solid var(--color-accent-700)",
                 }}
               >
-                {fesiUses.map((u, i) => (
+                {product.uses.map((u, i) => (
                   <div
                     key={i}
                     style={{
@@ -523,6 +521,7 @@ export default async function FerroProductPage({
                 ))}
               </div>
             </div>
+
             <div>
               <div
                 style={{
@@ -543,11 +542,15 @@ export default async function FerroProductPage({
                 }}
               >
                 {related.map((r, i) => (
-                  <div
+                  <Link
                     key={i}
+                    href={r.href}
                     style={{
                       border: "1px solid var(--color-accent-700)",
-                      padding: 0,
+                      background: "var(--color-accent-800)",
+                      textDecoration: "none",
+                      color: "#fff",
+                      display: "block",
                     }}
                   >
                     <div
@@ -558,26 +561,15 @@ export default async function FerroProductPage({
                         background: "var(--color-accent-800)",
                       }}
                     >
-                      <div
+                      <img
+                        src={r.photo}
+                        alt={r.name}
                         style={{
                           width: "100%",
                           height: "100%",
-                          minHeight: "78px",
-                          background:
-                            "repeating-linear-gradient(45deg, var(--color-accent-800) 0 8px, var(--color-accent) 8px 16px)",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          textAlign: "center",
-                          padding: "10px",
-                          font: "600 9px/1.35 'Barlow',sans-serif",
-                          letterSpacing: ".12em",
-                          textTransform: "uppercase",
-                          color: "var(--color-neutral-600)",
+                          objectFit: "cover",
                         }}
-                      >
-                        {r.name}
-                      </div>
+                      />
                     </div>
                     <div style={{ padding: "12px 14px" }}>
                       <div
@@ -601,7 +593,7 @@ export default async function FerroProductPage({
                         {r.grade}
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -620,26 +612,11 @@ export default async function FerroProductPage({
             position: "relative",
           }}
         >
-          <div
-            style={{
-              width: "100%",
-              height: "100%",
-              minHeight: "78px",
-              background:
-                "repeating-linear-gradient(45deg, #e4e4e5 0 8px, #eeeeef 8px 16px)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              textAlign: "center",
-              padding: "10px",
-              font: "600 9px/1.35 'Barlow',sans-serif",
-              letterSpacing: ".12em",
-              textTransform: "uppercase",
-              color: "var(--color-neutral-500)",
-            }}
-          >
-            {product.name}
-          </div>
+          <img
+            src={product.photo}
+            alt={product.name}
+            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+          />
           <span
             style={{
               position: "absolute",
@@ -653,7 +630,7 @@ export default async function FerroProductPage({
               padding: "7px 9px",
             }}
           >
-            Ready stock
+            {product.status}
           </span>
         </div>
         <div
@@ -666,12 +643,31 @@ export default async function FerroProductPage({
               textTransform: "uppercase",
               color: "var(--color-neutral-600)",
               marginBottom: "12px",
+              display: "flex",
+              gap: "6px",
             }}
           >
-            Ferro Alloys /{" "}
-            <span style={{ color: "var(--color-accent)" }}>
-              {product.name.replace("Ferro ", "Fe")}
-            </span>
+            <Link
+              href="/"
+              style={{
+                color: "var(--color-neutral-600)",
+                textDecoration: "none",
+              }}
+            >
+              Home
+            </Link>
+            <span>/</span>
+            <Link
+              href="/ferro-alloys"
+              style={{
+                color: "var(--color-neutral-600)",
+                textDecoration: "none",
+              }}
+            >
+              Ferro Alloys
+            </Link>
+            <span>/</span>
+            <span style={{ color: "var(--color-accent)" }}>{product.name}</span>
           </div>
           <h1
             style={{
@@ -693,8 +689,7 @@ export default async function FerroProductPage({
               marginBottom: "16px",
             }}
           >
-            {product.name.replace("Ferro ", "Fe")} · {product.use} · Origin:
-            China
+            {product.use} · Origin: {product.origin || "Imported"}
           </div>
           <p
             style={{
@@ -706,6 +701,7 @@ export default async function FerroProductPage({
           >
             {product.note}
           </p>
+
           <div
             className="blueprint"
             style={{
@@ -731,7 +727,7 @@ export default async function FerroProductPage({
             >
               Typical analysis · % wt
             </div>
-            {fesiChem.map((s, i) => (
+            {product.chem.map((s, i) => (
               <div
                 key={i}
                 style={{
@@ -761,6 +757,7 @@ export default async function FerroProductPage({
               </div>
             ))}
           </div>
+
           <div
             className="blueprint"
             style={{
@@ -785,7 +782,7 @@ export default async function FerroProductPage({
             >
               Supply &amp; packing
             </div>
-            {fesiSupply.map((s, i) => (
+            {product.supply.map((s, i) => (
               <div
                 key={i}
                 style={{
@@ -816,16 +813,8 @@ export default async function FerroProductPage({
               </div>
             ))}
           </div>
-          <p
-            style={{
-              font: "400 12px/1.5 'Barlow',sans-serif",
-              color: "var(--color-neutral-600)",
-              margin: "14px 0 0",
-            }}
-          >
-            COA for your lot is sent with the quotation.
-          </p>
         </div>
+
         <div
           style={{
             position: "sticky",
@@ -838,7 +827,7 @@ export default async function FerroProductPage({
           }}
         >
           <a
-            href={`https://wa.me/923009405230?text=Salam.%20${product.name}%20ka%20rate%20chahiye.`}
+            href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam.%20${product.name}%20ka%20rate%20chahiye.`}
             style={{
               flex: 1,
               background: "#fff",
@@ -851,10 +840,10 @@ export default async function FerroProductPage({
               textDecoration: "none",
             }}
           >
-            Order {product.name.replace("Ferro ", "Fe")}
+            Order {product.name}
           </a>
           <a
-            href="tel:+923009405230"
+            href={`tel:${siteInfo.phoneRaw}`}
             style={{
               flex: "none",
               border: "1px solid var(--color-neutral-600)",

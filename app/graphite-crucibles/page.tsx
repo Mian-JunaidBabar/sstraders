@@ -1,8 +1,25 @@
-import { cruciblePoints, crucibleSizes, crucibleSpecs } from "@/data/products";
+import Link from "next/link";
+import {
+  cruciblePoints,
+  crucibleSizes,
+  crucibleSpecs,
+  siteInfo,
+} from "@/data/products";
+import { getBreadcrumbSchema } from "@/lib/schema";
 
 export default function GraphiteCruciblesPage() {
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Graphite Crucibles", url: "/graphite-crucibles" },
+  ]);
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
       <div
         className="md:grid"
         style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}
@@ -17,14 +34,26 @@ export default function GraphiteCruciblesPage() {
         >
           <div
             style={{
+              display: "flex",
+              gap: "8px",
               font: "400 11px/1 'Barlow',sans-serif",
               letterSpacing: ".1em",
               textTransform: "uppercase",
-              color: "var(--color-neutral-600)",
+              color: "var(--color-accent-400)",
               marginBottom: "20px",
             }}
           >
-            Home / <span style={{ color: "#fff" }}>Graphite Crucibles</span>
+            <Link
+              href="/"
+              style={{
+                color: "var(--color-accent-400)",
+                textDecoration: "none",
+              }}
+            >
+              Home
+            </Link>
+            <span>/</span>
+            <span style={{ color: "#fff" }}>Graphite Crucibles</span>
           </div>
           <h1
             style={{
@@ -102,7 +131,7 @@ export default function GraphiteCruciblesPage() {
           </div>
           <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
             <a
-              href="https://wa.me/923009405230"
+              href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam.%20Crucibles%20size%20aur%20rate%20chahiye.`}
               style={{
                 background: "#fff",
                 color: "var(--color-accent)",
@@ -116,7 +145,7 @@ export default function GraphiteCruciblesPage() {
               WhatsApp for size &amp; price
             </a>
             <a
-              href="tel:+923009405230"
+              href={`tel:${siteInfo.phoneRaw}`}
               style={{
                 border: "1px solid var(--color-neutral-600)",
                 color: "#fff",
@@ -347,7 +376,7 @@ export default function GraphiteCruciblesPage() {
                   </td>
                   <td style={{ padding: "13px 16px", textAlign: "right" }}>
                     <a
-                      href={`https://wa.me/923009405230?text=Salam.%20Crucible%20No.%20${c.no}%20ka%20rate%20aur%20stock%20chahiye.`}
+                      href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam.%20Crucible%20No.%20${c.no}%20ka%20rate%20aur%20stock%20chahiye.`}
                       style={{
                         font: "700 11.5px/1 'Barlow Condensed',sans-serif",
                         letterSpacing: ".1em",

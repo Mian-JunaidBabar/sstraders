@@ -181,3 +181,26 @@ textarea.input { min-height: 90px; resize: vertical; }
 }
 .table td { padding: 6.8px; border-bottom: 1px solid color-mix(in srgb, var(--color-text) 8%, transparent); }
 .table tbody tr:hover { background: color-mix(in srgb, var(--color-text) 4%, transparent); }
+
+/* Ticker Marquee Animation */
+@keyframes tick {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.tickrow {
+  display: flex;
+  width: max-content;
+  animation: tick 28s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tickrow {
+    animation-play-state: paused;
+  }
+}
+

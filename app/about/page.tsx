@@ -1,8 +1,20 @@
-import { pillars, proof } from "@/data/products";
+import Link from "next/link";
+import { pillars, proof, siteInfo } from "@/data/products";
+import { getBreadcrumbSchema } from "@/lib/schema";
 
 export default function AboutPage() {
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "About Us", url: "/about" },
+  ]);
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
       <div
         style={{
           background: "var(--color-accent)",
@@ -12,14 +24,23 @@ export default function AboutPage() {
       >
         <div
           style={{
+            display: "flex",
+            gap: "8px",
             font: "600 10.5px/1 'Barlow',sans-serif",
             letterSpacing: ".2em",
             textTransform: "uppercase",
-            color: "var(--color-neutral-600)",
+            color: "var(--color-accent-400)",
             marginBottom: "22px",
           }}
         >
-          About us
+          <Link
+            href="/"
+            style={{ color: "var(--color-accent-400)", textDecoration: "none" }}
+          >
+            Home
+          </Link>
+          <span>/</span>
+          <span style={{ color: "#fff" }}>About us</span>
         </div>
         <h1
           style={{
@@ -43,10 +64,10 @@ export default function AboutPage() {
             textWrap: "pretty",
           }}
         >
-          A Lahore-based trading company specialised in high-grade ferro alloys,
-          non-ferro alloys and crucibles. We serve as the backbone for
-          manufacturers across Pakistan — from small casting units to
-          large-scale factories, we fulfil the casting needs of all.
+          A {siteInfo.address.city}-based trading company specialised in
+          high-grade ferro alloys, non-ferro alloys and crucibles. We serve as
+          the backbone for manufacturers across Pakistan — from small casting
+          units to large-scale factories, we fulfil the casting needs of all.
         </p>
       </div>
 
@@ -174,7 +195,7 @@ export default function AboutPage() {
               marginBottom: "12px",
             }}
           >
-            Why furnaces and foundries choose SS Traders
+            Why furnaces and foundries choose {siteInfo.name}
           </div>
           <h2
             style={{
@@ -216,7 +237,7 @@ export default function AboutPage() {
           </p>
           <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
             <a
-              href="https://wa.me/923009405230"
+              href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam.%20Stock%20position%20chahiye.`}
               style={{
                 background: "var(--color-accent)",
                 color: "#fff",
@@ -230,7 +251,7 @@ export default function AboutPage() {
               WhatsApp us
             </a>
             <a
-              href="tel:+923009405230"
+              href={`tel:${siteInfo.phoneRaw}`}
               style={{
                 border: "1px solid var(--color-accent)",
                 color: "var(--color-accent)",
@@ -341,8 +362,7 @@ export default function AboutPage() {
               textAlign: "right",
             }}
           >
-            Placeholders below — send me the real scans and photos and these
-            become the strongest part of the site.
+            Documentation issued with every quotation.
           </span>
         </div>
         <div

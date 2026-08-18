@@ -1,6 +1,20 @@
+import Link from "next/link";
+import { siteInfo } from "@/data/products";
+import { getBreadcrumbSchema } from "@/lib/schema";
+
 export default function ContactPage() {
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Contact", url: "/contact" },
+  ]);
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
       <div
         style={{
           background: "var(--color-accent)",
@@ -12,14 +26,26 @@ export default function ContactPage() {
         <div>
           <div
             style={{
+              display: "flex",
+              gap: "8px",
               font: "600 10.5px/1 'Barlow',sans-serif",
               letterSpacing: ".2em",
               textTransform: "uppercase",
-              color: "var(--color-neutral-600)",
+              color: "var(--color-accent-400)",
               marginBottom: "20px",
             }}
           >
-            Contact us
+            <Link
+              href="/"
+              style={{
+                color: "var(--color-accent-400)",
+                textDecoration: "none",
+              }}
+            >
+              Home
+            </Link>
+            <span>/</span>
+            <span style={{ color: "#fff" }}>Contact us</span>
           </div>
           <h1
             style={{
@@ -74,7 +100,7 @@ export default function ContactPage() {
                     font: "600 10px/1 'Barlow',sans-serif",
                     letterSpacing: ".16em",
                     textTransform: "uppercase",
-                    color: "var(--color-neutral-600)",
+                    color: "var(--color-accent-400)",
                     marginBottom: "8px",
                   }}
                 >
@@ -83,11 +109,11 @@ export default function ContactPage() {
                 <div
                   style={{ font: "800 30px/1 'Barlow Condensed',sans-serif" }}
                 >
-                  +92 300 9405230
+                  {siteInfo.whatsapp}
                 </div>
               </div>
               <a
-                href="https://wa.me/923009405230"
+                href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam.%20Today's%20rates%20chahiye.`}
                 style={{
                   background: "#fff",
                   color: "var(--color-accent)",
@@ -116,7 +142,7 @@ export default function ContactPage() {
                     font: "600 10px/1 'Barlow',sans-serif",
                     letterSpacing: ".16em",
                     textTransform: "uppercase",
-                    color: "var(--color-neutral-600)",
+                    color: "var(--color-accent-400)",
                     marginBottom: "8px",
                   }}
                 >
@@ -125,11 +151,11 @@ export default function ContactPage() {
                 <div
                   style={{ font: "800 30px/1 'Barlow Condensed',sans-serif" }}
                 >
-                  +92 300 9405230
+                  {siteInfo.phone}
                 </div>
               </div>
               <a
-                href="tel:+923009405230"
+                href={`tel:${siteInfo.phoneRaw}`}
                 style={{
                   border: "1px solid var(--color-neutral-600)",
                   color: "#fff",
@@ -154,14 +180,19 @@ export default function ContactPage() {
                   font: "600 10px/1 'Barlow',sans-serif",
                   letterSpacing: ".16em",
                   textTransform: "uppercase",
-                  color: "var(--color-neutral-600)",
+                  color: "var(--color-accent-400)",
                   marginBottom: "8px",
                 }}
               >
                 Email
               </div>
               <div style={{ font: "400 16px/1.3 'Barlow',sans-serif" }}>
-                sstraders03009405230@gmail.com
+                <a
+                  href={`mailto:${siteInfo.email}`}
+                  style={{ color: "#fff", textDecoration: "none" }}
+                >
+                  {siteInfo.email}
+                </a>
               </div>
             </div>
             <div
@@ -175,22 +206,22 @@ export default function ContactPage() {
                   font: "600 10px/1 'Barlow',sans-serif",
                   letterSpacing: ".16em",
                   textTransform: "uppercase",
-                  color: "var(--color-neutral-600)",
+                  color: "var(--color-accent-400)",
                   marginBottom: "8px",
                 }}
               >
                 Warehouse &amp; office
               </div>
               <div style={{ font: "400 16px/1.4 'Barlow',sans-serif" }}>
-                Lahore, Pakistan
+                {siteInfo.address.full}
                 <br />
                 <span
                   style={{
-                    color: "var(--color-neutral-600)",
+                    color: "var(--color-accent-400)",
                     fontSize: "14px",
                   }}
                 >
-                  Full address to be supplied
+                  {siteInfo.address.street} · NTN: {siteInfo.ntn}
                 </span>
               </div>
             </div>
@@ -225,7 +256,7 @@ export default function ContactPage() {
           <p
             style={{
               font: "400 13.5px/1.5 'Barlow',sans-serif",
-              color: "var(--color-neutral-500)",
+              color: "var(--color-accent-400)",
               margin: "0 0 22px",
             }}
           >
@@ -240,7 +271,7 @@ export default function ContactPage() {
                   font: "600 10px/1 'Barlow',sans-serif",
                   letterSpacing: ".14em",
                   textTransform: "uppercase",
-                  color: "var(--color-neutral-500)",
+                  color: "var(--color-accent-400)",
                   marginBottom: "7px",
                 }}
               >
@@ -272,7 +303,7 @@ export default function ContactPage() {
                     font: "600 10px/1 'Barlow',sans-serif",
                     letterSpacing: ".14em",
                     textTransform: "uppercase",
-                    color: "var(--color-neutral-500)",
+                    color: "var(--color-accent-400)",
                     marginBottom: "7px",
                   }}
                 >
@@ -297,7 +328,7 @@ export default function ContactPage() {
                     font: "600 10px/1 'Barlow',sans-serif",
                     letterSpacing: ".14em",
                     textTransform: "uppercase",
-                    color: "var(--color-neutral-500)",
+                    color: "var(--color-accent-400)",
                     marginBottom: "7px",
                   }}
                 >
@@ -323,7 +354,7 @@ export default function ContactPage() {
                   font: "600 10px/1 'Barlow',sans-serif",
                   letterSpacing: ".14em",
                   textTransform: "uppercase",
-                  color: "var(--color-neutral-500)",
+                  color: "var(--color-accent-400)",
                   marginBottom: "7px",
                 }}
               >
@@ -356,7 +387,7 @@ export default function ContactPage() {
                     font: "600 10px/1 'Barlow',sans-serif",
                     letterSpacing: ".14em",
                     textTransform: "uppercase",
-                    color: "var(--color-neutral-500)",
+                    color: "var(--color-accent-400)",
                     marginBottom: "7px",
                   }}
                 >
@@ -382,7 +413,7 @@ export default function ContactPage() {
                     font: "600 10px/1 'Barlow',sans-serif",
                     letterSpacing: ".14em",
                     textTransform: "uppercase",
-                    color: "var(--color-neutral-500)",
+                    color: "var(--color-accent-400)",
                     marginBottom: "7px",
                   }}
                 >
@@ -409,7 +440,7 @@ export default function ContactPage() {
                   font: "600 10px/1 'Barlow',sans-serif",
                   letterSpacing: ".14em",
                   textTransform: "uppercase",
-                  color: "var(--color-neutral-500)",
+                  color: "var(--color-accent-400)",
                   marginBottom: "7px",
                 }}
               >
@@ -505,15 +536,7 @@ export default function ContactPage() {
                 color: "var(--color-accent)",
               }}
             >
-              Mon – Sat · 09:00 – 19:00
-              <br />
-              Friday break 13:00 – 14:30
-              <br />
-              <span
-                style={{ color: "var(--color-neutral-600)", fontSize: "13px" }}
-              >
-                Hours to be confirmed
-              </span>
+              {siteInfo.hours}
             </div>
           </div>
         </div>
