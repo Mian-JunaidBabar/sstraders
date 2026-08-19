@@ -163,42 +163,51 @@ export default function MetalsPage() {
               <i className="corner tr"></i>
               <i className="corner bl"></i>
               <i className="corner br"></i>
-              <div
+              <Link
+                href={`/metals/${p.slug}`}
                 style={{
-                  height: "200px",
-                  overflow: "hidden",
-                  borderBottom: "1px solid var(--color-accent-300)",
-                  position: "relative",
+                  display: "block",
+                  textDecoration: "none",
+                  cursor: "pointer",
                 }}
               >
-                <img
-                  src={p.photo}
-                  alt={p.name}
+                <div
                   style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    objectPosition: "center",
-                  }}
-                />
-                <span
-                  style={{
-                    position: "absolute",
-                    top: "12px",
-                    left: "12px",
-                    background: p.status.includes("[confirm]")
-                      ? "#d97706"
-                      : "var(--color-accent)",
-                    color: "#fff",
-                    font: "600 10px/1 'Barlow',sans-serif",
-                    letterSpacing: ".14em",
-                    textTransform: "uppercase",
-                    padding: "6px 10px",
+                    height: "200px",
+                    overflow: "hidden",
+                    borderBottom: "1px solid var(--color-accent-300)",
+                    position: "relative",
                   }}
                 >
-                  {p.status}
-                </span>
-              </div>
+                  <img
+                    src={p.photo}
+                    alt={p.name}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      objectPosition: "center",
+                    }}
+                  />
+                  <span
+                    style={{
+                      position: "absolute",
+                      top: "12px",
+                      left: "12px",
+                      background: p.status.includes("[confirm]")
+                        ? "#d97706"
+                        : "var(--color-accent)",
+                      color: "#fff",
+                      font: "600 10px/1 'Barlow',sans-serif",
+                      letterSpacing: ".14em",
+                      textTransform: "uppercase",
+                      padding: "6px 10px",
+                    }}
+                  >
+                    {p.status}
+                  </span>
+                </div>
+              </Link>
               <div
                 style={{
                   padding: "20px",
