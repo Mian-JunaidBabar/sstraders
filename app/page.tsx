@@ -374,7 +374,7 @@ export default function HomePage() {
         style={{
           background: "var(--color-accent-100)",
           borderBottom: "1px solid var(--color-accent)",
-          padding: "12px 0",
+          padding: "18px 0",
           overflow: "hidden",
           display: "flex",
           whiteSpace: "nowrap",
@@ -384,10 +384,10 @@ export default function HomePage() {
           <div
             style={{
               display: "flex",
-              gap: "40px",
-              paddingRight: "40px",
-              font: "600 13px/1 'Barlow Condensed',sans-serif",
-              letterSpacing: ".1em",
+              gap: "48px",
+              paddingRight: "48px",
+              font: "700 18px/1 'Barlow Condensed',sans-serif",
+              letterSpacing: ".12em",
               textTransform: "uppercase",
               color: "var(--color-accent)",
             }}
@@ -406,10 +406,10 @@ export default function HomePage() {
           <div
             style={{
               display: "flex",
-              gap: "40px",
-              paddingRight: "40px",
-              font: "600 13px/1 'Barlow Condensed',sans-serif",
-              letterSpacing: ".1em",
+              gap: "48px",
+              paddingRight: "48px",
+              font: "700 18px/1 'Barlow Condensed',sans-serif",
+              letterSpacing: ".12em",
               textTransform: "uppercase",
               color: "var(--color-accent)",
             }}
