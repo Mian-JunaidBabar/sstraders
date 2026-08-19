@@ -487,11 +487,10 @@ export default function HomePage() {
                 <i className="corner br"></i>
                 <div
                   style={{
-                    height: "200px",
+                    height: "220px",
                     overflow: "hidden",
                     borderBottom: "1px solid var(--color-accent-300)",
                     position: "relative",
-                    background: "var(--color-surface)",
                   }}
                 >
                   <img
@@ -501,6 +500,7 @@ export default function HomePage() {
                       width: "100%",
                       height: "100%",
                       objectFit: "cover",
+                      objectPosition: "center",
                     }}
                   />
                   <span

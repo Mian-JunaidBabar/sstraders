@@ -125,7 +125,7 @@ export default function FerroAlloysPage() {
             marginBottom: "8px",
           }}
         >
-          9 grades in stock
+          {ferro.length} grades in stock
         </div>
         <h2
           style={{
@@ -165,17 +165,21 @@ export default function FerroAlloysPage() {
               <i className="corner br"></i>
               <div
                 style={{
-                  height: "180px",
+                  height: "200px",
                   overflow: "hidden",
                   borderBottom: "1px solid var(--color-accent-300)",
                   position: "relative",
-                  background: "var(--color-surface)",
                 }}
               >
                 <img
                   src={p.photo}
                   alt={p.name}
-                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    objectPosition: "center",
+                  }}
                 />
                 <span
                   style={{

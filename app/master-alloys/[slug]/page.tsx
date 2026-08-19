@@ -91,7 +91,6 @@ export default async function MasterAlloyProductPage({
               className="blueprint"
               style={{
                 border: "1px solid var(--color-accent)",
-                background: "var(--color-surface)",
                 position: "relative",
                 aspectRatio: "1/1",
                 overflow: "hidden",
@@ -104,88 +103,13 @@ export default async function MasterAlloyProductPage({
               <img
                 src={product.photo}
                 alt={product.name}
-                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  objectPosition: "center",
+                }}
               />
-            </div>
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(4,1fr)",
-                gap: "8px",
-                marginTop: "10px",
-              }}
-            >
-              <div
-                style={{
-                  border: "1px solid var(--color-accent)",
-                  aspectRatio: "1/1",
-                  overflow: "hidden",
-                  background: "var(--color-surface)",
-                }}
-              >
-                <img
-                  src={product.photo}
-                  alt={product.name}
-                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                />
-              </div>
-              <div
-                style={{
-                  border: "1px solid var(--color-accent-300)",
-                  aspectRatio: "1/1",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  background:
-                    "repeating-linear-gradient(45deg, #e9e9ea 0 6px, #f2f2f3 6px 12px)",
-                  font: "600 8.5px/1.3 'Barlow',sans-serif",
-                  letterSpacing: ".1em",
-                  textTransform: "uppercase",
-                  color: "var(--color-neutral-500)",
-                  textAlign: "center",
-                  padding: "6px",
-                }}
-              >
-                Ingot photo
-              </div>
-              <div
-                style={{
-                  border: "1px solid var(--color-accent-300)",
-                  aspectRatio: "1/1",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  background:
-                    "repeating-linear-gradient(45deg, #e9e9ea 0 6px, #f2f2f3 6px 12px)",
-                  font: "600 8.5px/1.3 'Barlow',sans-serif",
-                  letterSpacing: ".1em",
-                  textTransform: "uppercase",
-                  color: "var(--color-neutral-500)",
-                  textAlign: "center",
-                  padding: "6px",
-                }}
-              >
-                Warehouse photo
-              </div>
-              <div
-                style={{
-                  border: "1px solid var(--color-accent-300)",
-                  aspectRatio: "1/1",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  background:
-                    "repeating-linear-gradient(45deg, #e9e9ea 0 6px, #f2f2f3 6px 12px)",
-                  font: "600 8.5px/1.3 'Barlow',sans-serif",
-                  letterSpacing: ".1em",
-                  textTransform: "uppercase",
-                  color: "var(--color-neutral-500)",
-                  textAlign: "center",
-                  padding: "6px",
-                }}
-              >
-                COA scan
-              </div>
             </div>
           </div>
 

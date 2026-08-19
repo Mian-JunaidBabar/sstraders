@@ -92,7 +92,7 @@ export const siteInfo = {
   ntn: "7940523-0",
 };
 
-const P = "https://sstraders.pk/wp-content/uploads/2026/05/";
+const P = "/products/";
 
 // Helper to generate slugs
 const slugify = (text: string) =>
@@ -108,7 +108,7 @@ export const ferro: Product[] = [
     category: "ferro",
     use: "Steel deoxidation",
     status: "Ready stock",
-    photo: P + "ferro-Silicon-768x768.webp",
+    photo: P + "ferro-silicon-72.webp",
     note: "Fresh stock available. 75% grade, high purity, ready for immediate delivery.",
     origin: "China",
     specs: [
@@ -162,7 +162,7 @@ export const ferro: Product[] = [
     category: "ferro",
     use: "Mn addition, steel",
     status: "Ready stock",
-    photo: P + "ferro-magnese.webp",
+    photo: P + "ferro-manganese-75.webp",
     note: "High-grade 75% manganese. 100% pure quality and ready stock in warehouse.",
     origin: "India",
     specs: [
@@ -216,7 +216,7 @@ export const ferro: Product[] = [
     category: "ferro",
     use: "Combined Si + Mn",
     status: "Fresh arrival",
-    photo: P + "ferro-magnese.webp",
+    photo: P + "ferro-silico-manganese-extra.webp",
     note: "High-grade silicon-manganese. Fresh arrival with ready stock and guaranteed purity.",
     origin: "India",
     specs: [
@@ -270,7 +270,7 @@ export const ferro: Product[] = [
     category: "ferro",
     use: "Stainless, wear parts",
     status: "Ready stock",
-    photo: P + "ferro-Chrome-high-carbon-webp.webp",
+    photo: P + "ferro-chrome-hc-60.webp",
     note: "Premium high carbon (60%) grade. Direct import with ready stock available.",
     origin: "South Africa",
     specs: [
@@ -324,7 +324,7 @@ export const ferro: Product[] = [
     category: "ferro",
     use: "Stainless casting",
     status: "Certified",
-    photo: P + "ferro-Chrome-high-carbon-webp.webp",
+    photo: P + "ferro-chrome-lc-60.webp",
     note: "Specialised low carbon (60%) grade. Certified quality for stainless casting.",
     origin: "China",
     specs: [
@@ -378,7 +378,7 @@ export const ferro: Product[] = [
     category: "ferro",
     use: "High-purity Mn",
     status: "Vacuum packed",
-    photo: P + "ferro-magnese.webp",
+    photo: P + "manganese-metal-flakes.webp",
     note: "High purity manganese flakes. Fresh arrival, vacuum-packed and ready to ship.",
     origin: "China",
     specs: [
@@ -432,7 +432,7 @@ export const ferro: Product[] = [
     category: "ferro",
     use: "Carbon raiser",
     status: "Regular stock",
-    photo: P + "ferro-magnese.webp",
+    photo: P + "carburizer.webp",
     note: "High carbon content, low ash. Regular stock available for all foundry needs.",
     origin: "China",
     specs: [
@@ -485,7 +485,7 @@ export const ferro: Product[] = [
     category: "ferro",
     use: "Carbon raiser",
     status: "Ready stock",
-    photo: P + "graphite-crucible-768x768.webp",
+    photo: P + "carbon-coke.webp",
     note: "50 kg bags available. High-purity crystalline graphite with ready stock.",
     origin: "China",
     specs: [
@@ -537,7 +537,7 @@ export const ferro: Product[] = [
     category: "ferro",
     use: "Nodulariser, SG iron",
     status: "Fresh stock",
-    photo: P + "ferro-silico-magnesium-webp.webp",
+    photo: P + "ferro-silico-magnesium-extra.webp",
     note: "Premium magnesium-silicon grade. 100% pure material, fresh stock and ready for delivery.",
     origin: "China",
     specs: [
@@ -585,6 +585,271 @@ export const ferro: Product[] = [
       },
     ],
   },
+  {
+    name: "Ferro Silicon Inoculant",
+    slug: "ferro-silicon-inoculant",
+    category: "ferro",
+    use: "Grey & ductile iron inoculation",
+    status: "Ready stock",
+    photo: P + "ferro-silicon-inoculant.webp",
+    note: "High-performance FeSi inoculant. Promotes A-type graphite flakes and eliminates chill in thin castings.",
+    origin: "China",
+    specs: [
+      { k: "Si", v: "70 – 75%" },
+      { k: "Ba / Ca", v: "1.5 – 3.0%" },
+      { k: "Size", v: "0.2 – 0.7 mm / 1 – 3 mm" },
+      { k: "Packing", v: "25 kg bag / 1 MT" },
+    ],
+    chem: [
+      { k: "Silicon (Si)", v: "70 – 75%" },
+      { k: "Barium / Calcium", v: "1.5 – 3.0%" },
+      { k: "Aluminium (Al) max", v: "1.2%" },
+      { k: "Iron (Fe)", v: "Balance" },
+    ],
+    supply: [
+      { k: "Grade", v: "FeSi Inoculant" },
+      { k: "Size", v: "0.2 – 0.7 mm" },
+      { k: "Packing", v: "25 kg bag" },
+      { k: "Origin", v: "China" },
+      { k: "Minimum order", v: "250 kg" },
+      { k: "Delivery", v: "Ex-Lahore, 24 – 72 hrs" },
+    ],
+    uses: [
+      {
+        n: "01",
+        t: "Chill prevention",
+        b: "Eliminates hard iron carbides (chill) in thin-walled grey and ductile iron castings.",
+      },
+      {
+        n: "02",
+        t: "Graphite structure refinement",
+        b: "Promotes uniform Type-A graphite flake distribution and increases nodule count in SG iron.",
+      },
+      {
+        n: "03",
+        t: "Late stream inoculation",
+        b: "Ideal particle sizing for in-stream or ladle additions just prior to pouring.",
+      },
+      {
+        n: "04",
+        t: "Fade resistance",
+        b: "Barium/calcium additions provide excellent resistance to inoculation fading during extended pouring times.",
+      },
+    ],
+  },
+  {
+    name: "Ferro Molybdenum",
+    slug: "ferro-molybdenum",
+    category: "ferro",
+    use: "High-strength alloy steel",
+    status: "Imported grade",
+    photo: P + "ferro-molybdenum.webp",
+    note: "High purity 60% Ferro Molybdenum. Enhances high-temperature strength and creep resistance.",
+    origin: "Chile / China",
+    specs: [
+      { k: "Mo min", v: "60.0%" },
+      { k: "Cu / Si max", v: "0.5% / 2.0%" },
+      { k: "Size", v: "10 – 50 mm" },
+      { k: "Packing", v: "100 kg steel drum" },
+    ],
+    chem: [
+      { k: "Molybdenum (Mo) min", v: "60.0%" },
+      { k: "Copper (Cu) max", v: "0.5%" },
+      { k: "Silicon (Si) max", v: "2.0%" },
+      { k: "Carbon (C) max", v: "0.1%" },
+      { k: "Iron (Fe)", v: "Balance" },
+    ],
+    supply: [
+      { k: "Grade", v: "FeMo 60" },
+      { k: "Lump size", v: "10 – 50 mm" },
+      { k: "Packing", v: "100 kg steel drum" },
+      { k: "Origin", v: "Chile" },
+      { k: "Minimum order", v: "100 kg" },
+      { k: "Delivery", v: "Ex-Lahore, 24 – 72 hrs" },
+    ],
+    uses: [
+      {
+        n: "01",
+        t: "High-temperature strength",
+        b: "Increases creep strength and heat resistance in boiler and turbine steel castings.",
+      },
+      {
+        n: "02",
+        t: "Temper brittleness reduction",
+        b: "Suppresses temper embrittlement in quenched and tempered alloy steels.",
+      },
+      {
+        n: "03",
+        t: "Pitting corrosion resistance",
+        b: "Essential element in 316-grade stainless steel to resist chloride pitting.",
+      },
+      {
+        n: "04",
+        t: "Tool steel hardening",
+        b: "Improves hardenability and wear resistance in high-speed tool steels.",
+      },
+    ],
+  },
+  {
+    name: "Pig Iron",
+    slug: "pig-iron",
+    category: "ferro",
+    use: "Foundry charge base",
+    status: "Ready stock",
+    photo: P + "pig-iron.webp",
+    note: "High-purity foundry grade pig iron. Low trace elements, ideal for ductile and grey iron melting.",
+    origin: "Brazil / India",
+    specs: [
+      { k: "C", v: "3.8 – 4.5%" },
+      { k: "Si", v: "1.5 – 2.5%" },
+      { k: "S / P max", v: "0.03% / 0.08%" },
+      { k: "Form", v: "Ingot / pig, ~5–10 kg" },
+    ],
+    chem: [
+      { k: "Carbon (C)", v: "3.8 – 4.5%" },
+      { k: "Silicon (Si)", v: "1.5 – 2.5%" },
+      { k: "Manganese (Mn)", v: "0.2 – 0.5%" },
+      { k: "Sulphur (S) max", v: "0.03%" },
+      { k: "Phosphorus (P) max", v: "0.08%" },
+      { k: "Iron (Fe)", v: "Balance" },
+    ],
+    supply: [
+      { k: "Grade", v: "Foundry Grade Pig Iron" },
+      { k: "Form", v: "Pig ingot (~7 kg)" },
+      { k: "Packing", v: "Loose bulk / 1 MT bundle" },
+      { k: "Origin", v: "Brazil" },
+      { k: "Minimum order", v: "1 MT" },
+      { k: "Delivery", v: "Ex-Lahore, 24 – 72 hrs" },
+    ],
+    uses: [
+      {
+        n: "01",
+        t: "Clean furnace charge",
+        b: "Provides clean iron base free from tramp element contaminants common in scrap steel.",
+      },
+      {
+        n: "02",
+        t: "SG Iron base melting",
+        b: "Low sulphur and low phosphorus content make it essential for nodular ductile iron production.",
+      },
+      {
+        n: "03",
+        t: "Consistent melt chemistry",
+        b: "Delivers predictable carbon and silicon levels to stabilize cupola and induction furnace heats.",
+      },
+      {
+        n: "04",
+        t: "Reduced gas defects",
+        b: "Low nitrogen and hydrogen content minimizes gas porosity in heavy section iron castings.",
+      },
+    ],
+  },
+  {
+    name: "Steel Shot & Grit",
+    slug: "steel-shot",
+    category: "ferro",
+    use: "Surface cleaning, shot blasting",
+    status: "Ready stock",
+    photo: P + "steel-shot.webp",
+    note: "High-carbon cast steel shot. High durability and uniform hardness for shot blasting machines.",
+    origin: "China",
+    specs: [
+      { k: "Hardness", v: "40 – 50 HRC" },
+      { k: "Size", v: "S110 – S780 (0.3 – 2.0 mm)" },
+      { k: "Density min", v: "7.4 g/cm³" },
+      { k: "Packing", v: "25 kg bag / 1 MT" },
+    ],
+    chem: [
+      { k: "Carbon (C)", v: "0.80 – 1.20%" },
+      { k: "Manganese (Mn)", v: "0.60 – 1.20%" },
+      { k: "Silicon (Si)", v: "0.40 – 1.20%" },
+      { k: "Sulphur & Phosphorus max", v: "0.05%" },
+      { k: "Iron (Fe)", v: "Balance" },
+    ],
+    supply: [
+      { k: "Grade", v: "Cast Steel Shot S230/S330/S390" },
+      { k: "Size", v: "0.6 – 1.4 mm" },
+      { k: "Packing", v: "25 kg bag / 1 MT pallet" },
+      { k: "Origin", v: "China" },
+      { k: "Minimum order", v: "250 kg" },
+      { k: "Delivery", v: "Ex-Lahore, 24 – 72 hrs" },
+    ],
+    uses: [
+      {
+        n: "01",
+        t: "Casting sand removal",
+        b: "Cleans burnt moulding sand and heat-treat scale from grey and ductile iron castings.",
+      },
+      {
+        n: "02",
+        t: "Shot peening",
+        b: "Imparts compressive residual stress on automotive gears and springs to increase fatigue life.",
+      },
+      {
+        n: "03",
+        t: "Surface preparation",
+        b: "Creates optimal surface anchor profile prior to industrial painting or galvanising.",
+      },
+      {
+        n: "04",
+        t: "Reusable abrasive",
+        b: "High impact resistance allows recycling up to 3000 cycles in centrifugal wheel blast units.",
+      },
+    ],
+  },
+  {
+    name: "Foundry Coke",
+    slug: "foundry-coke",
+    category: "ferro",
+    use: "Cupola furnace fuel & carbon",
+    status: "Ready stock",
+    photo: P + "foundry-coke.webp",
+    note: "High fixed carbon foundry coke. Low ash and high mechanical strength for cupola furnaces.",
+    origin: "China",
+    specs: [
+      { k: "Fixed C min", v: "88.0%" },
+      { k: "Ash max", v: "10.0%" },
+      { k: "S max", v: "0.6%" },
+      { k: "Lump size", v: "60 – 120 mm" },
+    ],
+    chem: [
+      { k: "Fixed Carbon (C) min", v: "88.0%" },
+      { k: "Ash content max", v: "10.0%" },
+      { k: "Volatile Matter max", v: "1.5%" },
+      { k: "Sulphur (S) max", v: "0.6%" },
+      { k: "Moisture max", v: "5.0%" },
+    ],
+    supply: [
+      { k: "Grade", v: "Hard Metallurgical Foundry Coke" },
+      { k: "Size", v: "80 – 120 mm" },
+      { k: "Packing", v: "Bulk / 1 MT jumbo bag" },
+      { k: "Origin", v: "China" },
+      { k: "Minimum order", v: "1 MT" },
+      { k: "Delivery", v: "Ex-Lahore, 24 – 72 hrs" },
+    ],
+    uses: [
+      {
+        n: "01",
+        t: "Cupola furnace fuel",
+        b: "Provides primary combustion thermal heat to melt iron scrap charges in cupola furnaces.",
+      },
+      {
+        n: "02",
+        t: "Furnace bed support",
+        b: "High crushing strength supports heavy iron charges without premature degradation.",
+      },
+      {
+        n: "03",
+        t: "Melt recarburization",
+        b: "Supplies carbon to liquid iron droplets as they pass through the coke bed.",
+      },
+      {
+        n: "04",
+        t: "Permeable gas passage",
+        b: "Uniform sizing maintains gas permeability for efficient cupola blast air flow.",
+      },
+    ],
+  },
 ];
 
 export const nonferro: Product[] = [
@@ -594,7 +859,7 @@ export const nonferro: Product[] = [
     category: "non-ferro",
     use: "Mn addition",
     status: "Fresh stock",
-    photo: P + "ferro-magnese.webp",
+    photo: P + "manganese-metal-flakes.webp",
     note: "High-purity manganese metal ingots. Fresh stock available for immediate delivery.",
     origin: "China",
     specs: [
@@ -646,7 +911,7 @@ export const nonferro: Product[] = [
     category: "non-ferro",
     use: "Copper deoxidation",
     status: "Fresh arrival",
-    photo: P + "copper-phosphorus-webp.webp",
+    photo: P + "copper-phosphorus.webp",
     note: "Premium grade copper phosphorus. Fresh arrival with guaranteed purity and ready stock.",
     origin: "China",
     specs: [
@@ -701,7 +966,7 @@ export const masterAlloys: Product[] = [
     category: "master-alloys",
     use: "Master alloy",
     status: "A+ grade",
-    photo: P + "master-alloy-AlNI-8020-webp.webp",
+    photo: P + "aluminium-silicon-50-50.webp",
     note: "A+ grade aluminium silicon master alloy. Guaranteed purity with ready stock and fast delivery.",
     origin: "China",
     specs: [
@@ -753,7 +1018,7 @@ export const masterAlloys: Product[] = [
     category: "master-alloys",
     use: "Master alloy",
     status: "Ready stock",
-    photo: P + "copper-phosphorus-webp.webp",
+    photo: P + "aluminium-copper-40-60.webp",
     note: "Premium 40/60 grade copper alloy. Direct import with wholesale rates and ready stock.",
     origin: "China",
     specs: [
@@ -805,7 +1070,7 @@ export const masterAlloys: Product[] = [
     category: "master-alloys",
     use: "Master alloy",
     status: "Fresh arrival",
-    photo: P + "master-alloy-AlNI-8020-webp.webp",
+    photo: P + "master-alloy-alni.webp",
     note: "High-quality 80/20 aluminium nickel alloy. Fresh arrival, 100% pure, stock ready in warehouse.",
     origin: "China",
     specs: [
@@ -857,7 +1122,7 @@ export const masterAlloys: Product[] = [
     category: "master-alloys",
     use: "Die casting, automotive parts",
     status: "[confirm availability]",
-    photo: P + "master-alloy-AlNI-8020-webp.webp",
+    photo: P + "adc12.webp",
     note: "JIS H5302 standard aluminium die-casting alloy, equivalent to ASTM A383 / EN AC-AlSi12Cu2. Used for gearbox housings and thin-wall automotive castings.",
     origin: "[confirm origin]",
     specs: [
@@ -905,6 +1170,59 @@ export const masterAlloys: Product[] = [
       },
     ],
   },
+  {
+    name: "Aluminium Titanium Boron",
+    slug: "aluminium-titanium-boron",
+    category: "master-alloys",
+    use: "Grain refiner for aluminium",
+    status: "Ready stock",
+    photo: P + "aluminium-titanium-boron.webp",
+    note: "AlTi5B1 master alloy rod / waffle. Premier grain refiner for continuous casting and billet extrusion.",
+    origin: "China",
+    specs: [
+      { k: "Ti", v: "5.0%" },
+      { k: "B", v: "1.0%" },
+      { k: "Al", v: "Balance" },
+      { k: "Form", v: "Rod / Waffle plate" },
+    ],
+    chem: [
+      { k: "Titanium (Ti)", v: "4.8 – 5.2%" },
+      { k: "Boron (B)", v: "0.9 – 1.1%" },
+      { k: "Iron (Fe) max", v: "0.3%" },
+      { k: "Silicon (Si) max", v: "0.2%" },
+      { k: "Aluminium (Al)", v: "Balance" },
+    ],
+    supply: [
+      { k: "Grade", v: "AlTi5B1" },
+      { k: "Form", v: "9.5mm Rod coil / Waffle ingot" },
+      { k: "Packing", v: "180 kg coil / 1 MT pallet" },
+      { k: "Origin", v: "China" },
+      { k: "Minimum order", v: "250 kg" },
+      { k: "Delivery", v: "Ex-Lahore, 24 – 72 hrs" },
+    ],
+    uses: [
+      {
+        n: "01",
+        t: "Grain structure refinement",
+        b: "Nucleates fine equiaxed grain structure in aluminium billets and foundry castings.",
+      },
+      {
+        n: "02",
+        t: "Hot tearing prevention",
+        b: "Eliminates columnar crystal growth and prevents hot cracking during solidification.",
+      },
+      {
+        n: "03",
+        t: "Extrusion speed booster",
+        b: "Improves surface finish and allows faster extrusion rates on 6000-series profile presses.",
+      },
+      {
+        n: "04",
+        t: "Mechanical property enhancement",
+        b: "Yields higher tensile strength and improved elongation in finished cast components.",
+      },
+    ],
+  },
 ];
 
 export const metals: Product[] = [
@@ -914,7 +1232,7 @@ export const metals: Product[] = [
     category: "metals",
     use: "Si addition, aluminium",
     status: "Ready stock",
-    photo: P + "silicon-metal-webp-768x768.webp",
+    photo: P + "silicon-metal-441.webp",
     note: "High-purity silicon metal. Stock available in warehouse for immediate delivery.",
     origin: "China",
     specs: [
@@ -966,7 +1284,7 @@ export const metals: Product[] = [
     category: "metals",
     use: "Alloying, plating feedstock",
     status: "[confirm availability]",
-    photo: P + "master-alloy-AlNI-8020-webp.webp",
+    photo: P + "nickel-ingot.webp",
     note: "[confirm grade/purity with supplier]",
     origin: "[confirm origin]",
     specs: [
@@ -1016,7 +1334,7 @@ export const metals: Product[] = [
     category: "metals",
     use: "Solder, bronze, coatings",
     status: "[confirm availability]",
-    photo: P + "copper-phosphorus-webp.webp",
+    photo: P + "tin-ingot.webp",
     note: "[confirm grade/purity with supplier]",
     origin: "[confirm origin]",
     specs: [
@@ -1066,7 +1384,7 @@ export const metals: Product[] = [
     category: "metals",
     use: "Galvanising, die casting alloys",
     status: "[confirm availability]",
-    photo: P + "ferro-magnese.webp",
+    photo: P + "zinc-ingot.webp",
     note: "[confirm grade/purity with supplier]",
     origin: "[confirm origin]",
     specs: [
@@ -1116,7 +1434,7 @@ export const metals: Product[] = [
     category: "metals",
     use: "Alloying, nodularising base",
     status: "[confirm availability]",
-    photo: P + "silicon-metal-webp-768x768.webp",
+    photo: P + "magnesium-ingot.webp",
     note: "[confirm grade/purity with supplier]",
     origin: "[confirm origin]",
     specs: [
@@ -1166,7 +1484,7 @@ export const metals: Product[] = [
     category: "metals",
     use: "Plating, specialty alloys",
     status: "[confirm — regulated material]",
-    photo: P + "copper-phosphorus-webp.webp",
+    photo: P + "cadmium-ingot.webp",
     note: "Toxic, regulated metal. Confirm import licensing and storage compliance before listing publicly.",
     origin: "[confirm origin]",
     specs: [
@@ -1217,7 +1535,7 @@ const rawFluxes = [
     name: "Covering Flux",
     use: "Melt surface protection, reduces oxidation loss",
     status: "[confirm availability]",
-    photo: P + "copper-phosphorus-webp.webp",
+    photo: P + "cover-flux.webp",
     note: "Forms a protective barrier on molten metal to reduce oxidation losses during melting and holding. [confirm exact composition/dosage with supplier]",
     origin: "[confirm origin]",
     specs: [
@@ -1264,7 +1582,7 @@ const rawFluxes = [
     name: "Drossing Flux",
     use: "Separates metal from oxide dross",
     status: "[confirm availability]",
-    photo: P + "copper-phosphorus-webp.webp",
+    photo: P + "cover-flux.webp",
     note: "Promotes separation of usable metal from the oxide dross layer, reducing metal loss during skimming. [confirm exact composition/dosage with supplier]",
     origin: "[confirm origin]",
     specs: [
@@ -1310,7 +1628,7 @@ const rawFluxes = [
     name: "Exothermic Flux",
     use: "Recovers metal trapped in dross",
     status: "[confirm availability]",
-    photo: P + "copper-phosphorus-webp.webp",
+    photo: P + "cover-flux.webp",
     note: "Self-heating reaction recovers metal entrapped in dross that has already formed, reducing melting losses. [confirm exact composition/dosage with supplier]",
     origin: "[confirm origin]",
     specs: [
@@ -1356,7 +1674,7 @@ const rawFluxes = [
     name: "Furnace Cleaning Flux",
     use: "Softens refractory/wall oxide buildup",
     status: "[confirm availability]",
-    photo: P + "copper-phosphorus-webp.webp",
+    photo: P + "fire-bricks.webp",
     note: "Softens oxide buildup on furnace walls and refractory lining, protecting furnace life and melting efficiency. [confirm exact composition/dosage with supplier]",
     origin: "[confirm origin]",
     specs: [
@@ -1397,55 +1715,104 @@ const rawFluxes = [
       },
     ],
   },
+  {
+    name: "Degasser Tablets",
+    slug: "degasser-tablets",
+    use: "Hydrogen degassing in aluminium melt",
+    status: "Ready stock",
+    photo: P + "degasser-tablets.webp",
+    note: "Chlorine-free nitrogen / argon releasing tablets for removal of dissolved hydrogen gas from aluminium melts.",
+    origin: "China",
+    specs: [
+      { k: "Active element", v: "Nitrogen / Hexachloroethane-free" },
+      { k: "Tablet weight", v: "100 g / 250 g tablet" },
+      { k: "Dosage", v: "0.05 – 0.15% by melt weight" },
+      { k: "Packing", v: "20 kg carton box" },
+    ],
+    chem: [
+      { k: "Active gas releaser", v: "Compressed nitrogen compound" },
+      { k: "Chlorine content", v: "Zero / Eco-friendly" },
+      { k: "Moisture max", v: "0.2%" },
+    ],
+    supply: [
+      { k: "Form", v: "Solid compressed tablet" },
+      { k: "Packing", v: "20 kg box / moisture sealed" },
+      { k: "Origin", v: "China" },
+      { k: "Minimum order", v: "100 kg" },
+      { k: "Delivery", v: "Ex-Lahore, 24 – 72 hrs" },
+    ],
+    uses: [
+      {
+        n: "01",
+        t: "Hydrogen gas removal",
+        b: "Releases ultra-fine nitrogen gas bubbles that scavenge dissolved hydrogen from molten aluminium.",
+      },
+      {
+        n: "02",
+        t: "Pin-hole porosity elimination",
+        b: "Prevents sub-surface pin-hole gas porosity in automotive castings and pressure vessels.",
+      },
+      {
+        n: "03",
+        t: "Inclusion flotation",
+        b: "Rising gas bubbles float non-metallic oxide inclusions to the melt surface for easy skimming.",
+      },
+      {
+        n: "04",
+        t: "Eco-friendly operation",
+        b: "Smoke-free and low odor reaction protects foundry air quality and operator safety.",
+      },
+    ],
+  },
 ];
 
 export const fluxes: Product[] = rawFluxes.map((f) => ({
   ...f,
   category: "fluxes",
-  slug: slugify(f.name),
+  slug: f.slug || slugify(f.name),
 }));
 
 export const ranges: Range[] = [
   {
-    kicker: "9 grades in stock",
+    kicker: "14 grades in stock",
     title: "Ferro Alloys",
-    body: "High-grade ferro alloys for iron and steel casting units. Ferro silicon, ferro manganese, silico manganese, chrome.",
-    photo: P + "ferro-magnese.webp",
-    chips: ["FeSi 75%", "FeMn 75%", "FeCr 60%", "Nodulariser"],
+    body: "High-grade ferro alloys for iron and steel casting units. Ferro silicon, ferro manganese, silico manganese, chrome, inoculants, pig iron.",
+    photo: P + "ferro-manganese-75.webp",
+    chips: ["FeSi 75%", "FeMn 75%", "FeCr 60%", "Pig Iron"],
   },
   {
     kicker: "Stock in warehouse",
     title: "Non-Ferro Alloys",
     body: "Non-ferrous foundry additives including Manganese metal ingots and Copper Phosphorus deoxidisers.",
-    photo: P + "copper-phosphorus-webp.webp",
+    photo: P + "copper-phosphorus.webp",
     chips: ["Mn Ingot 99.7%", "CuP 14%", "Ready stock"],
   },
   {
-    kicker: "4 grades available",
+    kicker: "5 grades available",
     title: "Master Alloys",
-    body: "Master alloys and ingots for alloy wheels, car pistons and aluminium engine parts. AlSi 50/50, AlCu 40/60, AlNi 80/20, ADC12.",
-    photo: P + "master-alloy-AlNI-8020-webp.webp",
-    chips: ["AlSi 50/50", "AlCu 40/60", "AlNi 80/20", "ADC12"],
+    body: "Master alloys and ingots for alloy wheels, car pistons and aluminium engine parts. AlSi 50/50, AlCu 40/60, AlNi 80/20, AlTi5B1, ADC12.",
+    photo: P + "aluminium-silicon-50-50.webp",
+    chips: ["AlSi 50/50", "AlCu 40/60", "AlNi 80/20", "AlTi5B1", "ADC12"],
   },
   {
     kicker: "6 pure elements",
     title: "Metals",
     body: "Pure elemental ingots and lumps for foundry alloying and electroplating. Silicon Metal 441, Nickel, Tin, Zinc, Magnesium, Cadmium.",
-    photo: P + "silicon-metal-webp-768x768.webp",
+    photo: P + "silicon-metal-441.webp",
     chips: ["Si 441", "Nickel", "Tin", "Zinc", "Magnesium"],
   },
   {
-    kicker: "4 formulations",
+    kicker: "5 formulations",
     title: "Fluxes",
-    body: "Melt surface protection, dross separation, exothermic metal recovery, and furnace wall cleaning fluxes.",
-    photo: P + "copper-phosphorus-webp.webp",
-    chips: ["Covering Flux", "Drossing Flux", "Exothermic", "Furnace Cleaning"],
+    body: "Melt surface protection, dross separation, exothermic metal recovery, furnace wall cleaning, and degasser tablets.",
+    photo: P + "cover-flux.webp",
+    chips: ["Covering Flux", "Drossing Flux", "Degasser Tablets", "Exothermic"],
   },
   {
     kicker: "All sizes",
     title: "Graphite Crucibles",
     body: "Clay-graphite and SiC crucibles that take extreme furnace heat without cracking. Small sizes to heavy foundry sizes.",
-    photo: P + "graphite-crucible-768x768.webp",
+    photo: P + "graphite-crucible.webp",
     chips: ["#1 – #400", "1600°C", "Ready stock"],
   },
 ];
@@ -1712,7 +2079,7 @@ export function getRelatedProducts(product: Product): {
   selected.push({
     name: "Graphite Crucibles",
     grade: "Clay-graphite & SiC · #1 to #400",
-    photo: P + "graphite-crucible-768x768.webp",
+    photo: P + "graphite-crucible.webp",
     href: "/graphite-crucibles",
   });
 
