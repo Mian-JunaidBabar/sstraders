@@ -9,7 +9,7 @@ export interface HeroCarouselSlide {
   kicker: string;
 }
 
-const AUTOPLAY_MS = 4500;
+const AUTOPLAY_MS = 3000;
 
 export default function HeroCarousel({
   slides,
@@ -22,7 +22,7 @@ export default function HeroCarousel({
 
   useEffect(() => {
     reducedMotion.current = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
+      "(prefers-reduced-motion: reduce)",
     ).matches;
   }, []);
 
