@@ -1718,6 +1718,34 @@ export const board: BoardItem[] = [
     pack: "Single carton",
     status: "All sizes",
   },
+  {
+    name: "Copper Phosphorus",
+    grade: "P 14–15%",
+    size: "Shot / Plate",
+    pack: "25 kg drum",
+    status: "Fresh arrival",
+  },
+  {
+    name: "Aluminium Silicon 50/50",
+    grade: "Si 48–52%",
+    size: "6–6.5 kg ingot",
+    pack: "1 MT pallet",
+    status: "Ready stock",
+  },
+  {
+    name: "Nickel Ingot",
+    grade: "Ni 99.9% min",
+    size: "Cathode / Ingot",
+    pack: "Pallet / Drum",
+    status: "Ready stock",
+  },
+  {
+    name: "Ferro Chrome HC 60%",
+    grade: "Cr 60% min",
+    size: "10–50 mm",
+    pack: "1 MT jumbo bag",
+    status: "Ready stock",
+  },
 ];
 
 export const promises: string[] = [

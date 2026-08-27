@@ -28,138 +28,147 @@ export default function HomePage() {
           style={{
             background: "var(--color-accent)",
             color: "#fff",
-            padding: "52px 40px 48px",
+            padding: "40px 40px 36px",
             display: "grid",
             gridTemplateColumns: "1.15fr 1fr",
-            gap: "40px",
-            alignItems: "start",
+            gap: "36px",
+            alignItems: "stretch",
           }}
         >
-          <div>
-            <div
-              style={{
-                font: "600 10.5px/1 'Barlow',sans-serif",
-                letterSpacing: ".2em",
-                textTransform: "uppercase",
-                color: "var(--color-accent-400)",
-                marginBottom: "20px",
-              }}
-            >
-              Ferro Alloys · Non-Ferro Alloys · Crucibles
-            </div>
-            <h1
-              style={{
-                fontFamily: "'Barlow Condensed',sans-serif",
-                fontWeight: 800,
-                fontSize: "76px",
-                lineHeight: ".9",
-                margin: "0 0 20px",
-                textTransform: "uppercase",
-                letterSpacing: "-.01em",
-              }}
-            >
-              Pure materials
-              <br />
-              for perfect
-              <br />
-              casting.
-            </h1>
-            <p
-              style={{
-                font: "400 18px/1.5 'Barlow',sans-serif",
-                color: "#d4d4d5",
-                margin: "0 0 28px",
-                maxWidth: "520px",
-                textWrap: "pretty",
-              }}
-            >
-              A {siteInfo.address.city}-based trading company specialised in
-              high-grade ferro alloys, non-ferro alloys and crucibles. We are
-              the backbone for manufacturers across Pakistan — aluminium, iron,
-              cast iron and copper casting.
-            </p>
-            <div
-              style={{
-                display: "flex",
-                gap: "12px",
-                alignItems: "center",
-                marginBottom: "36px",
-              }}
-            >
-              <a
-                href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam.%20Today's%20rates%20chahiye.`}
-                className="btn btn-primary"
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+            }}
+          >
+            <div>
+              <div
                 style={{
-                  padding: "16px 26px",
-                  font: "700 14px/1 'Barlow Condensed',sans-serif",
-                  letterSpacing: ".1em",
+                  font: "600 10.5px/1 'Barlow',sans-serif",
+                  letterSpacing: ".2em",
                   textTransform: "uppercase",
-                  borderRadius: 0,
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "10px",
-                  textDecoration: "none",
+                  color: "var(--color-accent-400)",
+                  marginBottom: "14px",
                 }}
               >
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
-                </svg>
-                WhatsApp for today's rate
-              </a>
-              <a
-                href={`tel:${siteInfo.phoneRaw}`}
-                className="btn btn-secondary"
+                Ferro Alloys · Non-Ferro Alloys · Crucibles
+              </div>
+              <h1
                 style={{
-                  padding: "16px 22px",
-                  font: "700 14px/1 'Barlow Condensed',sans-serif",
-                  letterSpacing: ".1em",
+                  fontFamily: "'Barlow Condensed',sans-serif",
+                  fontWeight: 800,
+                  fontSize: "68px",
+                  lineHeight: ".92",
+                  margin: "0 0 16px",
                   textTransform: "uppercase",
-                  borderRadius: 0,
-                  color: "#fff",
-                  borderColor: "var(--color-neutral-600)",
-                  textDecoration: "none",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "8px",
+                  letterSpacing: "-.01em",
                 }}
               >
-                <svg
-                  width="15"
-                  height="15"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+                Pure materials
+                <br />
+                for perfect
+                <br />
+                casting.
+              </h1>
+              <p
+                style={{
+                  font: "400 16px/1.5 'Barlow',sans-serif",
+                  color: "#d4d4d5",
+                  margin: "0 0 20px",
+                  maxWidth: "500px",
+                  textWrap: "pretty",
+                }}
+              >
+                A {siteInfo.address.city}-based trading company specialised in
+                high-grade ferro alloys, non-ferro alloys and crucibles. We are
+                the backbone for manufacturers across Pakistan — aluminium,
+                iron, cast iron and copper casting.
+              </p>
+              <div
+                style={{
+                  display: "flex",
+                  gap: "12px",
+                  alignItems: "center",
+                  marginBottom: "20px",
+                }}
+              >
+                <a
+                  href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam.%20Today's%20rates%20chahiye.`}
+                  className="btn btn-primary"
+                  style={{
+                    padding: "14px 22px",
+                    font: "700 13px/1 'Barlow Condensed',sans-serif",
+                    letterSpacing: ".1em",
+                    textTransform: "uppercase",
+                    borderRadius: 0,
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "10px",
+                    textDecoration: "none",
+                  }}
                 >
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                </svg>
-                {siteInfo.phone}
-              </a>
+                  <svg
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                  </svg>
+                  WhatsApp for today's rate
+                </a>
+                <a
+                  href={`tel:${siteInfo.phoneRaw}`}
+                  className="btn btn-secondary"
+                  style={{
+                    padding: "14px 18px",
+                    font: "700 13px/1 'Barlow Condensed',sans-serif",
+                    letterSpacing: ".1em",
+                    textTransform: "uppercase",
+                    borderRadius: 0,
+                    color: "#fff",
+                    borderColor: "var(--color-neutral-600)",
+                    textDecoration: "none",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "8px",
+                  }}
+                >
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                  </svg>
+                  {siteInfo.phone}
+                </a>
+              </div>
             </div>
+
             <div
               style={{
                 display: "grid",
                 gridTemplateColumns: "repeat(4,1fr)",
-                gap: "20px",
+                gap: "16px",
                 borderTop: "1px solid var(--color-accent-700)",
-                paddingTop: "24px",
+                paddingTop: "18px",
               }}
             >
-              <div style={{ padding: "16px 0" }}>
+              <div>
                 <div
                   style={{
-                    font: "800 30px/1 'Barlow Condensed',sans-serif",
+                    font: "800 26px/1 'Barlow Condensed',sans-serif",
                     color: "#fff",
                   }}
                 >
@@ -167,20 +176,20 @@ export default function HomePage() {
                 </div>
                 <div
                   style={{
-                    font: "400 10.5px/1.3 'Barlow',sans-serif",
+                    font: "400 10px/1.3 'Barlow',sans-serif",
                     letterSpacing: ".1em",
                     textTransform: "uppercase",
                     color: "var(--color-accent-400)",
-                    marginTop: "6px",
+                    marginTop: "4px",
                   }}
                 >
                   Years in trade
                 </div>
               </div>
-              <div style={{ padding: "16px 0" }}>
+              <div>
                 <div
                   style={{
-                    font: "800 30px/1 'Barlow Condensed',sans-serif",
+                    font: "800 26px/1 'Barlow Condensed',sans-serif",
                     color: "#fff",
                   }}
                 >
@@ -188,20 +197,20 @@ export default function HomePage() {
                 </div>
                 <div
                   style={{
-                    font: "400 10.5px/1.3 'Barlow',sans-serif",
+                    font: "400 10px/1.3 'Barlow',sans-serif",
                     letterSpacing: ".1em",
                     textTransform: "uppercase",
                     color: "var(--color-accent-400)",
-                    marginTop: "6px",
+                    marginTop: "4px",
                   }}
                 >
                   Grades stocked
                 </div>
               </div>
-              <div style={{ padding: "16px 0" }}>
+              <div>
                 <div
                   style={{
-                    font: "800 30px/1 'Barlow Condensed',sans-serif",
+                    font: "800 26px/1 'Barlow Condensed',sans-serif",
                     color: "#fff",
                   }}
                 >
@@ -209,20 +218,20 @@ export default function HomePage() {
                 </div>
                 <div
                   style={{
-                    font: "400 10.5px/1.3 'Barlow',sans-serif",
+                    font: "400 10px/1.3 'Barlow',sans-serif",
                     letterSpacing: ".1em",
                     textTransform: "uppercase",
                     color: "var(--color-accent-400)",
-                    marginTop: "6px",
+                    marginTop: "4px",
                   }}
                 >
                   Casting types served
                 </div>
               </div>
-              <div style={{ padding: "16px 0" }}>
+              <div>
                 <div
                   style={{
-                    font: "800 30px/1 'Barlow Condensed',sans-serif",
+                    font: "800 26px/1 'Barlow Condensed',sans-serif",
                     color: "#fff",
                   }}
                 >
@@ -230,11 +239,11 @@ export default function HomePage() {
                 </div>
                 <div
                   style={{
-                    font: "400 10.5px/1.3 'Barlow',sans-serif",
+                    font: "400 10px/1.3 'Barlow',sans-serif",
                     letterSpacing: ".1em",
                     textTransform: "uppercase",
                     color: "var(--color-accent-400)",
-                    marginTop: "6px",
+                    marginTop: "4px",
                   }}
                 >
                   With every lot
@@ -242,12 +251,15 @@ export default function HomePage() {
               </div>
             </div>
           </div>
+
           <div
             className="blueprint plate"
             style={{
               border: "1px solid var(--color-accent-800)",
-              borderRight: "none",
-              borderBottom: "none",
+              position: "relative",
+              height: "100%",
+              width: "100%",
+              overflow: "hidden",
             }}
           >
             <i className="corner tl"></i>
@@ -275,9 +287,13 @@ export default function HomePage() {
               src="/products/ferro-manganese.webp"
               alt="SS Traders Warehouse Lahore"
               style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
                 width: "100%",
                 height: "100%",
                 objectFit: "cover",
+                objectPosition: "center",
                 display: "block",
                 opacity: 0.85,
               }}
@@ -657,11 +673,21 @@ export default function HomePage() {
           }}
         >
           {board.map((b, i) => {
-            const foundFerro = ferro.find((p) => p.name === b.name);
-            const foundNonFerro = nonferro.find((p) => p.name === b.name);
-            const foundMaster = masterAlloys.find((p) => p.name === b.name);
-            const foundMetal = metals.find((p) => p.name === b.name);
-            const foundFlux = fluxes.find((p) => p.name === b.name);
+            const foundFerro = ferro.find(
+              (p) => p.name === b.name || p.name.startsWith(b.name)
+            );
+            const foundNonFerro = nonferro.find(
+              (p) => p.name === b.name || p.name.startsWith(b.name)
+            );
+            const foundMaster = masterAlloys.find(
+              (p) => p.name === b.name || p.name.startsWith(b.name)
+            );
+            const foundMetal = metals.find(
+              (p) => p.name === b.name || p.name.startsWith(b.name)
+            );
+            const foundFlux = fluxes.find(
+              (p) => p.name === b.name || p.name.startsWith(b.name)
+            );
             const productUrl = foundFerro
               ? `/ferro-alloys/${foundFerro.slug}`
               : foundNonFerro
