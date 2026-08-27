@@ -1,18 +1,36 @@
 import Link from "next/link";
+import Image from "next/image";
+import type { Metadata } from "next";
 import { masterAlloys, siteInfo } from "@/data/products";
-import { getBreadcrumbSchema } from "@/lib/schema";
+import { getBreadcrumbSchema, getItemListSchema } from "@/lib/schema";
+import { buildPageMetadata } from "@/lib/metadata";
+
+export const metadata: Metadata = buildPageMetadata({
+  title: `Master Alloys Supplier in ${siteInfo.address.city}, Pakistan`,
+  description: `Master alloys and ingots for alloy wheels, pistons and engine components — AlSi 50/50, AlCu 40/60, AlNi 80/20, AlTi5B1, ADC12. Ready stock in ${siteInfo.address.city}.`,
+  path: "/master-alloys",
+  image: masterAlloys[0].photo,
+});
 
 export default function MasterAlloysPage() {
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: "Home", url: "/" },
     { name: "Master Alloys", url: "/master-alloys" },
   ]);
+  const itemListSchema = getItemListSchema(
+    masterAlloys.map((p) => ({ name: p.name, url: `/master-alloys/${p.slug}` })),
+    "Master Alloys"
+  );
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
       />
 
       {/* HERO SECTION */}
@@ -179,12 +197,12 @@ export default function MasterAlloysPage() {
                     position: "relative",
                   }}
                 >
-                  <img
+                  <Image
                     src={p.photo}
                     alt={p.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 320px"
                     style={{
-                      width: "100%",
-                      height: "100%",
                       objectFit: "cover",
                       objectPosition: "center",
                     }}

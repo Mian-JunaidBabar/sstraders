@@ -11,6 +11,9 @@ export function getOrganizationSchema() {
     url: siteInfo.url,
     telephone: siteInfo.phone,
     email: siteInfo.email,
+    foundingDate: siteInfo.foundingYear,
+    image: `${siteInfo.url}/products/warehouse-stock.webp`,
+    logo: `${siteInfo.url}/logo.webp`,
     address: {
       "@type": "PostalAddress",
       streetAddress: siteInfo.address.street,
@@ -23,8 +26,53 @@ export function getOrganizationSchema() {
       latitude: siteInfo.geo.latitude,
       longitude: siteInfo.geo.longitude,
     },
+    hasMap: `https://www.google.com/maps?q=${siteInfo.geo.latitude},${siteInfo.geo.longitude}`,
+    areaServed: {
+      "@type": "Country",
+      name: "Pakistan",
+    },
+    knowsAbout: [
+      "Ferro Alloys",
+      "Non-Ferro Alloys",
+      "Master Alloys",
+      "Foundry Metals",
+      "Foundry Fluxes",
+      "Graphite Crucibles",
+    ],
     openingHours: "Mo-Sa 09:00-19:00",
     priceRange: "$$",
+  };
+}
+
+export function getWebsiteSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${siteInfo.url}/#website`,
+    name: siteInfo.name,
+    url: siteInfo.url,
+    publisher: {
+      "@id": `${siteInfo.url}/#organization`,
+    },
+    inLanguage: "en",
+  };
+}
+
+export function getItemListSchema(
+  items: { name: string; url: string }[],
+  listName: string
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: listName,
+    numberOfItems: items.length,
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      url: item.url.startsWith("http") ? item.url : `${siteInfo.url}${item.url}`,
+    })),
   };
 }
 

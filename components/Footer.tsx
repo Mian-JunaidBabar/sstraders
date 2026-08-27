@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { siteInfo } from "@/data/products";
 
 export default function Footer() {
@@ -22,9 +23,11 @@ export default function Footer() {
           }}
         >
           <div>
-            <img
+            <Image
               src="/logo.webp"
               alt={siteInfo.name}
+              width={117}
+              height={30}
               style={{
                 height: "30px",
                 width: "auto",
@@ -153,9 +156,11 @@ export default function Footer() {
           }}
         >
           <div>
-            <img
+            <Image
               src="/logo.webp"
               alt={siteInfo.name}
+              width={101}
+              height={26}
               style={{
                 height: "26px",
                 width: "auto",

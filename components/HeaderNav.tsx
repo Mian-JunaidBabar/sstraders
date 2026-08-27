@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { siteInfo } from "@/data/products";
 
 export default function HeaderNav() {
@@ -45,9 +46,12 @@ export default function HeaderNav() {
           }}
         >
           <Link href="/">
-            <img
+            <Image
               src="/logo.webp"
               alt={`${siteInfo.name} — Metal Industry Suppliers`}
+              width={132}
+              height={34}
+              priority
               style={{ height: "34px", width: "auto", display: "block" }}
             />
           </Link>
@@ -130,9 +134,12 @@ export default function HeaderNav() {
           }}
         >
           <Link href="/" onClick={closeMenu}>
-            <img
+            <Image
               src="/logo.webp"
               alt={siteInfo.name}
+              width={101}
+              height={26}
+              priority
               style={{ height: "26px", width: "auto", display: "block" }}
             />
           </Link>

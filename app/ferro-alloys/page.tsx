@@ -1,18 +1,36 @@
 import Link from "next/link";
+import Image from "next/image";
+import type { Metadata } from "next";
 import { ferro, siteInfo } from "@/data/products";
-import { getBreadcrumbSchema } from "@/lib/schema";
+import { getBreadcrumbSchema, getItemListSchema } from "@/lib/schema";
+import { buildPageMetadata } from "@/lib/metadata";
+
+export const metadata: Metadata = buildPageMetadata({
+  title: `Ferro Alloys Supplier in ${siteInfo.address.city}, Pakistan`,
+  description: `Direct imported ferro alloys — FeSi 72%, FeMn 75%, FeCr 60%, silico manganese, pig iron and more. Lab-tested, ready stock in ${siteInfo.address.city} with COA on every lot.`,
+  path: "/ferro-alloys",
+  image: ferro[0].photo,
+});
 
 export default function FerroAlloysPage() {
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: "Home", url: "/" },
     { name: "Ferro Alloys", url: "/ferro-alloys" },
   ]);
+  const itemListSchema = getItemListSchema(
+    ferro.map((p) => ({ name: p.name, url: `/ferro-alloys/${p.slug}` })),
+    "Ferro Alloys"
+  );
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
       />
 
       {/* HERO SECTION */}
@@ -179,12 +197,12 @@ export default function FerroAlloysPage() {
                     position: "relative",
                   }}
                 >
-                  <img
+                  <Image
                     src={p.photo}
                     alt={p.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 320px"
                     style={{
-                      width: "100%",
-                      height: "100%",
                       objectFit: "cover",
                       objectPosition: "center",
                     }}

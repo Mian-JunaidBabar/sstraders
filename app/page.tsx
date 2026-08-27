@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   siteInfo,
   ranges,
@@ -9,8 +10,13 @@ import {
   masterAlloys,
   metals,
   fluxes,
+  yearsInTrade,
 } from "@/data/products";
 import { getBreadcrumbSchema } from "@/lib/schema";
+import HeroCarousel from "@/components/HeroCarousel";
+
+// Title, description, canonical and OG/Twitter tags for "/" are inherited
+// from the root layout's default metadata — no override needed here.
 
 export default function HomePage() {
   const breadcrumbSchema = getBreadcrumbSchema([{ name: "Home", url: "/" }]);
@@ -120,7 +126,7 @@ export default function HomePage() {
                   >
                     <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
                   </svg>
-                  WhatsApp for today's rate
+                  WhatsApp for today&apos;s rate
                 </a>
                 <a
                   href={`tel:${siteInfo.phoneRaw}`}
@@ -172,7 +178,7 @@ export default function HomePage() {
                     color: "#fff",
                   }}
                 >
-                  [ ## ]
+                  {yearsInTrade}
                 </div>
                 <div
                   style={{
@@ -266,37 +272,12 @@ export default function HomePage() {
             <i className="corner tr"></i>
             <i className="corner bl"></i>
             <i className="corner br"></i>
-            <div
-              style={{
-                position: "absolute",
-                top: "16px",
-                right: "16px",
-                background: "var(--color-accent)",
-                color: "var(--color-accent-400)",
-                padding: "4px 8px",
-                font: "600 10px/1 'Barlow',sans-serif",
-                letterSpacing: ".1em",
-                textTransform: "uppercase",
-                zIndex: 10,
-                border: "1px solid var(--color-accent-700)",
-              }}
-            >
-              Warehouse, {siteInfo.address.city}
-            </div>
-            <img
-              src="/products/ferro-manganese.webp"
-              alt="SS Traders Warehouse Lahore"
-              style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                objectPosition: "center",
-                display: "block",
-                opacity: 0.85,
-              }}
+            <HeroCarousel
+              slides={ranges.map((r) => ({
+                photo: r.photo,
+                title: r.title,
+                kicker: r.kicker,
+              }))}
             />
           </div>
         </div>
@@ -509,12 +490,12 @@ export default function HomePage() {
                     position: "relative",
                   }}
                 >
-                  <img
+                  <Image
                     src={r.photo}
                     alt={r.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     style={{
-                      width: "100%",
-                      height: "100%",
                       objectFit: "cover",
                       objectPosition: "center",
                     }}

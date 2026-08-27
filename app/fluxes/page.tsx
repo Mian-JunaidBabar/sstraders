@@ -1,18 +1,36 @@
 import Link from "next/link";
+import Image from "next/image";
+import type { Metadata } from "next";
 import { fluxes, siteInfo } from "@/data/products";
-import { getBreadcrumbSchema } from "@/lib/schema";
+import { getBreadcrumbSchema, getItemListSchema } from "@/lib/schema";
+import { buildPageMetadata } from "@/lib/metadata";
+
+export const metadata: Metadata = buildPageMetadata({
+  title: `Foundry Fluxes Supplier in ${siteInfo.address.city}, Pakistan`,
+  description: `Melt surface covering flux and hydrogen degasser tablets for aluminium melting. Ready stock in ${siteInfo.address.city}, Pakistan.`,
+  path: "/fluxes",
+  image: fluxes[0].photo,
+});
 
 export default function FluxesPage() {
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: "Home", url: "/" },
     { name: "Fluxes", url: "/fluxes" },
   ]);
+  const itemListSchema = getItemListSchema(
+    fluxes.map((p) => ({ name: p.name, url: `/fluxes/${p.slug}` })),
+    "Fluxes"
+  );
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
       />
 
       {/* HERO SECTION */}
@@ -178,12 +196,12 @@ export default function FluxesPage() {
                     position: "relative",
                   }}
                 >
-                  <img
+                  <Image
                     src={p.photo}
                     alt={p.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 320px"
                     style={{
-                      width: "100%",
-                      height: "100%",
                       objectFit: "cover",
                       objectPosition: "center",
                     }}

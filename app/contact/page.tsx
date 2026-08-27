@@ -1,6 +1,15 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { siteInfo } from "@/data/products";
 import { getBreadcrumbSchema } from "@/lib/schema";
+import { buildPageMetadata } from "@/lib/metadata";
+import EnquiryForm from "@/components/EnquiryForm";
+
+export const metadata: Metadata = buildPageMetadata({
+  title: "Contact Us — Rates, Stock & Enquiries",
+  description: `Reach ${siteInfo.name} on WhatsApp, phone or email for today's rates and stock position. Warehouse in ${siteInfo.address.full}.`,
+  path: "/contact",
+});
 
 export default function ContactPage() {
   const breadcrumbSchema = getBreadcrumbSchema([
@@ -70,9 +79,9 @@ export default function ContactPage() {
               textWrap: "pretty",
             }}
           >
-            Questions about stock or today's market rates? Message us on
+            Questions about stock or today&apos;s market rates? Message us on
             WhatsApp — that is where we are fastest. Send the material, grade
-            and quantity and you'll have a rate, stock position and delivery
+            and quantity and you&apos;ll have a rate, stock position and delivery
             time back.
           </p>
           <div
@@ -260,222 +269,9 @@ export default function ContactPage() {
               margin: "0 0 22px",
             }}
           >
-            Prefer email? Fill this and we'll reply with a quotation.
+            Prefer email? Fill this and we&apos;ll reply with a quotation.
           </p>
-          <form
-            style={{ display: "flex", flexDirection: "column", gap: "14px" }}
-          >
-            <div>
-              <div
-                style={{
-                  font: "600 10px/1 'Barlow',sans-serif",
-                  letterSpacing: ".14em",
-                  textTransform: "uppercase",
-                  color: "var(--color-accent-400)",
-                  marginBottom: "7px",
-                }}
-              >
-                Your name
-              </div>
-              <input
-                type="text"
-                style={{
-                  border: "1px solid var(--color-neutral-600)",
-                  height: "44px",
-                  width: "100%",
-                  background: "transparent",
-                  color: "#fff",
-                  padding: "0 12px",
-                  outline: "none",
-                }}
-              />
-            </div>
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "1fr 1fr",
-                gap: "12px",
-              }}
-            >
-              <div>
-                <div
-                  style={{
-                    font: "600 10px/1 'Barlow',sans-serif",
-                    letterSpacing: ".14em",
-                    textTransform: "uppercase",
-                    color: "var(--color-accent-400)",
-                    marginBottom: "7px",
-                  }}
-                >
-                  Phone
-                </div>
-                <input
-                  type="tel"
-                  style={{
-                    border: "1px solid var(--color-neutral-600)",
-                    height: "44px",
-                    width: "100%",
-                    background: "transparent",
-                    color: "#fff",
-                    padding: "0 12px",
-                    outline: "none",
-                  }}
-                />
-              </div>
-              <div>
-                <div
-                  style={{
-                    font: "600 10px/1 'Barlow',sans-serif",
-                    letterSpacing: ".14em",
-                    textTransform: "uppercase",
-                    color: "var(--color-accent-400)",
-                    marginBottom: "7px",
-                  }}
-                >
-                  Email
-                </div>
-                <input
-                  type="email"
-                  style={{
-                    border: "1px solid var(--color-neutral-600)",
-                    height: "44px",
-                    width: "100%",
-                    background: "transparent",
-                    color: "#fff",
-                    padding: "0 12px",
-                    outline: "none",
-                  }}
-                />
-              </div>
-            </div>
-            <div>
-              <div
-                style={{
-                  font: "600 10px/1 'Barlow',sans-serif",
-                  letterSpacing: ".14em",
-                  textTransform: "uppercase",
-                  color: "var(--color-accent-400)",
-                  marginBottom: "7px",
-                }}
-              >
-                Material &amp; grade
-              </div>
-              <input
-                type="text"
-                placeholder="e.g. Ferro Silicon 75%"
-                style={{
-                  border: "1px solid var(--color-neutral-600)",
-                  height: "44px",
-                  width: "100%",
-                  background: "transparent",
-                  color: "#fff",
-                  padding: "0 12px",
-                  outline: "none",
-                }}
-              />
-            </div>
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "1fr 1fr",
-                gap: "12px",
-              }}
-            >
-              <div>
-                <div
-                  style={{
-                    font: "600 10px/1 'Barlow',sans-serif",
-                    letterSpacing: ".14em",
-                    textTransform: "uppercase",
-                    color: "var(--color-accent-400)",
-                    marginBottom: "7px",
-                  }}
-                >
-                  Quantity
-                </div>
-                <input
-                  type="text"
-                  placeholder="Tons"
-                  style={{
-                    border: "1px solid var(--color-neutral-600)",
-                    height: "44px",
-                    width: "100%",
-                    background: "transparent",
-                    color: "#fff",
-                    padding: "0 12px",
-                    outline: "none",
-                  }}
-                />
-              </div>
-              <div>
-                <div
-                  style={{
-                    font: "600 10px/1 'Barlow',sans-serif",
-                    letterSpacing: ".14em",
-                    textTransform: "uppercase",
-                    color: "var(--color-accent-400)",
-                    marginBottom: "7px",
-                  }}
-                >
-                  Delivery city
-                </div>
-                <input
-                  type="text"
-                  placeholder="Lahore"
-                  style={{
-                    border: "1px solid var(--color-neutral-600)",
-                    height: "44px",
-                    width: "100%",
-                    background: "transparent",
-                    color: "#fff",
-                    padding: "0 12px",
-                    outline: "none",
-                  }}
-                />
-              </div>
-            </div>
-            <div>
-              <div
-                style={{
-                  font: "600 10px/1 'Barlow',sans-serif",
-                  letterSpacing: ".14em",
-                  textTransform: "uppercase",
-                  color: "var(--color-accent-400)",
-                  marginBottom: "7px",
-                }}
-              >
-                Message
-              </div>
-              <textarea
-                style={{
-                  border: "1px solid var(--color-neutral-600)",
-                  height: "84px",
-                  width: "100%",
-                  background: "transparent",
-                  color: "#fff",
-                  padding: "12px",
-                  outline: "none",
-                  resize: "none",
-                }}
-              ></textarea>
-            </div>
-            <button
-              type="button"
-              style={{
-                background: "#fff",
-                color: "var(--color-accent)",
-                font: "700 14px/1 'Barlow Condensed',sans-serif",
-                letterSpacing: ".1em",
-                textTransform: "uppercase",
-                padding: "17px",
-                textAlign: "center",
-                cursor: "pointer",
-                border: "none",
-              }}
-            >
-              Send enquiry
-            </button>
-          </form>
+          <EnquiryForm />
         </div>
       </div>
 
@@ -516,8 +312,8 @@ export default function ContactPage() {
               textWrap: "pretty",
             }}
           >
-            Buyers are welcome at the warehouse. Call before you come and we'll
-            have the grades you want laid out.
+            Buyers are welcome at the warehouse. Call before you come and
+            we&apos;ll have the grades you want laid out.
           </p>
           <div style={{ display: "flex", flexDirection: "column", gap: "9px" }}>
             <div
@@ -543,19 +339,18 @@ export default function ContactPage() {
         <div
           style={{
             borderLeft: "1px solid var(--color-accent-300)",
-            background:
-              "repeating-linear-gradient(45deg, #e9e9ea 0 10px, #f2f2f3 10px 20px)",
             minHeight: "300px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            font: "600 11px/1 'Barlow',sans-serif",
-            letterSpacing: ".16em",
-            textTransform: "uppercase",
-            color: "var(--color-neutral-500)",
           }}
         >
-          Google map embed
+          <iframe
+            title={`${siteInfo.name} warehouse location on Google Maps`}
+            src={`https://www.google.com/maps?q=${siteInfo.geo.latitude},${siteInfo.geo.longitude}&z=15&output=embed`}
+            width="100%"
+            height="100%"
+            style={{ border: 0, display: "block", minHeight: "300px" }}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
       </div>
     </>

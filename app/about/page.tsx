@@ -1,6 +1,14 @@
 import Link from "next/link";
-import { pillars, proof, siteInfo } from "@/data/products";
+import type { Metadata } from "next";
+import { pillars, proof, siteInfo, yearsInTrade } from "@/data/products";
 import { getBreadcrumbSchema } from "@/lib/schema";
+import { buildPageMetadata } from "@/lib/metadata";
+
+export const metadata: Metadata = buildPageMetadata({
+  title: `About Us — Metal Trading Company in ${siteInfo.address.city}`,
+  description: `${siteInfo.name} has supplied ferro alloys, non-ferro alloys and crucibles to foundries across Pakistan since ${siteInfo.foundingYear}. Direct importers, lab-tested stock, documentation with every quotation.`,
+  path: "/about",
+});
 
 export default function AboutPage() {
   const breadcrumbSchema = getBreadcrumbSchema([
@@ -92,7 +100,7 @@ export default function AboutPage() {
               color: "var(--color-accent)",
             }}
           >
-            [ ## ]
+            {yearsInTrade}
           </div>
           <div
             style={{

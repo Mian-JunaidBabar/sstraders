@@ -1,18 +1,36 @@
 import Link from "next/link";
+import Image from "next/image";
+import type { Metadata } from "next";
 import { metals, siteInfo } from "@/data/products";
-import { getBreadcrumbSchema } from "@/lib/schema";
+import { getBreadcrumbSchema, getItemListSchema } from "@/lib/schema";
+import { buildPageMetadata } from "@/lib/metadata";
+
+export const metadata: Metadata = buildPageMetadata({
+  title: `Pure Metals Supplier in ${siteInfo.address.city}, Pakistan`,
+  description: `Pure elemental ingots for foundry alloying and electroplating — Silicon Metal 553, Nickel, Tin, Zinc, Magnesium, Cadmium. Ready stock in ${siteInfo.address.city}.`,
+  path: "/metals",
+  image: metals[0].photo,
+});
 
 export default function MetalsPage() {
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: "Home", url: "/" },
     { name: "Metals", url: "/metals" },
   ]);
+  const itemListSchema = getItemListSchema(
+    metals.map((p) => ({ name: p.name, url: `/metals/${p.slug}` })),
+    "Metals"
+  );
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
       />
 
       {/* HERO SECTION */}
@@ -179,12 +197,12 @@ export default function MetalsPage() {
                     position: "relative",
                   }}
                 >
-                  <img
+                  <Image
                     src={p.photo}
                     alt={p.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 320px"
                     style={{
-                      width: "100%",
-                      height: "100%",
                       objectFit: "cover",
                       objectPosition: "center",
                     }}

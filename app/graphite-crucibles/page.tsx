@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
+import type { Metadata } from "next";
 import {
   cruciblePoints,
   crucibleSizes,
@@ -6,18 +8,56 @@ import {
   siteInfo,
 } from "@/data/products";
 import { getBreadcrumbSchema } from "@/lib/schema";
+import { buildPageMetadata } from "@/lib/metadata";
+
+export const metadata: Metadata = buildPageMetadata({
+  title: `Graphite Crucibles Supplier in ${siteInfo.address.city}, Pakistan`,
+  description: `Clay-graphite and silicon carbide crucibles, sizes #1 to #400, for aluminium, brass, copper and iron melting. Ready stock in ${siteInfo.address.city}, Pakistan.`,
+  path: "/graphite-crucibles",
+  image: "/products/graphite-crucible.webp",
+});
 
 export default function GraphiteCruciblesPage() {
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: "Home", url: "/" },
     { name: "Graphite Crucibles", url: "/graphite-crucibles" },
   ]);
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "@id": `${siteInfo.url}/graphite-crucibles/#product`,
+    name: "Graphite Crucibles",
+    description:
+      "Clay-graphite and silicon carbide crucibles, sizes #1 to #400, built to bear extreme furnace heat without cracking.",
+    image: `${siteInfo.url}/products/graphite-crucible.webp`,
+    category: "Graphite Crucibles",
+    brand: { "@type": "Brand", name: siteInfo.name },
+    additionalProperty: crucibleSpecs.flatMap((g) =>
+      g.rows.map((r) => ({
+        "@type": "PropertyValue",
+        name: `${g.title}: ${r.k}`,
+        value: r.v,
+      }))
+    ),
+    offers: {
+      "@type": "AggregateOffer",
+      url: `${siteInfo.url}/graphite-crucibles`,
+      priceCurrency: "PKR",
+      availability: "https://schema.org/InStock",
+      offerCount: crucibleSizes.length,
+      seller: { "@type": "Organization", name: siteInfo.name },
+    },
+  };
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
       />
 
       <div
@@ -170,16 +210,15 @@ export default function GraphiteCruciblesPage() {
             minHeight: "400px",
           }}
         >
-          <img
+          <Image
             src="/products/graphite-crucibles-hero.png"
             alt="Graphite Crucibles in all sizes - SS Traders"
+            fill
+            priority
+            sizes="(max-width: 768px) 100vw, 50vw"
             style={{
-              width: "100%",
-              height: "100%",
-              maxHeight: "540px",
               objectFit: "contain",
               objectPosition: "center",
-              display: "block",
             }}
           />
           <div
@@ -251,7 +290,7 @@ export default function GraphiteCruciblesPage() {
           >
             Capacity is for aluminium at nominal fill. Multiply by roughly 2.6
             for brass and 3.0 for cast iron. Send us your furnace number and
-            we'll confirm the fit.
+            we&apos;ll confirm the fit.
           </p>
         </div>
 

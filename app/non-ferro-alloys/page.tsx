@@ -1,18 +1,36 @@
 import Link from "next/link";
+import Image from "next/image";
+import type { Metadata } from "next";
 import { nonferro, siteInfo } from "@/data/products";
-import { getBreadcrumbSchema } from "@/lib/schema";
+import { getBreadcrumbSchema, getItemListSchema } from "@/lib/schema";
+import { buildPageMetadata } from "@/lib/metadata";
+
+export const metadata: Metadata = buildPageMetadata({
+  title: `Non-Ferro Alloys Supplier in ${siteInfo.address.city}, Pakistan`,
+  description: `Direct imported non-ferrous foundry additives including Copper Phosphorus deoxidiser. Lab-tested, ready stock in ${siteInfo.address.city} with COA on every lot.`,
+  path: "/non-ferro-alloys",
+  image: nonferro[0].photo,
+});
 
 export default function NonFerroAlloysPage() {
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: "Home", url: "/" },
     { name: "Non-Ferro Alloys", url: "/non-ferro-alloys" },
   ]);
+  const itemListSchema = getItemListSchema(
+    nonferro.map((p) => ({ name: p.name, url: `/non-ferro-alloys/${p.slug}` })),
+    "Non-Ferro Alloys"
+  );
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
       />
 
       {/* HERO SECTION */}
@@ -179,12 +197,12 @@ export default function NonFerroAlloysPage() {
                     position: "relative",
                   }}
                 >
-                  <img
+                  <Image
                     src={p.photo}
                     alt={p.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 320px"
                     style={{
-                      width: "100%",
-                      height: "100%",
                       objectFit: "cover",
                       objectPosition: "center",
                     }}

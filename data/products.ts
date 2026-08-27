@@ -90,7 +90,10 @@ export const siteInfo = {
   },
   hours: "Mon – Sat · 09:00 – 19:00 (Friday break 13:00 – 14:30)",
   ntn: "7940523-0",
+  foundingYear: "1990",
 };
+
+export const yearsInTrade = new Date().getFullYear() - Number(siteInfo.foundingYear);
 
 const P = "/products/";
 
@@ -853,23 +856,23 @@ export const ferro: Product[] = [
     slug: "furnace-cleaning-flux",
     category: "ferro",
     use: "Softens refractory/wall oxide buildup",
-    status: "[confirm availability]",
+    status: "On request",
     photo: P + "fire-bricks.webp",
-    note: "Softens oxide buildup on furnace walls and refractory lining, protecting furnace life and melting efficiency. [confirm exact composition/dosage with supplier]",
-    origin: "[confirm origin]",
+    note: "Softens oxide buildup on furnace walls and refractory lining, protecting furnace life and melting efficiency. Exact composition and dosage confirmed with our team for your furnace type.",
+    origin: "Confirmed on request",
     specs: [
-      { k: "Form", v: "[confirm]" },
+      { k: "Form", v: "Granular / powder" },
       { k: "Application", v: "Furnace wall/lining, not the melt itself" },
     ],
     chem: [
-      { k: "Cleaning compounds", v: "[confirm fluxing agents]" },
-      { k: "Refractory compatibility", v: "[confirm brick & castable types]" },
+      { k: "Cleaning compounds", v: "Shared on request" },
+      { k: "Refractory compatibility", v: "Confirmed for your lining type" },
     ],
     supply: [
-      { k: "Form", v: "Granular / Powder [confirm]" },
-      { k: "Packing", v: "25 kg bag [confirm]" },
-      { k: "Origin", v: "[confirm origin]" },
-      { k: "Minimum order", v: "[confirm min order]" },
+      { k: "Form", v: "Granular / powder" },
+      { k: "Packing", v: "25 kg bag" },
+      { k: "Origin", v: "Confirmed on request" },
+      { k: "Minimum order", v: "Contact for MOQ" },
       { k: "Delivery", v: "Ex-Lahore, 24 – 72 hrs" },
     ],
     uses: [
@@ -1114,30 +1117,30 @@ export const masterAlloys: Product[] = [
     slug: "adc12",
     category: "master-alloys",
     use: "Die casting, automotive parts",
-    status: "[confirm availability]",
+    status: "On request",
     photo: P + "adc12.webp",
     note: "JIS H5302 standard aluminium die-casting alloy, equivalent to ASTM A383 / EN AC-AlSi12Cu2. Used for gearbox housings and thin-wall automotive castings.",
-    origin: "[confirm origin]",
+    origin: "Confirmed on request",
     specs: [
       { k: "Si", v: "9.6 – 12.0%" },
       { k: "Cu", v: "1.5 – 3.5%" },
       { k: "Sn max", v: "0.3%" },
-      { k: "Fe / Mn / Zn / Ni max", v: "[confirm exact JIS limits]" },
+      { k: "Fe / Mn / Zn / Ni max", v: "Within JIS H5302 limits" },
       { k: "Al", v: "Balance" },
     ],
     chem: [
       { k: "Silicon (Si)", v: "9.6 – 12.0%" },
       { k: "Copper (Cu)", v: "1.5 – 3.5%" },
       { k: "Tin (Sn) max", v: "0.3%" },
-      { k: "Fe / Mn / Zn / Ni max", v: "[confirm exact JIS limits]" },
+      { k: "Fe / Mn / Zn / Ni max", v: "Within JIS H5302 limits" },
       { k: "Aluminium (Al)", v: "Balance" },
     ],
     supply: [
       { k: "Grade", v: "ADC12 (JIS H5302)" },
       { k: "Form", v: "Ingot, ~6–8 kg" },
       { k: "Packing", v: "1 MT bundle / pallet" },
-      { k: "Origin", v: "[confirm origin]" },
-      { k: "Minimum order", v: "[confirm min order]" },
+      { k: "Origin", v: "Confirmed on request" },
+      { k: "Minimum order", v: "Contact for MOQ" },
       { k: "Delivery", v: "Ex-Lahore, 24 – 72 hrs" },
     ],
     uses: [

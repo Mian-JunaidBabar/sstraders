@@ -1,12 +1,26 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { fluxes, getRelatedProducts, siteInfo } from "@/data/products";
 import { getProductSchema, getBreadcrumbSchema } from "@/lib/schema";
+import { buildProductMetadata } from "@/lib/metadata";
 
 export function generateStaticParams() {
   return fluxes.map((p) => ({
     slug: p.slug,
   }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const product = fluxes.find((p) => p.slug === slug);
+  if (!product) return {};
+  return buildProductMetadata(product, "fluxes");
 }
 
 export default async function FluxProductPage({
@@ -100,12 +114,13 @@ export default async function FluxProductPage({
               <i className="corner tr"></i>
               <i className="corner bl"></i>
               <i className="corner br"></i>
-              <img
+              <Image
                 src={product.photo}
                 alt={product.name}
+                fill
+                priority
+                sizes="(max-width: 768px) 100vw, 45vw"
                 style={{
-                  width: "100%",
-                  height: "100%",
                   objectFit: "cover",
                   objectPosition: "center",
                 }}
@@ -488,14 +503,15 @@ export default async function FluxProductPage({
                         overflow: "hidden",
                         borderBottom: "1px solid var(--color-accent-700)",
                         background: "var(--color-accent-800)",
+                        position: "relative",
                       }}
                     >
-                      <img
+                      <Image
                         src={r.photo}
                         alt={r.name}
+                        fill
+                        sizes="140px"
                         style={{
-                          width: "100%",
-                          height: "100%",
                           objectFit: "cover",
                         }}
                       />
@@ -541,10 +557,12 @@ export default async function FluxProductPage({
             position: "relative",
           }}
         >
-          <img
+          <Image
             src={product.photo}
             alt={product.name}
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            fill
+            sizes="100vw"
+            style={{ objectFit: "cover" }}
           />
           <span
             style={{
