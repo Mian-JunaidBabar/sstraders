@@ -272,14 +272,14 @@ export default function HomePage() {
               Warehouse, {siteInfo.address.city}
             </div>
             <img
-              src="/assets/ferro-magnese.webp"
-              alt="Warehouse"
+              src="/products/ferro-manganese.webp"
+              alt="SS Traders Warehouse Lahore"
               style={{
                 width: "100%",
                 height: "100%",
                 objectFit: "cover",
                 display: "block",
-                opacity: 0.8,
+                opacity: 0.85,
               }}
             />
           </div>
@@ -392,9 +392,9 @@ export default function HomePage() {
               color: "var(--color-accent)",
             }}
           >
-            <span>FeSi 75% — Stock updated</span>
+            <span>FeSi 72% — Stock updated</span>
             <span style={{ color: "var(--color-accent-300)" }}>•</span>
-            <span>Silicon Metal 441 — Arrived</span>
+            <span>Silicon Metal 553 — Arrived</span>
             <span style={{ color: "var(--color-accent-300)" }}>•</span>
             <span>Crucibles #1 to #400 — Ready</span>
             <span style={{ color: "var(--color-accent-300)" }}>•</span>
@@ -414,9 +414,9 @@ export default function HomePage() {
               color: "var(--color-accent)",
             }}
           >
-            <span>FeSi 75% — Stock updated</span>
+            <span>FeSi 72% — Stock updated</span>
             <span style={{ color: "var(--color-accent-300)" }}>•</span>
-            <span>Silicon Metal 441 — Arrived</span>
+            <span>Silicon Metal 553 — Arrived</span>
             <span style={{ color: "var(--color-accent-300)" }}>•</span>
             <span>Crucibles #1 to #400 — Ready</span>
             <span style={{ color: "var(--color-accent-300)" }}>•</span>

@@ -78,8 +78,8 @@ export default function FluxesPage() {
             textWrap: "pretty",
           }}
         >
-          Foundry fluxes for melt surface protection, dross separation,
-          exothermic metal recovery, and furnace refractory cleaning.
+          Foundry fluxes for melt surface protection, furnace refractory
+          cleaning, and hydrogen degassing.
         </p>
         <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
           <a

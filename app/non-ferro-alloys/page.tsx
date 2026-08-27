@@ -125,7 +125,7 @@ export default function NonFerroAlloysPage() {
             marginBottom: "8px",
           }}
         >
-          6 grades in stock
+          {nonferro.length} {nonferro.length === 1 ? "grade" : "grades"} in stock
         </div>
         <h2
           style={{

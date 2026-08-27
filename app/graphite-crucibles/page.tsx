@@ -21,8 +21,8 @@ export default function GraphiteCruciblesPage() {
       />
 
       <div
-        className="md:grid"
-        style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}
+        className="grid grid-cols-1 md:grid-cols-2"
+        style={{ borderBottom: "1px solid var(--color-accent)" }}
       >
         {/* HERO LEFT */}
         <div
@@ -65,9 +65,7 @@ export default function GraphiteCruciblesPage() {
               textTransform: "uppercase",
             }}
           >
-            Premium
-            <br />
-            graphite
+            Graphite
             <br />
             crucibles
           </h1>
@@ -163,32 +161,41 @@ export default function GraphiteCruciblesPage() {
 
         {/* HERO RIGHT */}
         <div
-          className="hidden md:block"
+          className="relative flex items-center justify-center"
           style={{
-            background: "var(--color-surface)",
+            background: "#ffffff",
             overflow: "hidden",
             borderLeft: "1px solid var(--color-accent)",
+            padding: "24px",
+            minHeight: "400px",
           }}
         >
-          <div
+          <img
+            src="/products/graphite-crucibles-hero.png"
+            alt="Graphite Crucibles in all sizes - SS Traders"
             style={{
               width: "100%",
               height: "100%",
-              minHeight: "78px",
-              background:
-                "repeating-linear-gradient(45deg, #e4e4e5 0 8px, #eeeeef 8px 16px)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              textAlign: "center",
-              padding: "10px",
-              font: "600 9px/1.35 'Barlow',sans-serif",
-              letterSpacing: ".12em",
+              maxHeight: "540px",
+              objectFit: "contain",
+              objectPosition: "center",
+              display: "block",
+            }}
+          />
+          <div
+            style={{
+              position: "absolute",
+              bottom: "16px",
+              right: "16px",
+              background: "var(--color-accent)",
+              color: "#fff",
+              padding: "7px 14px",
+              font: "600 10.5px/1 'Barlow',sans-serif",
+              letterSpacing: ".14em",
               textTransform: "uppercase",
-              color: "var(--color-neutral-500)",
             }}
           >
-            Graphite crucibles in all sizes
+            #1 – #400 Sizes in Stock
           </div>
         </div>
       </div>

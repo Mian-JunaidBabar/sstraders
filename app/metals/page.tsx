@@ -79,7 +79,7 @@ export default function MetalsPage() {
           }}
         >
           Pure element ingots and lumps for foundry alloying, electroplating,
-          and chemical formulations. Silicon Metal 441, Nickel, Tin, Zinc,
+          and chemical formulations. Silicon Metal 553, Nickel, Tin, Zinc,
           Magnesium, and Cadmium.
         </p>
         <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
