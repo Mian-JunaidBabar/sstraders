@@ -139,7 +139,6 @@ export default function HeaderNav() {
               alt={siteInfo.name}
               width={101}
               height={26}
-              priority
               style={{ height: "26px", width: "auto", display: "block" }}
             />
           </Link>

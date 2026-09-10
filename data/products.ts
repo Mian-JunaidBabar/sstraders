@@ -77,11 +77,6 @@ export const siteInfo = {
     (process.env.VERCEL_URL
       ? `https://${process.env.VERCEL_URL}`
       : "https://sstraders.pk"),
-  phone: "+92 300 9405230",
-  phoneRaw: "+923009405230",
-  whatsapp: "+92 300 9405230",
-  whatsappRaw: "923009405230",
-  email: "sstraders03009405230@gmail.com",
   phone: "+92 320 4990620",
   phoneRaw: "+923204990620",
   whatsapp: "+92 320 4990620",

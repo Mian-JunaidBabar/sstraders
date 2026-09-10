@@ -26,10 +26,10 @@ export default function Footer() {
             <Image
               src="/logo.webp"
               alt={siteInfo.name}
-              width={117}
-              height={30}
+              width={132}
+              height={34}
               style={{
-                height: "30px",
+                height: "34px",
                 width: "auto",
                 display: "block",
                 marginBottom: "16px",
