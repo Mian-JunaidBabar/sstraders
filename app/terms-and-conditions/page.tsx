@@ -1,85 +1,71 @@
-import React from "react";
-import { siteInfo } from "@/data/products";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: `Terms & Conditions | ${siteInfo.name}`,
-  description: `Terms and conditions for ${siteInfo.name}.`,
+  title: "Terms & Conditions | SS Traders",
+  description: "Terms and Conditions for SS Traders.",
 };
 
-export default function TermsAndConditions() {
+export default function TermsPage() {
   return (
-    <main className="min-h-screen py-24 bg-white text-black">
-      <div className="max-w-4xl mx-auto px-4 md:px-6">
-        <h1 className="text-4xl font-bold font-condensed uppercase tracking-wider mb-8 text-[var(--color-accent)]">
-          Terms & Conditions
-        </h1>
+    <main className="max-w-4xl mx-auto px-6 py-20 text-slate-800">
+      <h1 className="text-4xl font-extrabold tracking-tight mb-4">
+        Terms & Conditions
+      </h1>
+      <p className="text-sm text-slate-500 mb-10">
+        Last Updated: September 2026
+      </p>
 
-        <div className="prose prose-lg max-w-none text-black/80 font-sans">
-          <p>
-            Welcome to {siteInfo.name}. By accessing this website, you agree to
-            be bound by these Terms and Conditions.
-          </p>
-
-          <h2 className="text-2xl font-bold mt-8 mb-4 text-[var(--color-accent)]">
-            1. No Online Payments Accepted
+      <div className="space-y-8 text-base leading-relaxed">
+        <section>
+          <h2 className="text-2xl font-bold mb-3">
+            1. Nature of Website (Information & Inquiry Only)
           </h2>
           <p>
-            <strong>Important Notice:</strong> {siteInfo.name} is a B2B trading
-            business. We <strong>do not</strong> accept or process any online
-            payments through this website. This website serves strictly as a
-            digital catalog and inquiry platform. All commercial transactions,
-            payments, and invoicing are handled offline through formal banking
-            channels. Please do not share any credit card or banking information
-            on this website.
+            The website www.sstraders.pk serves strictly as an informational and
+            product showcase platform for our ferroalloys, metals, and related
+            industrial commodities. The website is not an automated e-commerce
+            store. Product specifications, grades, and availability listed on
+            this site are indicative and subject to change without prior notice.
           </p>
+        </section>
 
-          <h2 className="text-2xl font-bold mt-8 mb-4 text-[var(--color-accent)]">
-            2. Product Information and Rates
+        <section>
+          <h2 className="text-2xl font-bold mb-3">
+            2. Payment Policy – No Online Payments Accepted
           </h2>
           <p>
-            The products, technical specifications, and general information
-            provided on this website are for informational purposes. Since metal
-            and alloy rates fluctuate daily based on global market conditions,
-            we do not publish fixed pricing on the website. Please contact us
-            directly via WhatsApp or phone for today&apos;s rates and stock
-            availability.
+            SS Traders DOES NOT accept or process any payments directly through
+            www.sstraders.pk. We do not operate online checkout facilities or
+            payment gateways. All business transactions are settled strictly via
+            formal offline commercial methods agreed upon in writing (such as
+            official Company Bank Transfers, Pay Orders, or Cheques). We will
+            never ask you to enter credit card details on this website.
           </p>
+        </section>
 
-          <h2 className="text-2xl font-bold mt-8 mb-4 text-[var(--color-accent)]">
-            3. Intellectual Property
+        <section>
+          <h2 className="text-2xl font-bold mb-3">
+            3. Quotations, Pricing & Product Specifications
           </h2>
           <p>
-            All content on this website, including product descriptions, images,
-            logos, and structure, is the property of {siteInfo.name} and may not
-            be copied, reproduced, or distributed without our explicit written
-            permission.
+            Due to the volatile nature of the ferroalloys and metallurgical
+            commodity markets, prices and availability are not fixed on the
+            website and are quoted upon direct inquiry. Formal quotes are issued
+            via official email or WhatsApp.
           </p>
+        </section>
 
-          <h2 className="text-2xl font-bold mt-8 mb-4 text-[var(--color-accent)]">
-            4. Liability
+        <section>
+          <h2 className="text-2xl font-bold mb-3">
+            4. Orders, Inspection & Delivery
           </h2>
           <p>
-            {siteInfo.name} makes every effort to ensure the accuracy of the
-            information provided on this website. However, we do not guarantee
-            that all information is error-free, complete, or current.{" "}
-            {siteInfo.name} will not be held liable for any direct or indirect
-            damages arising from the use of this website.
+            A commercial order is considered confirmed only upon issuance and
+            mutual acceptance of an official Proforma Invoice. Delivery terms
+            shall be governed by the specific commercial contract executed for
+            each order.
           </p>
-
-          <h2 className="text-2xl font-bold mt-8 mb-4 text-[var(--color-accent)]">
-            5. Contact Information
-          </h2>
-          <p>
-            If you have any questions regarding these Terms and Conditions,
-            please contact us at:
-            <br />
-            <strong>Phone/WhatsApp:</strong> {siteInfo.phone}
-            <br />
-            <strong>Address:</strong> {siteInfo.address.street},{" "}
-            {siteInfo.address.city}, {siteInfo.address.country}.
-          </p>
-        </div>
+        </section>
       </div>
     </main>
   );

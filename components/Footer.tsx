@@ -1,304 +1,148 @@
 import Link from "next/link";
 import Image from "next/image";
-import { siteInfo } from "@/data/products";
 
 export default function Footer() {
   return (
-    <footer>
-      {/* Desktop Footer */}
-      <div
-        className="hidden md:block"
-        style={{
-          background: "var(--color-accent-100)",
-          padding: "40px 40px 20px",
-        }}
-      >
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1.4fr 1fr 1fr",
-            gap: "40px",
-            borderTop: "1px solid var(--color-accent)",
-            paddingTop: "26px",
-          }}
-        >
-          <div>
-            <Image
-              src="/logo.webp"
-              alt={siteInfo.name}
-              width={132}
-              height={34}
-              style={{
-                height: "34px",
-                width: "auto",
-                display: "block",
-                marginBottom: "16px",
-              }}
-            />
-            <p
-              style={{
-                font: "400 14px/1.55 'Barlow',sans-serif",
-                color: "var(--color-text)",
-                opacity: 0.8,
-                margin: 0,
-                maxWidth: "340px",
-                textWrap: "pretty",
-              }}
-            >
-              {siteInfo.description}
+    <footer className="bg-slate-50 border-t border-slate-200 mt-20">
+      <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-24">
+          {/* Brand Column */}
+          <div className="space-y-6">
+            <Link href="/">
+              <Image
+                src="/logo.webp"
+                alt="SS Traders"
+                width={180}
+                height={50}
+                className="h-auto w-48"
+              />
+            </Link>
+            <p className="text-slate-600 leading-relaxed text-sm">
+              A Lahore-based trading company specialised in high-grade ferro
+              alloys, non-ferro alloys, master alloys, pure metals, foundry
+              fluxes and crucibles for iron, steel, aluminium and copper
+              foundries across Pakistan.
             </p>
           </div>
+
+          {/* Products Column */}
           <div>
-            <div
-              style={{
-                font: "600 10.5px/1 'Barlow',sans-serif",
-                letterSpacing: ".18em",
-                textTransform: "uppercase",
-                color: "var(--color-accent)",
-                marginBottom: "14px",
-              }}
-            >
-              Our products
-            </div>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "8px",
-                font: "400 14px/1.3 'Barlow',sans-serif",
-                color: "var(--color-text)",
-                opacity: 0.8,
-              }}
-            >
-              <Link href="/ferro-alloys" className="hover:text-black">
-                Ferro Alloys
-              </Link>
-              <Link href="/non-ferro-alloys" className="hover:text-black">
-                Non-Ferro Alloys
-              </Link>
-              <Link href="/master-alloys" className="hover:text-black">
-                Master Alloys
-              </Link>
-              <Link href="/metals" className="hover:text-black">
-                Metals
-              </Link>
-              <Link href="/fluxes" className="hover:text-black">
-                Fluxes
-              </Link>
-              <Link href="/graphite-crucibles" className="hover:text-black">
-                Graphite Crucibles
-              </Link>
-            </div>
+            <h3 className="font-bold text-slate-900 mb-6 tracking-wide text-sm uppercase">
+              Our Products
+            </h3>
+            <ul className="space-y-4 text-sm text-slate-600">
+              <li>
+                <Link
+                  href="/ferro-alloys"
+                  className="hover:text-amber-600 transition-colors"
+                >
+                  Ferro Alloys
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/non-ferro-alloys"
+                  className="hover:text-amber-600 transition-colors"
+                >
+                  Non-Ferro Alloys
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/master-alloys"
+                  className="hover:text-amber-600 transition-colors"
+                >
+                  Master Alloys
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/metals"
+                  className="hover:text-amber-600 transition-colors"
+                >
+                  Metals
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/fluxes"
+                  className="hover:text-amber-600 transition-colors"
+                >
+                  Fluxes
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/graphite-crucibles"
+                  className="hover:text-amber-600 transition-colors"
+                >
+                  Graphite Crucibles
+                </Link>
+              </li>
+            </ul>
           </div>
+
+          {/* Contact Column */}
           <div>
-            <div
-              style={{
-                font: "600 10.5px/1 'Barlow',sans-serif",
-                letterSpacing: ".18em",
-                textTransform: "uppercase",
-                color: "var(--color-accent)",
-                marginBottom: "14px",
-              }}
-            >
-              Contact us
-            </div>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "8px",
-                font: "400 14px/1.3 'Barlow',sans-serif",
-                color: "var(--color-text)",
-                opacity: 0.8,
-              }}
-            >
-              <a href={`tel:${siteInfo.phoneRaw}`} className="hover:text-black">
-                {siteInfo.phone}
-              </a>
-              <a href={`mailto:${siteInfo.email}`} className="hover:text-black">
-                {siteInfo.email}
-              </a>
-              <span>{siteInfo.address.full}</span>
-            </div>
+            <h3 className="font-bold text-slate-900 mb-6 tracking-wide text-sm uppercase">
+              Contact Us
+            </h3>
+            <ul className="space-y-4 text-sm text-slate-600">
+              <li>
+                <a
+                  href="https://wa.me/923204990620?text=Salam,%20ma%20apki%20website%20dekh%20rha%20tha,%20muja%20rates%20bta%20dein."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-amber-600 transition-colors"
+                >
+                  +92 320 4990620
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:sstraders03204990620@gmail.com"
+                  className="hover:text-amber-600 transition-colors"
+                >
+                  sstraders03204990620@gmail.com
+                </a>
+              </li>
+              <li>Lahore, Pakistan</li>
+            </ul>
           </div>
-        </div>
-        <div
-          style={{
-            borderTop: "1px solid var(--color-accent-300)",
-            marginTop: "26px",
-            paddingTop: "14px",
-            font: "400 12px/1 'Barlow',sans-serif",
-            color: "var(--color-neutral-700)",
-            display: "flex",
-            justifyContent: "space-between",
-          }}
-        >
-          <div style={{ display: "flex", gap: "12px", alignItems: "center" }}>
-            <span>Copyright © 2026 {siteInfo.name} · All rights reserved</span>
-            <span>·</span>
-            <Link href="/privacy-policy" className="hover:text-black">
-              Privacy Policy
-            </Link>
-            <span>·</span>
-            <Link href="/terms-and-conditions" className="hover:text-black">
-              Terms & Conditions
-            </Link>
-          </div>
-          <span>
-            developed by{" "}
-            <a
-              href="https://www.deepdevsolutions.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-black underline decoration-transparent hover:decoration-current transition-colors"
-            >
-              deep dev solutions
-            </a>
-          </span>
         </div>
       </div>
 
-      {/* Mobile Footer */}
-      <div
-        className="md:hidden"
-        style={{
-          background: "var(--color-accent-100)",
-          padding: "40px 24px 24px",
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "36px",
-            borderTop: "1px solid var(--color-accent)",
-            paddingTop: "26px",
-          }}
-        >
-          <div>
-            <Image
-              src="/logo.webp"
-              alt={siteInfo.name}
-              width={101}
-              height={26}
-              style={{
-                height: "26px",
-                width: "auto",
-                display: "block",
-                marginBottom: "16px",
-              }}
-            />
-            <p
-              style={{
-                font: "400 14px/1.55 'Barlow',sans-serif",
-                color: "var(--color-text)",
-                opacity: 0.8,
-                margin: 0,
-                textWrap: "pretty",
-              }}
+      {/* Bottom Bar */}
+      <div className="border-t border-slate-200 bg-white">
+        <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+          <p>Copyright © 2026 SS Traders · All rights reserved</p>
+
+          <div className="flex items-center space-x-6">
+            <Link
+              href="/privacy-policy"
+              className="hover:text-amber-600 transition-colors"
             >
-              Direct importers and trusted suppliers of high-grade ferro alloys,
-              non-ferro alloys and premium crucibles.
-            </p>
-          </div>
-          <div style={{ display: "flex", gap: "36px" }}>
-            <div style={{ flex: 1 }}>
-              <div
-                style={{
-                  font: "600 10px/1 'Barlow',sans-serif",
-                  letterSpacing: ".18em",
-                  textTransform: "uppercase",
-                  color: "var(--color-accent)",
-                  marginBottom: "14px",
-                }}
-              >
-                Products
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "8px",
-                  font: "400 14px/1.3 'Barlow',sans-serif",
-                  color: "var(--color-text)",
-                  opacity: 0.8,
-                }}
-              >
-                <Link href="/ferro-alloys">Ferro Alloys</Link>
-                <Link href="/non-ferro-alloys">Non-Ferro</Link>
-                <Link href="/master-alloys">Master Alloys</Link>
-                <Link href="/metals">Metals</Link>
-                <Link href="/fluxes">Fluxes</Link>
-                <Link href="/graphite-crucibles">Crucibles</Link>
-              </div>
-            </div>
-            <div style={{ flex: 1 }}>
-              <div
-                style={{
-                  font: "600 10px/1 'Barlow',sans-serif",
-                  letterSpacing: ".18em",
-                  textTransform: "uppercase",
-                  color: "var(--color-accent)",
-                  marginBottom: "14px",
-                }}
-              >
-                Contact
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "8px",
-                  font: "400 14px/1.3 'Barlow',sans-serif",
-                  color: "var(--color-text)",
-                  opacity: 0.8,
-                }}
-              >
-                <a href={`tel:${siteInfo.phoneRaw}`}>{siteInfo.phone}</a>
-                <span>{siteInfo.address.city}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          style={{
-            borderTop: "1px solid var(--color-accent-300)",
-            marginTop: "32px",
-            paddingTop: "20px",
-            font: "400 11px/1.4 'Barlow',sans-serif",
-            color: "var(--color-neutral-700)",
-            textAlign: "center",
-          }}
-        >
-          Copyright © 2026 {siteInfo.name}
-          <br />
-          All rights reserved
-          <div
-            style={{
-              marginTop: "12px",
-              display: "flex",
-              flexDirection: "column",
-              gap: "6px",
-            }}
-          >
-            <Link href="/privacy-policy" className="hover:text-black">
               Privacy Policy
             </Link>
-            <Link href="/terms-and-conditions" className="hover:text-black">
+            <Link
+              href="/terms-and-conditions"
+              className="hover:text-amber-600 transition-colors"
+            >
               Terms & Conditions
             </Link>
           </div>
-          <div style={{ marginTop: "16px" }}>
+
+          <p>
             developed by{" "}
             <a
               href="https://www.deepdevsolutions.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-black underline decoration-transparent hover:decoration-current transition-colors"
+              className="font-medium text-slate-700 hover:text-amber-600 transition-colors"
             >
               deep dev solutions
             </a>
-          </div>
+          </p>
         </div>
       </div>
     </footer>

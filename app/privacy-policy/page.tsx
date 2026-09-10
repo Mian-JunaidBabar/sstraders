@@ -1,85 +1,61 @@
-import React from "react";
-import { siteInfo } from "@/data/products";
-import { Metadata } from "next";
+import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: `Privacy Policy | ${siteInfo.name}`,
-  description: `Privacy policy for ${siteInfo.name}.`,
+  title: "Privacy Policy | SS Traders",
+  description: "Privacy Policy for SS Traders.",
 };
 
-export default function PrivacyPolicy() {
+export default function PrivacyPolicyPage() {
   return (
-    <main className="min-h-screen py-24 bg-white text-black">
-      <div className="max-w-4xl mx-auto px-4 md:px-6">
-        <h1 className="text-4xl font-bold font-condensed uppercase tracking-wider mb-8 text-[var(--color-accent)]">
-          Privacy Policy
-        </h1>
+    <main className="max-w-4xl mx-auto px-6 py-20 text-slate-800">
+      <h1 className="text-4xl font-extrabold tracking-tight mb-4">
+        Privacy Policy
+      </h1>
+      <p className="text-sm text-slate-500 mb-10">
+        Last Updated: September 2026
+      </p>
 
-        <div className="prose prose-lg max-w-none text-black/80 font-sans">
+      <div className="space-y-8 text-base leading-relaxed">
+        <section>
+          <h2 className="text-2xl font-bold mb-3">1. Information Collection</h2>
           <p>
-            This Privacy Policy describes how {siteInfo.name} collects, uses,
-            and protects your information when you visit our website.
+            SS Traders solely collects information submitted directly by you
+            during inquiries, including your name, business name, phone number,
+            city, and product requirements. We do not use automated tracking to
+            harvest personal identification data.
           </p>
+        </section>
 
-          <h2 className="text-2xl font-bold mt-8 mb-4 text-[var(--color-accent)]">
-            1. Information We Collect
-          </h2>
+        <section>
+          <h2 className="text-2xl font-bold mb-3">2. Use of Information</h2>
           <p>
-            As a B2B trading business, we do not require user accounts or track
-            personal browsing habits. The only information we collect is the
-            data you voluntarily provide when submitting an inquiry through our
-            contact forms or WhatsApp links. This may include your:
+            The data collected is strictly utilized for legitimate B2B
+            commercial purposes, such as providing wholesale rate updates,
+            processing orders, arranging logistics, and issuing Certificates of
+            Analysis (COA).
           </p>
-          <ul className="list-disc pl-6 mb-4">
-            <li>Name</li>
-            <li>Phone Number (WhatsApp)</li>
-            <li>City or Company Location</li>
-            <li>Product(s) of interest</li>
-          </ul>
+        </section>
 
-          <h2 className="text-2xl font-bold mt-8 mb-4 text-[var(--color-accent)]">
-            2. How We Use Your Information
-          </h2>
+        <section>
+          <h2 className="text-2xl font-bold mb-3">3. Data Sharing</h2>
           <p>
-            The information collected is used exclusively for the purpose of
-            responding to your business inquiries, providing quotations, and
-            communicating regarding product stock and delivery.
+            We respect your business privacy. SS Traders does not sell, rent, or
+            trade your data. Information is only shared with essential third
+            parties, such as freight and logistics transporters, to fulfill your
+            delivery requirements.
           </p>
+        </section>
 
-          <h2 className="text-2xl font-bold mt-8 mb-4 text-[var(--color-accent)]">
-            3. Data Sharing and Third Parties
-          </h2>
+        <section>
+          <h2 className="text-2xl font-bold mb-3">4. Contact Us</h2>
           <p>
-            <strong>We respect your privacy.</strong> {siteInfo.name} does not
-            sell, rent, trade, or otherwise share your personal or business
-            inquiry data with any third parties. Your information is kept
-            strictly confidential and is only accessible to authorized personnel
-            handling your request.
+            If you have questions regarding our privacy practices, please
+            contact us at: <br />
+            <strong>Email:</strong> sstraders03204990620@gmail.com <br />
+            <strong>WhatsApp:</strong> +92 320 4990620
           </p>
-
-          <h2 className="text-2xl font-bold mt-8 mb-4 text-[var(--color-accent)]">
-            4. Security
-          </h2>
-          <p>
-            We take reasonable precautions to protect your information. Since we
-            do not collect sensitive data like credit card numbers online (refer
-            to our Terms & Conditions for our No Online Payments policy), the
-            risk is minimized. However, no internet transmission is 100% secure,
-            and we advise standard caution when sharing information online.
-          </p>
-
-          <h2 className="text-2xl font-bold mt-8 mb-4 text-[var(--color-accent)]">
-            5. Contact Us
-          </h2>
-          <p>
-            If you have questions about this Privacy Policy, please contact us
-            at:
-            <br />
-            <strong>Email:</strong> {siteInfo.email}
-            <br />
-            <strong>Phone:</strong> {siteInfo.phone}
-          </p>
-        </div>
+        </section>
       </div>
     </main>
   );
