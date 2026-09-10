@@ -103,7 +103,7 @@ export default function HomePage() {
                 }}
               >
                 <a
-                  href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam.%20Today's%20rates%20chahiye.`}
+                  href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam,%20ma%20apki%20website%20dekh%20rha%20tha,%20muja%20rates%20bta%20dein.`}
                   className="btn btn-primary"
                   style={{
                     padding: "14px 22px",
