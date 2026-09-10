@@ -49,6 +49,9 @@ export default function HomePage() {
             }}
           >
             <div>
+              <div style={{ marginBottom: "16px" }}>
+                <span className="hero-logo-shine">SS Traders!</span>
+              </div>
               <div
                 style={{
                   font: "600 10.5px/1 'Barlow',sans-serif",
@@ -292,6 +295,11 @@ export default function HomePage() {
           padding: "32px 16px 28px",
         }}
       >
+        <div style={{ marginBottom: "14px" }}>
+          <span className="hero-logo-shine hero-logo-shine-mobile">
+            SS Traders!
+          </span>
+        </div>
         <div
           style={{
             font: "600 9.5px/1 'Barlow',sans-serif",

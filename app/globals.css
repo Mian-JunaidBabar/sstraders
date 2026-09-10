@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700&family=Barlow+Condensed:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700&family=Barlow+Condensed:wght@400;600&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,700&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -203,4 +204,54 @@ textarea.input { min-height: 90px; resize: vertical; }
     animation-play-state: paused;
   }
 }
+
+/* Hero Logo Shiny Effect */
+.hero-logo-shine {
+  display: inline-block;
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  font-weight: 800;
+  font-size: 38px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  background: linear-gradient(
+    115deg,
+    #888d94 0%,
+    #888d94 36%,
+    #d8dce2 45%,
+    #ffffff 50%,
+    #d8dce2 55%,
+    #888d94 64%,
+    #888d94 100%
+  );
+  background-size: 260% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: logoShineRightToLeft 3.5s ease-in-out infinite;
+  user-select: none;
+}
+
+.hero-logo-shine-mobile {
+  font-size: 30px;
+}
+
+@keyframes logoShineRightToLeft {
+  0% {
+    background-position: 160% 0;
+  }
+  65% {
+    background-position: -60% 0;
+  }
+  100% {
+    background-position: -60% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-logo-shine {
+    animation: none;
+    background-position: 50% 0;
+  }
+}
+
 
