@@ -41,6 +41,7 @@ export function getOrganizationSchema() {
     ],
     openingHours: "Mo-Sa 09:00-19:00",
     priceRange: "$$",
+    sameAs: [siteInfo.social.facebook, siteInfo.social.instagram],
   };
 }
 

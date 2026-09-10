@@ -96,6 +96,10 @@ export const siteInfo = {
   hours: "Mon – Sat · 09:00 – 19:00 (Friday break 13:00 – 14:30)",
   ntn: "7940523-0",
   foundingYear: "1990",
+  social: {
+    instagram: "https://www.instagram.com/ss.traders.pk/",
+    facebook: "https://www.facebook.com/lahore.sstraders.pk",
+  },
 };
 
 export const yearsInTrade =
