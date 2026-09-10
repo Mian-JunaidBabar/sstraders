@@ -114,10 +114,9 @@ export default function FluxesPage() {
         </p>
         <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
           <a
-            href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam.%20Foundry%20fluxes%20ka%20rate%20chahiye.`}
+            href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam,%20ma%20apki%20website%20pa%20Foundry%20fluxes%20dekh%20rha%20tha,%20muja%20iska%20rate%20bta%20dein.`}
+            className="btn btn-white"
             style={{
-              background: "#fff",
-              color: "var(--color-accent)",
               font: "700 14px/1 'Barlow Condensed',sans-serif",
               letterSpacing: ".1em",
               textTransform: "uppercase",
@@ -129,9 +128,8 @@ export default function FluxesPage() {
           </a>
           <a
             href={`tel:${siteInfo.phoneRaw}`}
+            className="btn btn-secondary"
             style={{
-              border: "1px solid var(--color-neutral-600)",
-              color: "#fff",
               font: "700 14px/1 'Barlow Condensed',sans-serif",
               letterSpacing: ".1em",
               textTransform: "uppercase",

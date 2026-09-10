@@ -13,7 +13,7 @@ export default function HeaderNav() {
   return (
     <nav>
       {/* Desktop Nav */}
-      <div className="hidden md:block">
+      <div className="hidden lg:block">
         <div
           style={{
             background: "var(--color-accent)",
@@ -109,8 +109,8 @@ export default function HeaderNav() {
         </div>
       </div>
 
-      {/* Mobile Nav Header */}
-      <div className="md:hidden">
+      {/* Mobile/Tablet Nav Header */}
+      <div className="lg:hidden">
         <div
           style={{
             background: "var(--color-accent)",

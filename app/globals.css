@@ -249,7 +249,7 @@ figcaption {
   box-shadow: none !important;
 }
 
-/* 1. Primary Solid Dark Button (Header CTA, Hero CTA, WhatsApp Orders) */
+/* 1. Primary Solid Dark Button (Header CTA, WhatsApp Orders) */
 .btn-primary,
 a.btn-primary,
 button.btn-primary {
@@ -279,6 +279,38 @@ button.btn-primary:active {
   color: #ffffff !important;
   transform: translateY(0);
   box-shadow: 0 2px 6px rgba(217, 119, 6, 0.35);
+}
+
+/* 1b. Vibrant WhatsApp Button (High-visibility Hero CTA) */
+.btn-whatsapp,
+a.btn-whatsapp,
+button.btn-whatsapp {
+  background: #25d366 !important;
+  color: #ffffff !important;
+  border: 1px solid #25d366 !important;
+  box-shadow:
+    0 4px 14px rgba(37, 211, 102, 0.4),
+    0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-whatsapp:hover,
+a.btn-whatsapp:hover,
+button.btn-whatsapp:hover {
+  background: #1ebd5a !important;
+  border-color: #1ebd5a !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 24px rgba(37, 211, 102, 0.6),
+    0 3px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+.btn-whatsapp:active,
+a.btn-whatsapp:active,
+button.btn-whatsapp:active {
+  background: #128c7e !important;
+  border-color: #128c7e !important;
+  transform: translateY(0);
 }
 
 /* 2. Secondary Outline on Dark (Phone CTA, View Specs in dark cards) */

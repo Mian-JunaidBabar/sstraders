@@ -119,9 +119,8 @@ export default function MasterAlloysPage() {
         <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
           <a
             href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam,%20ma%20apki%20website%20pa%20Master%20alloys%20dekh%20rha%20tha,%20muja%20iska%20rate%20bta%20dein.`}
+            className="btn btn-white"
             style={{
-              background: "#fff",
-              color: "var(--color-accent)",
               font: "700 14px/1 'Barlow Condensed',sans-serif",
               letterSpacing: ".1em",
               textTransform: "uppercase",
@@ -133,9 +132,8 @@ export default function MasterAlloysPage() {
           </a>
           <a
             href={`tel:${siteInfo.phoneRaw}`}
+            className="btn btn-secondary"
             style={{
-              border: "1px solid var(--color-neutral-600)",
-              color: "#fff",
               font: "700 14px/1 'Barlow Condensed',sans-serif",
               letterSpacing: ".1em",
               textTransform: "uppercase",

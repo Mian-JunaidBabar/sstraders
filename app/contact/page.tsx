@@ -123,9 +123,8 @@ export default function ContactPage() {
               </div>
               <a
                 href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam,%20ma%20apki%20website%20dekh%20rha%20tha,%20muja%20rates%20bta%20dein.`}
+                className="btn btn-white"
                 style={{
-                  background: "#fff",
-                  color: "var(--color-accent)",
                   font: "700 13px/1 'Barlow Condensed',sans-serif",
                   letterSpacing: ".1em",
                   textTransform: "uppercase",
@@ -165,9 +164,8 @@ export default function ContactPage() {
               </div>
               <a
                 href={`tel:${siteInfo.phoneRaw}`}
+                className="btn btn-secondary"
                 style={{
-                  border: "1px solid var(--color-neutral-600)",
-                  color: "#fff",
                   font: "700 13px/1 'Barlow Condensed',sans-serif",
                   letterSpacing: ".1em",
                   textTransform: "uppercase",
@@ -337,9 +335,16 @@ export default function ContactPage() {
 
       <div
         style={{ background: "var(--color-surface)", padding: 0 }}
-        className="md:grid md:grid-cols-2 flex flex-col"
+        className="md:grid md:grid-cols-2 flex flex-col items-stretch"
       >
-        <div style={{ padding: "36px 40px" }}>
+        <div
+          style={{
+            padding: "48px 40px",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+          }}
+        >
           <div
             style={{
               font: "600 10.5px/1 'Barlow',sans-serif",
@@ -397,19 +402,25 @@ export default function ContactPage() {
           </div>
         </div>
         <div
+          className="w-full h-full min-h-[380px] md:min-h-full border-t md:border-t-0 md:border-l relative"
           style={{
-            borderLeft: "1px solid var(--color-accent-300)",
-            minHeight: "300px",
+            borderColor: "var(--color-accent-300)",
           }}
         >
           <iframe
             title={`${siteInfo.name} warehouse location on Google Maps`}
-            src={`https://www.google.com/maps?q=${siteInfo.geo.latitude},${siteInfo.geo.longitude}&z=15&output=embed`}
-            width="100%"
-            height="100%"
-            style={{ border: 0, display: "block", minHeight: "300px" }}
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3398.5130651255636!2d74.30339957533333!3d31.59239834358032!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39191d58a7448091%3A0x3c2de03003d1b5dd!2sSS%20Traders%20%7C%20Ferro%20Alloys%20%26%20Non%20Ferro%20Alloys%20Supplier!5e0!3m2!1sen!2s!4v1789046611400!5m2!1sen!2s"
+            className="w-full h-full md:absolute md:inset-0"
+            style={{
+              border: 0,
+              width: "100%",
+              height: "100%",
+              minHeight: "380px",
+              display: "block",
+            }}
+            allowFullScreen
             loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
+            referrerPolicy="strict-origin-when-cross-origin"
           ></iframe>
         </div>
       </div>

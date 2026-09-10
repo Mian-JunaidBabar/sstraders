@@ -67,7 +67,7 @@ export default function HomePage() {
                 style={{
                   fontFamily: "'Barlow Condensed',sans-serif",
                   fontWeight: 800,
-                  fontSize: "68px",
+                  fontSize: "clamp(42px, 5.2vw, 68px)",
                   lineHeight: ".92",
                   margin: "0 0 16px",
                   textTransform: "uppercase",
@@ -99,15 +99,16 @@ export default function HomePage() {
                   display: "flex",
                   gap: "12px",
                   alignItems: "center",
+                  flexWrap: "wrap",
                   marginBottom: "20px",
                 }}
               >
                 <a
                   href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam,%20ma%20apki%20website%20dekh%20rha%20tha,%20muja%20rates%20bta%20dein.`}
-                  className="btn btn-primary"
+                  className="btn btn-whatsapp"
                   style={{
                     padding: "14px 22px",
-                    font: "700 13px/1 'Barlow Condensed',sans-serif",
+                    font: "700 13.5px/1 'Barlow Condensed',sans-serif",
                     letterSpacing: ".1em",
                     textTransform: "uppercase",
                     borderRadius: 0,
@@ -118,18 +119,14 @@ export default function HomePage() {
                   }}
                 >
                   <svg
-                    width="17"
-                    height="17"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 16 16"
+                    fill="#ffffff"
                   >
-                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                    <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
                   </svg>
-                  WhatsApp for today&apos;s rate
+                  <span>WhatsApp for today&apos;s rate</span>
                 </a>
                 <a
                   href={`tel:${siteInfo.phoneRaw}`}
@@ -166,12 +163,9 @@ export default function HomePage() {
             </div>
 
             <div
+              className="grid grid-cols-2 lg:grid-cols-4 gap-4 pt-4 border-t"
               style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(4,1fr)",
-                gap: "16px",
-                borderTop: "1px solid var(--color-accent-700)",
-                paddingTop: "18px",
+                borderColor: "var(--color-accent-700)",
               }}
             >
               <div>
@@ -339,33 +333,39 @@ export default function HomePage() {
           high-grade ferro alloys, non-ferro alloys and crucibles. Serving
           manufacturers across Pakistan.
         </p>
-        <div style={{ display: "flex", gap: "8px", marginBottom: "24px" }}>
+        <div style={{ display: "flex", gap: "10px", marginBottom: "24px" }}>
           <a
-            href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam.%20Today's%20rates%20chahiye.`}
+            href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam,%20ma%20apki%20website%20dekh%20rha%20tha,%20muja%20rates%20bta%20dein.`}
+            className="btn btn-whatsapp"
             style={{
               flex: 1,
-              background: "#fff",
-              color: "var(--color-accent)",
-              font: "700 13px/1 'Barlow Condensed',sans-serif",
+              padding: "14px 12px",
+              font: "700 14px/1 'Barlow Condensed',sans-serif",
               letterSpacing: ".08em",
               textTransform: "uppercase",
-              padding: "14px 10px",
-              textAlign: "center",
+              borderRadius: 0,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "8px",
               textDecoration: "none",
             }}
           >
-            WhatsApp rates
+            <svg width="17" height="17" viewBox="0 0 16 16" fill="#ffffff">
+              <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
+            </svg>
+            <span>WhatsApp rates</span>
           </a>
           <a
             href={`tel:${siteInfo.phoneRaw}`}
+            className="btn btn-secondary"
             style={{
               flex: "none",
-              border: "1px solid var(--color-neutral-600)",
-              color: "#fff",
-              font: "700 13px/1 'Barlow Condensed',sans-serif",
+              font: "700 14px/1 'Barlow Condensed',sans-serif",
               letterSpacing: ".1em",
               textTransform: "uppercase",
-              padding: "14px 18px",
+              padding: "14px 20px",
+              borderRadius: 0,
               textDecoration: "none",
             }}
           >
@@ -764,14 +764,13 @@ export default function HomePage() {
                 <div style={{ display: "flex", gap: "8px" }}>
                   <a
                     href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam,%20ma%20apki%20website%20pa%20${b.name}%20dekh%20rha%20tha,%20muja%20iska%20rate%20bta%20dein.`}
+                    className="btn btn-white"
                     style={{
                       flex: 1,
-                      background: "#fff",
-                      color: "var(--color-accent)",
-                      font: "700 12.5px/1 'Barlow Condensed',sans-serif",
+                      font: "700 13px/1 'Barlow Condensed',sans-serif",
                       letterSpacing: ".08em",
                       textTransform: "uppercase",
-                      padding: "10px",
+                      padding: "11px 10px",
                       textAlign: "center",
                       textDecoration: "none",
                     }}
@@ -781,13 +780,12 @@ export default function HomePage() {
                   {productUrl !== "#" && (
                     <Link
                       href={productUrl}
+                      className="btn btn-secondary"
                       style={{
-                        border: "1px solid var(--color-accent-700)",
-                        color: "#fff",
-                        font: "700 12.5px/1 'Barlow Condensed',sans-serif",
+                        font: "700 13px/1 'Barlow Condensed',sans-serif",
                         letterSpacing: ".08em",
                         textTransform: "uppercase",
-                        padding: "10px 14px",
+                        padding: "11px 14px",
                         textDecoration: "none",
                       }}
                     >
