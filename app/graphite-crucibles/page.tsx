@@ -9,6 +9,7 @@ import {
 } from "@/data/products";
 import { getBreadcrumbSchema } from "@/lib/schema";
 import { buildPageMetadata } from "@/lib/metadata";
+import FAQSection from "@/components/FAQSection";
 
 export const metadata: Metadata = buildPageMetadata({
   title: `Graphite Crucibles Supplier in ${siteInfo.address.city}, Pakistan`,
@@ -16,6 +17,18 @@ export const metadata: Metadata = buildPageMetadata({
   path: "/graphite-crucibles",
   image: "/products/graphite-crucible.webp",
 });
+
+
+const faqs = [
+  {
+    "question": "What materials are your crucibles made from?",
+    "answer": "We supply clay graphite (up to 1400 °C for aluminium, brass, zinc) and silicon carbide (up to 1600 °C for copper, iron, steel)."
+  },
+  {
+    "question": "What sizes are available?",
+    "answer": "We stock sizes ranging from #4 (1.5 kg capacity) up to #500 (200 kg capacity)."
+  }
+];
 
 export default function GraphiteCruciblesPage() {
   const breadcrumbSchema = getBreadcrumbSchema([
@@ -556,6 +569,7 @@ export default function GraphiteCruciblesPage() {
           ))}
         </div>
       </div>
+      <FAQSection faqs={faqs} />
     </>
   );
 }

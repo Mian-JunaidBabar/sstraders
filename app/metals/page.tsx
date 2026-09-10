@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { metals, siteInfo } from "@/data/products";
 import { getBreadcrumbSchema, getItemListSchema } from "@/lib/schema";
 import { buildPageMetadata } from "@/lib/metadata";
+import FAQSection from "@/components/FAQSection";
 
 export const metadata: Metadata = buildPageMetadata({
   title: `Pure Metals Supplier in ${siteInfo.address.city}, Pakistan`,
@@ -11,6 +12,18 @@ export const metadata: Metadata = buildPageMetadata({
   path: "/metals",
   image: metals[0].photo,
 });
+
+
+const faqs = [
+  {
+    "question": "What materials are available in your Metals range?",
+    "answer": "Pure elemental ingots and lumps for foundry alloying and electroplating. Silicon Metal 553, Nickel, Tin, Zinc, Magnesium, Cadmium."
+  },
+  {
+    "question": "What is the current availability for Metals?",
+    "answer": "6 pure elements in stock."
+  }
+];
 
 export default function MetalsPage() {
   const breadcrumbSchema = getBreadcrumbSchema([
@@ -335,6 +348,7 @@ export default function MetalsPage() {
           ))}
         </div>
       </div>
+      <FAQSection faqs={faqs} />
     </>
   );
 }

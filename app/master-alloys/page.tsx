@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { masterAlloys, siteInfo } from "@/data/products";
 import { getBreadcrumbSchema, getItemListSchema } from "@/lib/schema";
 import { buildPageMetadata } from "@/lib/metadata";
+import FAQSection from "@/components/FAQSection";
 
 export const metadata: Metadata = buildPageMetadata({
   title: `Master Alloys Supplier in ${siteInfo.address.city}, Pakistan`,
@@ -11,6 +12,18 @@ export const metadata: Metadata = buildPageMetadata({
   path: "/master-alloys",
   image: masterAlloys[0].photo,
 });
+
+
+const faqs = [
+  {
+    "question": "What materials are available in your Master Alloys range?",
+    "answer": "Master alloys and ingots for alloy wheels, car pistons and aluminium engine parts. AlSi 50/50, AlCu 40/60, AlNi 80/20, AlTi5B1, ADC12."
+  },
+  {
+    "question": "What is the current availability for Master Alloys?",
+    "answer": "5 grades available."
+  }
+];
 
 export default function MasterAlloysPage() {
   const breadcrumbSchema = getBreadcrumbSchema([
@@ -335,6 +348,7 @@ export default function MasterAlloysPage() {
           ))}
         </div>
       </div>
+      <FAQSection faqs={faqs} />
     </>
   );
 }

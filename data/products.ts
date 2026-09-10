@@ -68,10 +68,15 @@ export interface Pillar {
 export const siteInfo = {
   name: "SS Traders",
   legalName: "SS Traders Pakistan",
-  tagline: "High-Grade Ferro Alloys, Non-Ferro Alloys, Master Alloys, Pure Metals, Fluxes & Crucibles",
+  tagline:
+    "High-Grade Ferro Alloys, Non-Ferro Alloys, Master Alloys, Pure Metals, Fluxes & Crucibles",
   description:
     "A Lahore-based trading company specialised in high-grade ferro alloys, non-ferro alloys, master alloys, pure metals, foundry fluxes and crucibles for iron, steel, aluminium and copper foundries across Pakistan.",
-  url: "https://sstraders.pk",
+  url:
+    process.env.NEXT_PUBLIC_SITE_URL ||
+    (process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}`
+      : "https://sstraders.pk"),
   phone: "+92 300 9405230",
   phoneRaw: "+923009405230",
   whatsapp: "+92 300 9405230",
@@ -93,7 +98,8 @@ export const siteInfo = {
   foundingYear: "1990",
 };
 
-export const yearsInTrade = new Date().getFullYear() - Number(siteInfo.foundingYear);
+export const yearsInTrade =
+  new Date().getFullYear() - Number(siteInfo.foundingYear);
 
 const P = "/products/";
 
@@ -1657,8 +1663,7 @@ export const ranges: Range[] = [
   {
     kicker: "6 pure elements",
     title: "Metals",
-    body:
-      "Pure elemental ingots and lumps for foundry alloying and electroplating. Silicon Metal 553, Nickel, Tin, Zinc, Magnesium, Cadmium.",
+    body: "Pure elemental ingots and lumps for foundry alloying and electroplating. Silicon Metal 553, Nickel, Tin, Zinc, Magnesium, Cadmium.",
     photo: P + "silicon-metal-441.webp",
     chips: ["Si 553", "Nickel", "Tin", "Zinc", "Magnesium"],
   },
@@ -1928,8 +1933,12 @@ export function getRelatedProducts(product: Product): {
     }
   };
 
-  const selected: { name: string; grade: string; photo: string; href: string }[] =
-    [];
+  const selected: {
+    name: string;
+    grade: string;
+    photo: string;
+    href: string;
+  }[] = [];
 
   if (sameCat.length > 0) {
     selected.push({

@@ -60,7 +60,7 @@ export function getWebsiteSchema() {
 
 export function getItemListSchema(
   items: { name: string; url: string }[],
-  listName: string
+  listName: string,
 ) {
   return {
     "@context": "https://schema.org",
@@ -71,7 +71,9 @@ export function getItemListSchema(
       "@type": "ListItem",
       position: index + 1,
       name: item.name,
-      url: item.url.startsWith("http") ? item.url : `${siteInfo.url}${item.url}`,
+      url: item.url.startsWith("http")
+        ? item.url
+        : `${siteInfo.url}${item.url}`,
     })),
   };
 }
@@ -103,16 +105,22 @@ export function getProductSchema(product: Product, categorySlug: string) {
       product.category === "ferro"
         ? "Ferro Alloys"
         : product.category === "non-ferro"
-        ? "Non-Ferro Alloys"
-        : product.category === "master-alloys"
-        ? "Master Alloys"
-        : product.category === "metals"
-        ? "Metals"
-        : "Fluxes",
+          ? "Non-Ferro Alloys"
+          : product.category === "master-alloys"
+            ? "Master Alloys"
+            : product.category === "metals"
+              ? "Metals"
+              : "Fluxes",
     brand: {
       "@type": "Brand",
       name: siteInfo.name,
     },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "",
+      reviewCount: "",
+    },
+    review: [],
     offers: {
       "@type": "Offer",
       url: productUrl,
@@ -136,7 +144,9 @@ export function getBreadcrumbSchema(items: { name: string; url: string }[]) {
       "@type": "ListItem",
       position: index + 1,
       name: item.name,
-      item: item.url.startsWith("http") ? item.url : `${siteInfo.url}${item.url}`,
+      item: item.url.startsWith("http")
+        ? item.url
+        : `${siteInfo.url}${item.url}`,
     })),
   };
 }

@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { ferro, siteInfo } from "@/data/products";
 import { getBreadcrumbSchema, getItemListSchema } from "@/lib/schema";
 import { buildPageMetadata } from "@/lib/metadata";
+import FAQSection from "@/components/FAQSection";
 
 export const metadata: Metadata = buildPageMetadata({
   title: `Ferro Alloys Supplier in ${siteInfo.address.city}, Pakistan`,
@@ -11,6 +12,18 @@ export const metadata: Metadata = buildPageMetadata({
   path: "/ferro-alloys",
   image: ferro[0].photo,
 });
+
+
+const faqs = [
+  {
+    "question": "What materials are available in your Ferro Alloys range?",
+    "answer": "High-grade ferro alloys for iron and steel casting units. Ferro silicon, ferro manganese, silico manganese, chrome, inoculants, pig iron."
+  },
+  {
+    "question": "What is the current availability for Ferro Alloys?",
+    "answer": "15 grades in stock."
+  }
+];
 
 export default function FerroAlloysPage() {
   const breadcrumbSchema = getBreadcrumbSchema([
@@ -331,6 +344,7 @@ export default function FerroAlloysPage() {
           ))}
         </div>
       </div>
+      <FAQSection faqs={faqs} />
     </>
   );
 }

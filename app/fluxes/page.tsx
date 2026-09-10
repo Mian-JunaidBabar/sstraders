@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { fluxes, siteInfo } from "@/data/products";
 import { getBreadcrumbSchema, getItemListSchema } from "@/lib/schema";
 import { buildPageMetadata } from "@/lib/metadata";
+import FAQSection from "@/components/FAQSection";
 
 export const metadata: Metadata = buildPageMetadata({
   title: `Foundry Fluxes Supplier in ${siteInfo.address.city}, Pakistan`,
@@ -11,6 +12,18 @@ export const metadata: Metadata = buildPageMetadata({
   path: "/fluxes",
   image: fluxes[0].photo,
 });
+
+
+const faqs = [
+  {
+    "question": "What materials are available in your Fluxes range?",
+    "answer": "High-performance fluxes and degassers for aluminium, copper and iron foundries. Covering flux, drossing flux, degasser tablets."
+  },
+  {
+    "question": "What is the current availability for Fluxes?",
+    "answer": "Ready stock."
+  }
+];
 
 export default function FluxesPage() {
   const breadcrumbSchema = getBreadcrumbSchema([
@@ -334,6 +347,7 @@ export default function FluxesPage() {
           ))}
         </div>
       </div>
+      <FAQSection faqs={faqs} />
     </>
   );
 }

@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { nonferro, siteInfo } from "@/data/products";
 import { getBreadcrumbSchema, getItemListSchema } from "@/lib/schema";
 import { buildPageMetadata } from "@/lib/metadata";
+import FAQSection from "@/components/FAQSection";
 
 export const metadata: Metadata = buildPageMetadata({
   title: `Non-Ferro Alloys Supplier in ${siteInfo.address.city}, Pakistan`,
@@ -11,6 +12,18 @@ export const metadata: Metadata = buildPageMetadata({
   path: "/non-ferro-alloys",
   image: nonferro[0].photo,
 });
+
+
+const faqs = [
+  {
+    "question": "What materials are available in your Non-Ferro Alloys range?",
+    "answer": "Non-ferrous foundry additives including Copper Phosphorus deoxidisers."
+  },
+  {
+    "question": "What is the current availability for Non-Ferro Alloys?",
+    "answer": "Stock in warehouse."
+  }
+];
 
 export default function NonFerroAlloysPage() {
   const breadcrumbSchema = getBreadcrumbSchema([
@@ -331,6 +344,7 @@ export default function NonFerroAlloysPage() {
           ))}
         </div>
       </div>
+      <FAQSection faqs={faqs} />
     </>
   );
 }
