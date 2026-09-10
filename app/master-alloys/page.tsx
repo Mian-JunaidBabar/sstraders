@@ -13,16 +13,16 @@ export const metadata: Metadata = buildPageMetadata({
   image: masterAlloys[0].photo,
 });
 
-
 const faqs = [
   {
-    "question": "What materials are available in your Master Alloys range?",
-    "answer": "Master alloys and ingots for alloy wheels, car pistons and aluminium engine parts. AlSi 50/50, AlCu 40/60, AlNi 80/20, AlTi5B1, ADC12."
+    question: "What materials are available in your Master Alloys range?",
+    answer:
+      "Master alloys and ingots for alloy wheels, car pistons and aluminium engine parts. AlSi 50/50, AlCu 40/60, AlNi 80/20, AlTi5B1, ADC12.",
   },
   {
-    "question": "What is the current availability for Master Alloys?",
-    "answer": "5 grades available."
-  }
+    question: "What is the current availability for Master Alloys?",
+    answer: "5 grades available.",
+  },
 ];
 
 export default function MasterAlloysPage() {
@@ -31,8 +31,11 @@ export default function MasterAlloysPage() {
     { name: "Master Alloys", url: "/master-alloys" },
   ]);
   const itemListSchema = getItemListSchema(
-    masterAlloys.map((p) => ({ name: p.name, url: `/master-alloys/${p.slug}` })),
-    "Master Alloys"
+    masterAlloys.map((p) => ({
+      name: p.name,
+      url: `/master-alloys/${p.slug}`,
+    })),
+    "Master Alloys",
   );
 
   return (
@@ -115,7 +118,7 @@ export default function MasterAlloysPage() {
         </p>
         <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
           <a
-            href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam.%20Master%20alloys%20ka%20rate%20chahiye.`}
+            href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam,%20ma%20apki%20website%20pa%20Master%20alloys%20dekh%20rha%20tha,%20muja%20iska%20rate%20bta%20dein.`}
             style={{
               background: "#fff",
               color: "var(--color-accent)",
@@ -313,7 +316,7 @@ export default function MasterAlloysPage() {
                 </div>
                 <div style={{ display: "flex", gap: "8px" }}>
                   <a
-                    href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam.%20${p.name}%20ka%20rate%20chahiye.`}
+                    href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam,%20ma%20apki%20website%20pa%20${p.name}%20dekh%20rha%20tha,%20muja%20iska%20rate%20bta%20dein.`}
                     style={{
                       flex: 1,
                       background: "var(--color-accent)",

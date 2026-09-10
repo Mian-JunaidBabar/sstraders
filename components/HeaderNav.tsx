@@ -94,7 +94,7 @@ export default function HeaderNav() {
               Contact
             </Link>
             <a
-              href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam.%20Stock%20aur%20rates%20chahiye.`}
+              href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam,%20ma%20apki%20website%20dekh%20rha%20tha,%20muja%20rates%20bta%20dein.`}
               className="btn btn-primary"
               style={{
                 borderRadius: 0,
@@ -271,7 +271,7 @@ export default function HeaderNav() {
             </Link>
             <div style={{ display: "flex", gap: "10px", marginTop: "8px" }}>
               <a
-                href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam.%20Stock%20aur%20rates%20chahiye.`}
+                href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam,%20ma%20apki%20website%20dekh%20rha%20tha,%20muja%20rates%20bta%20dein.`}
                 style={{
                   flex: 1,
                   background: "var(--color-accent)",

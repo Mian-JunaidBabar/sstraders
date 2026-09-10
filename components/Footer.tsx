@@ -133,8 +133,28 @@ export default function Footer() {
             justifyContent: "space-between",
           }}
         >
-          <span>Copyright © 2026 {siteInfo.name} · All rights reserved</span>
-          <span>Metal Industry Suppliers · NTN: {siteInfo.ntn}</span>
+          <div style={{ display: "flex", gap: "12px", alignItems: "center" }}>
+            <span>Copyright © 2026 {siteInfo.name} · All rights reserved</span>
+            <span>·</span>
+            <Link href="/privacy-policy" className="hover:text-black">
+              Privacy Policy
+            </Link>
+            <span>·</span>
+            <Link href="/terms-and-conditions" className="hover:text-black">
+              Terms & Conditions
+            </Link>
+          </div>
+          <span>
+            developed by{" "}
+            <a
+              href="https://www.deepdevsolutions.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-black underline decoration-transparent hover:decoration-current transition-colors"
+            >
+              deep dev solutions
+            </a>
+          </span>
         </div>
       </div>
 
@@ -253,6 +273,32 @@ export default function Footer() {
           Copyright © 2026 {siteInfo.name}
           <br />
           All rights reserved
+          <div
+            style={{
+              marginTop: "12px",
+              display: "flex",
+              flexDirection: "column",
+              gap: "6px",
+            }}
+          >
+            <Link href="/privacy-policy" className="hover:text-black">
+              Privacy Policy
+            </Link>
+            <Link href="/terms-and-conditions" className="hover:text-black">
+              Terms & Conditions
+            </Link>
+          </div>
+          <div style={{ marginTop: "16px" }}>
+            developed by{" "}
+            <a
+              href="https://www.deepdevsolutions.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-black underline decoration-transparent hover:decoration-current transition-colors"
+            >
+              deep dev solutions
+            </a>
+          </div>
         </div>
       </div>
     </footer>

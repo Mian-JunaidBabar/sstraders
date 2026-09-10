@@ -334,7 +334,7 @@ export default async function MasterAlloyProductPage({
 
             <div style={{ display: "flex", gap: "10px", marginBottom: "12px" }}>
               <a
-                href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam.%20${product.name}%20ka%20rate%20chahiye.`}
+                href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam,%20ma%20apki%20website%20pa%20${product.name}%20dekh%20rha%20tha,%20muja%20iska%20rate%20bta%20dein.`}
                 style={{
                   flex: 1,
                   background: "var(--color-accent)",
@@ -781,7 +781,7 @@ export default async function MasterAlloyProductPage({
           }}
         >
           <a
-            href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam.%20${product.name}%20ka%20rate%20chahiye.`}
+            href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam,%20ma%20apki%20website%20pa%20${product.name}%20dekh%20rha%20tha,%20muja%20iska%20rate%20bta%20dein.`}
             style={{
               flex: 1,
               background: "#fff",

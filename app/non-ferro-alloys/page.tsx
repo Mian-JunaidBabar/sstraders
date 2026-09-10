@@ -13,16 +13,16 @@ export const metadata: Metadata = buildPageMetadata({
   image: nonferro[0].photo,
 });
 
-
 const faqs = [
   {
-    "question": "What materials are available in your Non-Ferro Alloys range?",
-    "answer": "Non-ferrous foundry additives including Copper Phosphorus deoxidisers."
+    question: "What materials are available in your Non-Ferro Alloys range?",
+    answer:
+      "Non-ferrous foundry additives including Copper Phosphorus deoxidisers.",
   },
   {
-    "question": "What is the current availability for Non-Ferro Alloys?",
-    "answer": "Stock in warehouse."
-  }
+    question: "What is the current availability for Non-Ferro Alloys?",
+    answer: "Stock in warehouse.",
+  },
 ];
 
 export default function NonFerroAlloysPage() {
@@ -32,7 +32,7 @@ export default function NonFerroAlloysPage() {
   ]);
   const itemListSchema = getItemListSchema(
     nonferro.map((p) => ({ name: p.name, url: `/non-ferro-alloys/${p.slug}` })),
-    "Non-Ferro Alloys"
+    "Non-Ferro Alloys",
   );
 
   return (
@@ -115,7 +115,7 @@ export default function NonFerroAlloysPage() {
         </p>
         <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
           <a
-            href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam.%20Non-ferro%20alloys%20ka%20rate%20chahiye.`}
+            href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam,%20ma%20apki%20website%20pa%20Non-ferro%20alloys%20dekh%20rha%20tha,%20muja%20iska%20rate%20bta%20dein.`}
             style={{
               background: "#fff",
               color: "var(--color-accent)",
@@ -156,7 +156,8 @@ export default function NonFerroAlloysPage() {
             marginBottom: "8px",
           }}
         >
-          {nonferro.length} {nonferro.length === 1 ? "grade" : "grades"} in stock
+          {nonferro.length} {nonferro.length === 1 ? "grade" : "grades"} in
+          stock
         </div>
         <h2
           style={{
@@ -309,7 +310,7 @@ export default function NonFerroAlloysPage() {
                 </div>
                 <div style={{ display: "flex", gap: "8px" }}>
                   <a
-                    href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam.%20${p.name}%20ka%20rate%20chahiye.`}
+                    href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam,%20ma%20apki%20website%20pa%20${p.name}%20dekh%20rha%20tha,%20muja%20iska%20rate%20bta%20dein.`}
                     style={{
                       flex: 1,
                       background: "var(--color-accent)",

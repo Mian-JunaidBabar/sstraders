@@ -13,16 +13,16 @@ export const metadata: Metadata = buildPageMetadata({
   image: metals[0].photo,
 });
 
-
 const faqs = [
   {
-    "question": "What materials are available in your Metals range?",
-    "answer": "Pure elemental ingots and lumps for foundry alloying and electroplating. Silicon Metal 553, Nickel, Tin, Zinc, Magnesium, Cadmium."
+    question: "What materials are available in your Metals range?",
+    answer:
+      "Pure elemental ingots and lumps for foundry alloying and electroplating. Silicon Metal 553, Nickel, Tin, Zinc, Magnesium, Cadmium.",
   },
   {
-    "question": "What is the current availability for Metals?",
-    "answer": "6 pure elements in stock."
-  }
+    question: "What is the current availability for Metals?",
+    answer: "6 pure elements in stock.",
+  },
 ];
 
 export default function MetalsPage() {
@@ -32,7 +32,7 @@ export default function MetalsPage() {
   ]);
   const itemListSchema = getItemListSchema(
     metals.map((p) => ({ name: p.name, url: `/metals/${p.slug}` })),
-    "Metals"
+    "Metals",
   );
 
   return (
@@ -115,7 +115,7 @@ export default function MetalsPage() {
         </p>
         <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
           <a
-            href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam.%20Pure%20metals%20ka%20rate%20chahiye.`}
+            href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam,%20ma%20apki%20website%20pa%20Pure%20metals%20dekh%20rha%20tha,%20muja%20iska%20rate%20bta%20dein.`}
             style={{
               background: "#fff",
               color: "var(--color-accent)",
@@ -313,7 +313,7 @@ export default function MetalsPage() {
                 </div>
                 <div style={{ display: "flex", gap: "8px" }}>
                   <a
-                    href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam.%20${p.name}%20ka%20rate%20chahiye.`}
+                    href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam,%20ma%20apki%20website%20pa%20${p.name}%20dekh%20rha%20tha,%20muja%20iska%20rate%20bta%20dein.`}
                     style={{
                       flex: 1,
                       background: "var(--color-accent)",

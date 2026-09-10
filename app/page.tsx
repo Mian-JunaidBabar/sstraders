@@ -763,7 +763,7 @@ export default function HomePage() {
                 </div>
                 <div style={{ display: "flex", gap: "8px" }}>
                   <a
-                    href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam.%20Rate%20aur%20stock%20for%20${b.name}%20${b.grade}?`}
+                    href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam,%20ma%20apki%20website%20pa%20${b.name}%20dekh%20rha%20tha,%20muja%20iska%20rate%20bta%20dein.`}
                     style={{
                       flex: 1,
                       background: "#fff",

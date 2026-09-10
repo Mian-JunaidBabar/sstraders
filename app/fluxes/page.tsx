@@ -13,16 +13,16 @@ export const metadata: Metadata = buildPageMetadata({
   image: fluxes[0].photo,
 });
 
-
 const faqs = [
   {
-    "question": "What materials are available in your Fluxes range?",
-    "answer": "High-performance fluxes and degassers for aluminium, copper and iron foundries. Covering flux, drossing flux, degasser tablets."
+    question: "What materials are available in your Fluxes range?",
+    answer:
+      "High-performance fluxes and degassers for aluminium, copper and iron foundries. Covering flux, drossing flux, degasser tablets.",
   },
   {
-    "question": "What is the current availability for Fluxes?",
-    "answer": "Ready stock."
-  }
+    question: "What is the current availability for Fluxes?",
+    answer: "Ready stock.",
+  },
 ];
 
 export default function FluxesPage() {
@@ -32,7 +32,7 @@ export default function FluxesPage() {
   ]);
   const itemListSchema = getItemListSchema(
     fluxes.map((p) => ({ name: p.name, url: `/fluxes/${p.slug}` })),
-    "Fluxes"
+    "Fluxes",
   );
 
   return (
@@ -312,7 +312,7 @@ export default function FluxesPage() {
                 </div>
                 <div style={{ display: "flex", gap: "8px" }}>
                   <a
-                    href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam.%20${p.name}%20ka%20rate%20chahiye.`}
+                    href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam,%20ma%20apki%20website%20pa%20${p.name}%20dekh%20rha%20tha,%20muja%20iska%20rate%20bta%20dein.`}
                     style={{
                       flex: 1,
                       background: "var(--color-accent)",

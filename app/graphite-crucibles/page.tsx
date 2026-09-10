@@ -18,16 +18,17 @@ export const metadata: Metadata = buildPageMetadata({
   image: "/products/graphite-crucible.webp",
 });
 
-
 const faqs = [
   {
-    "question": "What materials are your crucibles made from?",
-    "answer": "We supply clay graphite (up to 1400 °C for aluminium, brass, zinc) and silicon carbide (up to 1600 °C for copper, iron, steel)."
+    question: "What materials are your crucibles made from?",
+    answer:
+      "We supply clay graphite (up to 1400 °C for aluminium, brass, zinc) and silicon carbide (up to 1600 °C for copper, iron, steel).",
   },
   {
-    "question": "What sizes are available?",
-    "answer": "We stock sizes ranging from #4 (1.5 kg capacity) up to #500 (200 kg capacity)."
-  }
+    question: "What sizes are available?",
+    answer:
+      "We stock sizes ranging from #4 (1.5 kg capacity) up to #500 (200 kg capacity).",
+  },
 ];
 
 export default function GraphiteCruciblesPage() {
@@ -182,7 +183,7 @@ export default function GraphiteCruciblesPage() {
           </div>
           <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
             <a
-              href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam.%20Crucibles%20size%20aur%20rate%20chahiye.`}
+              href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam,%20ma%20apki%20website%20pa%20Crucibles%20dekh%20rha%20tha,%20muja%20iska%20rate%20bta%20dein.`}
               style={{
                 background: "#fff",
                 color: "var(--color-accent)",
@@ -455,7 +456,7 @@ export default function GraphiteCruciblesPage() {
                   </td>
                   <td style={{ padding: "13px 16px", textAlign: "right" }}>
                     <a
-                      href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam.%20Crucible%20No.%20${c.no}%20ka%20rate%20aur%20stock%20chahiye.`}
+                      href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam,%20ma%20apki%20website%20pa%20Crucible%20No.%20${c.no}%20dekh%20rha%20tha,%20muja%20iska%20rate%20bta%20dein.`}
                       style={{
                         font: "700 11.5px/1 'Barlow Condensed',sans-serif",
                         letterSpacing: ".1em",

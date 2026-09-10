@@ -245,7 +245,7 @@ export default function AboutPage() {
           </p>
           <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
             <a
-              href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam.%20Stock%20position%20chahiye.`}
+              href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam,%20ma%20apki%20website%20dekh%20rha%20tha,%20muja%20rates%20bta%20dein.`}
               style={{
                 background: "var(--color-accent)",
                 color: "#fff",

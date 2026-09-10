@@ -81,8 +81,8 @@ export default function ContactPage() {
           >
             Questions about stock or today&apos;s market rates? Message us on
             WhatsApp — that is where we are fastest. Send the material, grade
-            and quantity and you&apos;ll have a rate, stock position and delivery
-            time back.
+            and quantity and you&apos;ll have a rate, stock position and
+            delivery time back.
           </p>
           <div
             style={{

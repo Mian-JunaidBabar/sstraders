@@ -3,6 +3,7 @@ import { Barlow, Barlow_Condensed, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import HeaderNav from "@/components/HeaderNav";
 import Footer from "@/components/Footer";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { getOrganizationSchema, getWebsiteSchema } from "@/lib/schema";
 import { siteInfo } from "@/data/products";
 
@@ -121,6 +122,7 @@ export default function RootLayout({
         <HeaderNav />
         <main className="flex-1">{children}</main>
         <Footer />
+        <FloatingWhatsApp />
       </body>
     </html>
   );

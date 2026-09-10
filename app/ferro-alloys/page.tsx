@@ -13,16 +13,16 @@ export const metadata: Metadata = buildPageMetadata({
   image: ferro[0].photo,
 });
 
-
 const faqs = [
   {
-    "question": "What materials are available in your Ferro Alloys range?",
-    "answer": "High-grade ferro alloys for iron and steel casting units. Ferro silicon, ferro manganese, silico manganese, chrome, inoculants, pig iron."
+    question: "What materials are available in your Ferro Alloys range?",
+    answer:
+      "High-grade ferro alloys for iron and steel casting units. Ferro silicon, ferro manganese, silico manganese, chrome, inoculants, pig iron.",
   },
   {
-    "question": "What is the current availability for Ferro Alloys?",
-    "answer": "15 grades in stock."
-  }
+    question: "What is the current availability for Ferro Alloys?",
+    answer: "15 grades in stock.",
+  },
 ];
 
 export default function FerroAlloysPage() {
@@ -32,7 +32,7 @@ export default function FerroAlloysPage() {
   ]);
   const itemListSchema = getItemListSchema(
     ferro.map((p) => ({ name: p.name, url: `/ferro-alloys/${p.slug}` })),
-    "Ferro Alloys"
+    "Ferro Alloys",
   );
 
   return (
@@ -115,7 +115,7 @@ export default function FerroAlloysPage() {
         </p>
         <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
           <a
-            href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam.%20Ferro%20alloys%20ka%20rate%20aur%20stock%20chahiye.`}
+            href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam,%20ma%20apki%20website%20pa%20Ferro%20alloys%20dekh%20rha%20tha,%20muja%20iska%20rate%20bta%20dein.`}
             style={{
               background: "#fff",
               color: "var(--color-accent)",
@@ -309,7 +309,7 @@ export default function FerroAlloysPage() {
                 </div>
                 <div style={{ display: "flex", gap: "8px" }}>
                   <a
-                    href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam.%20${p.name}%20ka%20rate%20chahiye.`}
+                    href={`https://wa.me/${siteInfo.whatsappRaw}?text=Salam,%20ma%20apki%20website%20pa%20${p.name}%20dekh%20rha%20tha,%20muja%20iska%20rate%20bta%20dein.`}
                     style={{
                       flex: 1,
                       background: "var(--color-accent)",
