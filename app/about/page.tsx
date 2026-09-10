@@ -296,13 +296,13 @@ export default function AboutPage() {
               <div
                 style={{
                   font: "800 20px/1 'Barlow Condensed',sans-serif",
-                  color: "var(--color-neutral-500)",
+                  color: "var(--color-neutral-600)",
                   marginBottom: "12px",
                 }}
               >
                 {p.n}
               </div>
-              <h4
+              <h3
                 style={{
                   fontFamily: "'Barlow Condensed',sans-serif",
                   fontWeight: 700,
@@ -314,7 +314,7 @@ export default function AboutPage() {
                 }}
               >
                 {p.t}
-              </h4>
+              </h3>
               <p
                 style={{
                   font: "400 13.5px/1.5 'Barlow',sans-serif",
@@ -365,7 +365,7 @@ export default function AboutPage() {
           <span
             style={{
               font: "400 13px/1.4 'Barlow',sans-serif",
-              color: "var(--color-neutral-600)",
+              color: "var(--color-accent-400)",
               maxWidth: "420px",
               textAlign: "right",
             }}

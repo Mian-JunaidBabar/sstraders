@@ -37,7 +37,7 @@ export default function GraphiteCruciblesPage() {
         "@type": "PropertyValue",
         name: `${g.title}: ${r.k}`,
         value: r.v,
-      }))
+      })),
     ),
     offers: {
       "@type": "AggregateOffer",
@@ -211,7 +211,7 @@ export default function GraphiteCruciblesPage() {
           }}
         >
           <Image
-            src="/products/graphite-crucibles-hero.png"
+            src="/products/graphite-crucibles-hero.webp"
             alt="Graphite Crucibles in all sizes - SS Traders"
             fill
             priority
@@ -307,6 +307,7 @@ export default function GraphiteCruciblesPage() {
             <thead>
               <tr style={{ background: "var(--color-accent)", color: "#fff" }}>
                 <th
+                  scope="col"
                   style={{
                     textAlign: "left",
                     color: "#fff",
@@ -319,6 +320,7 @@ export default function GraphiteCruciblesPage() {
                   Crucible no.
                 </th>
                 <th
+                  scope="col"
                   style={{
                     textAlign: "left",
                     color: "#fff",
@@ -331,6 +333,7 @@ export default function GraphiteCruciblesPage() {
                   Top dia.
                 </th>
                 <th
+                  scope="col"
                   style={{
                     textAlign: "left",
                     color: "#fff",
@@ -343,6 +346,7 @@ export default function GraphiteCruciblesPage() {
                   Height
                 </th>
                 <th
+                  scope="col"
                   style={{
                     textAlign: "left",
                     color: "#fff",
@@ -355,6 +359,7 @@ export default function GraphiteCruciblesPage() {
                   Aluminium capacity
                 </th>
                 <th
+                  scope="col"
                   style={{
                     textAlign: "left",
                     color: "#fff",
@@ -366,7 +371,19 @@ export default function GraphiteCruciblesPage() {
                 >
                   Typical use
                 </th>
-                <th style={{ padding: "13px 16px" }}></th>
+                <th
+                  scope="col"
+                  style={{
+                    textAlign: "right",
+                    color: "#fff",
+                    font: "600 10.5px/1 'Barlow',sans-serif",
+                    letterSpacing: ".14em",
+                    textTransform: "uppercase",
+                    padding: "13px 16px",
+                  }}
+                >
+                  Order
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -375,15 +392,18 @@ export default function GraphiteCruciblesPage() {
                   key={i}
                   style={{ borderTop: "1px solid var(--color-surface)" }}
                 >
-                  <td
+                  <th
+                    scope="row"
                     style={{
                       font: "700 17px/1 'Barlow Condensed',sans-serif",
                       color: "var(--color-accent)",
                       padding: "13px 16px",
+                      textAlign: "left",
+                      fontWeight: 700,
                     }}
                   >
                     {c.no}
-                  </td>
+                  </th>
                   <td
                     style={{
                       font: "400 14px/1.2 'Barlow',sans-serif",

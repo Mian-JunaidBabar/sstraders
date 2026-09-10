@@ -434,7 +434,7 @@ export default async function MasterAlloyProductPage({
                     <span
                       style={{
                         font: "800 15px/1 'Barlow Condensed',sans-serif",
-                        color: "var(--color-neutral-600)",
+                        color: "var(--color-accent-300)",
                         flex: "none",
                       }}
                     >

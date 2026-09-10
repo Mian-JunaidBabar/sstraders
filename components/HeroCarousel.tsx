@@ -123,17 +123,29 @@ export default function HeroCarousel({
             aria-label={`Show ${slide.title}`}
             onClick={() => setIndex(i)}
             style={{
-              width: "7px",
-              height: "7px",
-              borderRadius: "50%",
+              width: "28px",
+              height: "28px",
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              background: "transparent",
               border: "none",
               padding: 0,
               cursor: "pointer",
-              background: i === index ? "#fff" : "rgba(255,255,255,0.4)",
-              transform: i === index ? "scale(1.3)" : "scale(1)",
-              transition: "transform 0.3s ease, background 0.3s ease",
             }}
-          />
+          >
+            <span
+              style={{
+                width: "7px",
+                height: "7px",
+                borderRadius: "50%",
+                background: i === index ? "#fff" : "rgba(255,255,255,0.4)",
+                transform: i === index ? "scale(1.3)" : "scale(1)",
+                transition: "transform 0.3s ease, background 0.3s ease",
+                display: "block",
+              }}
+            />
+          </button>
         ))}
       </div>
     </div>

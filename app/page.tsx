@@ -440,7 +440,7 @@ export default function HomePage() {
             font: "600 10.5px/1 'Barlow',sans-serif",
             letterSpacing: ".2em",
             textTransform: "uppercase",
-            color: "var(--color-neutral-600)",
+            color: "var(--color-neutral-700)",
             marginBottom: "8px",
           }}
         >
@@ -573,7 +573,7 @@ export default function HomePage() {
                           letterSpacing: ".1em",
                           textTransform: "uppercase",
                           padding: "5px 8px",
-                          color: "var(--color-neutral-600)",
+                          color: "var(--color-neutral-700)",
                         }}
                       >
                         {c}
@@ -663,19 +663,19 @@ export default function HomePage() {
         >
           {board.map((b, i) => {
             const foundFerro = ferro.find(
-              (p) => p.name === b.name || p.name.startsWith(b.name)
+              (p) => p.name === b.name || p.name.startsWith(b.name),
             );
             const foundNonFerro = nonferro.find(
-              (p) => p.name === b.name || p.name.startsWith(b.name)
+              (p) => p.name === b.name || p.name.startsWith(b.name),
             );
             const foundMaster = masterAlloys.find(
-              (p) => p.name === b.name || p.name.startsWith(b.name)
+              (p) => p.name === b.name || p.name.startsWith(b.name),
             );
             const foundMetal = metals.find(
-              (p) => p.name === b.name || p.name.startsWith(b.name)
+              (p) => p.name === b.name || p.name.startsWith(b.name),
             );
             const foundFlux = fluxes.find(
-              (p) => p.name === b.name || p.name.startsWith(b.name)
+              (p) => p.name === b.name || p.name.startsWith(b.name),
             );
             const productUrl = foundFerro
               ? `/ferro-alloys/${foundFerro.slug}`
@@ -717,7 +717,7 @@ export default function HomePage() {
                       href={productUrl}
                       style={{ color: "#fff", textDecoration: "none" }}
                     >
-                      <h4
+                      <h3
                         style={{
                           fontFamily: "'Barlow Condensed',sans-serif",
                           fontWeight: 700,
@@ -728,7 +728,7 @@ export default function HomePage() {
                         }}
                       >
                         {b.name}
-                      </h4>
+                      </h3>
                     </Link>
                     <span
                       style={{
@@ -808,7 +808,7 @@ export default function HomePage() {
             font: "600 10.5px/1 'Barlow',sans-serif",
             letterSpacing: ".2em",
             textTransform: "uppercase",
-            color: "var(--color-neutral-600)",
+            color: "var(--color-neutral-700)",
             marginBottom: "8px",
           }}
         >
@@ -849,7 +849,7 @@ export default function HomePage() {
               <span
                 style={{
                   font: "800 16px/1 'Barlow Condensed',sans-serif",
-                  color: "var(--color-neutral-600)",
+                  color: "var(--color-neutral-700)",
                 }}
               >
                 0{i + 1}

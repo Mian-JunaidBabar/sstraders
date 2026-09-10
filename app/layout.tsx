@@ -1,9 +1,31 @@
 import type { Metadata } from "next";
+import { Barlow, Barlow_Condensed, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import HeaderNav from "@/components/HeaderNav";
 import Footer from "@/components/Footer";
 import { getOrganizationSchema, getWebsiteSchema } from "@/lib/schema";
 import { siteInfo } from "@/data/products";
+
+const barlow = Barlow({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-barlow",
+  display: "swap",
+});
+
+const barlowCondensed = Barlow_Condensed({
+  subsets: ["latin"],
+  weight: ["400", "600", "700", "800"],
+  variable: "--font-barlow-condensed",
+  display: "swap",
+});
+
+const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["700", "800", "900"],
+  variable: "--font-playfair",
+  display: "swap",
+});
 
 const defaultTitle =
   "SS Traders — High-Grade Ferro Alloys, Non-Ferro Alloys & Crucibles";
@@ -78,7 +100,10 @@ export default function RootLayout({
   const websiteSchema = getWebsiteSchema();
 
   return (
-    <html lang="en" className="h-full antialiased">
+    <html
+      lang="en"
+      className={`h-full antialiased ${barlow.variable} ${barlowCondensed.variable} ${playfairDisplay.variable}`}
+    >
       <head>
         <script
           type="application/ld+json"

@@ -128,7 +128,7 @@ export default function Footer() {
             marginTop: "26px",
             paddingTop: "14px",
             font: "400 12px/1 'Barlow',sans-serif",
-            color: "var(--color-neutral-600)",
+            color: "var(--color-neutral-700)",
             display: "flex",
             justifyContent: "space-between",
           }}
@@ -246,7 +246,7 @@ export default function Footer() {
             marginTop: "32px",
             paddingTop: "20px",
             font: "400 11px/1.4 'Barlow',sans-serif",
-            color: "var(--color-neutral-600)",
+            color: "var(--color-neutral-700)",
             textAlign: "center",
           }}
         >
